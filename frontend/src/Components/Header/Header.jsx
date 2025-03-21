@@ -1,23 +1,36 @@
 import React from 'react';
 import './Header.css';
+import logo from 'img/Logo.png';
 
 const Header = () => {
   return (
     <header id="Header">
-      <h1>Vila Imperiale</h1>
-      <nav>
+        
+      <div id="LogoName">
+        <img src={logo} alt="Logo" />
+        <h1>Vila Imperiale</h1>
+      </div>
+
+      <nav id="NavHeader">
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="#sobre">Sobre</a>
+            <a href="#">Cardápio</a>
           </li>
           <li>
-            <a href="#contato">Contato</a>
+            <a href="#">Pedido</a>
+          </li>
+          <li>
+            <a href="#">Reserva</a>
+          </li>
+          <li>
+            <a href="#">Contato</a>
           </li>
         </ul>
       </nav>
+
     </header>
   );
 };

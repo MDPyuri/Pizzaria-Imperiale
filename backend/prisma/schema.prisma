@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  idUsuario  Int    @id @default(autoincrement())
+  nome       String 
+  telefone   String 
+  cpf        String  @unique
+  email      String  @unique
+  senha      String 
+
+  reservas   Reserva[]
+  pedidos    Pedido[]
+}
+
+model Reserva {
+  idReserva     Int    @id @default(autoincrement())
+  data          DateTime
+  preferencia   String? 
+  telefone      String? 
+  qtdpessoas    Int
+  usuario       Usuario @relation(fields: [Usuario_idUsuario], references: [idUsuario])
+  Usuario_idUsuario Int
+}
+
+model Endereco {
+  idEndereco  Int    @id @default(autoincrement())
+  logradouro  String 
+  numero      String 
+  bairro      String 
+  cep         String
+  complemento String? 
+  pontoRef    String? 
+
+  pedidos     Pedido[]
+}
+
+model Pagamento {
+  idPagamento Int    @id @default(autoincrement())
+  tipo        String 
+  pago        Boolean
+
+  pedidos     Pedido[]
+}
+
+model Pedido {
+  idPedido       Int       @id @default(autoincrement())
+  data           DateTime
+  valor          Decimal @db.Decimal(10,2)
+  usuario        Usuario   @relation(fields: [Usuario_idUsuario], references: [idUsuario])
+  Usuario_idUsuario Int
+  endereco       Endereco? @relation(fields: [Endereco_idEndereco], references: [idEndereco])
+  Endereco_idEndereco Int?
+  pagamento      Pagamento? @relation(fields: [Pagamento_idpagamento], references: [idPagamento])
+  Pagamento_idpagamento Int?
+
+  itensProduto   ItemProduto[]
+}
+
+model Produto {
+  idProduto  Int    @id @default(autoincrement())
+  nome       String 
+  preco      Decimal @db.Decimal(5,2)
+  descricao  String?
+  imagem     String? 
+
+  itensProduto ItemProduto[]
+}
+
+model ItemProduto {
+  idItemProduto Int      @id @default(autoincrement())
+  quantidade    Int
+  preco         Decimal @db.Decimal(10,2)
+  observacao    String? 
+
+  produto       Produto  @relation(fields: [Produto_idProduto], references: [idProduto])
+  Produto_idProduto Int
+
+  pedido        Pedido   @relation(fields: [Pedido_idPedido], references: [idPedido])
+  Pedido_idPedido Int
+}

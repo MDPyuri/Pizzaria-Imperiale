@@ -1,14 +1,13 @@
 import React from 'react';
 import './Header.css';
-import logo from 'img/Logo.png';
+import logo from './img/logo.png';
 
 const Header = () => {
   return (
     <header id="Header">
-        
       <div id="LogoName">
         <img src={logo} alt="Logo" />
-        <h1>Vila Imperiale</h1>
+        <p>Vila Imperiale</p>
       </div>
 
       <nav id="NavHeader">
@@ -31,6 +30,10 @@ const Header = () => {
         </ul>
       </nav>
 
+      <div id="profile">
+        <p>^</p>
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
     </header>
   );
 };

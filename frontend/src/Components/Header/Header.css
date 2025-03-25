@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Header {
+    display: flex;
+    background-color: #2e4b32;
+    color: #f5f3e7;
+    align-items: center;
+    padding: 10px;
+}
+
+#LogoName {
+    font-family: 'Great Vibes';
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#LogoName img {
+    width: 50px;
+    margin: 10px;
+}
+
+#NavHeader ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#NavHeader ul li {
+    list-style: none;
+    margin: 10px;
+}
+
+#NavHeader ul li a {
+    color: #f5f3e7;
+    text-decoration: none;
+    font-family: 'Cinzel';
+}
+
+#profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-family: "Cinzel";
+    font-weight: 900;
+    font-size: 25px;
+    margin-right: 0px;
+}
+
+#profile ion-icon {
+    font-size: 40px;
+    margin: 0 6px;
+}

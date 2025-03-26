@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner-img img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    display: block;
+}
+
+.space {
+    background-color: #f5f3e7;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.title-space {
+    font-family: 'Great Vibes';
+    font-size: 100px;
+}
+
+.line {
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+}

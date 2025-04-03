@@ -4,6 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+
+.our-space {
+    background-color: #f5f3e7;
 }
 
 .banner-img img {
@@ -15,22 +20,73 @@
 
 .space {
     background-color: #f5f3e7;
-    position: absolute;
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* Usa min-height para evitar que ele fique pequeno */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
+
+
+.space-text {
+    display: flex;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    flex-direction: column;
+    width: 100%;
+    height: auto; /* Evita altura fixa */
+    text-align: center;
+    gap: 20px; /* Espaçamento automático entre os elementos */
+}
+
 
 
 
 .title-space {
     font-family: 'Great Vibes';
     font-size: 100px;
+    background-color: #f5f3e7;
+    padding: 0 30px;
+    color: #6b2e2e;
+    position: relative; /* Mudei de absolute para relative para evitar deslocamento */
+    text-align: center;
+    margin-bottom: 20px; /* Adiciona um espaçamento sem quebrar o layout */
 }
 
+
 .line {
-    width: 100%;
+    width: 1000px;
     height: 5px;
-    background-color: #000;
+    background-color: #c5a15c;
     position: absolute;
+}
+
+.text-space {
+    width: 50%;
+    height: 100%;
+    margin-top: 300px;
+}
+
+.line2 {
+    width: 1000px;
+    height: 5px;
+    background-color: #c5a15c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.text-space2 {
+    width: 50%;
+    height: auto; /* Para evitar que ele tenha altura fixa */
+    border: solid 5px #6b2e2e;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px; /* Agora pode aumentar sem empurrar os elementos acima */
+    box-sizing: border-box;
 }

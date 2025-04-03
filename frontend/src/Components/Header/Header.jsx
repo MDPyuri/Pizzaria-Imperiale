@@ -1,8 +1,9 @@
-import React from 'react';
+import { React, useState } from 'react';
 import './Header.css';
 import logo from './img/logo.png';
 
 const Header = () => {
+
   return (
     <header id="Header">
       <div id="LogoName">
@@ -28,14 +29,25 @@ const Header = () => {
             <a href="#">Contato</a>
           </li>
         </ul>
-      </nav>
 
-      <div id="profile">
-        <p>^</p>
-        <ion-icon name="person-circle-outline"></ion-icon>
-      </div>
+        <div id="profile" onClick={PopupProfile}>
+          <p>^</p>
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </div>
+      </nav>
     </header>
   );
 };
+
+const PopupProfile = () => {
+  return (
+      <div id="popupProfile">
+          <p>Login/Logout</p>
+          <p>Pedido</p>
+          <p>Perfil</p>
+      </div>
+  );
+}
+
 
 export default Header;

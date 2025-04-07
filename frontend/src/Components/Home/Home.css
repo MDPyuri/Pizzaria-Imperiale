@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 .our-space {
     background-color: #f5f3e7;
+    padding-bottom: 30px;
+    
 }
 
 .banner-img img {
@@ -20,73 +21,65 @@
 
 .space {
     background-color: #f5f3e7;
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* Usa min-height para evitar que ele fique pequeno */
     display: flex;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
-
 
 .space-text {
     display: flex;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
     flex-direction: column;
-    width: 100%;
-    height: auto; /* Evita altura fixa */
-    text-align: center;
-    gap: 20px; /* Espaçamento automático entre os elementos */
+    align-items: center; 
+    gap: 20px; 
+    margin-right: 50px;
 }
 
-
-
+.line {
+    width: 100%;
+    height: 5px;
+    background-color: #c5a15c;
+}
 
 .title-space {
     font-family: 'Great Vibes';
-    font-size: 100px;
-    background-color: #f5f3e7;
-    padding: 0 30px;
+    font-size: 70px;
     color: #6b2e2e;
-    position: relative; /* Mudei de absolute para relative para evitar deslocamento */
-    text-align: center;
-    margin-bottom: 20px; /* Adiciona um espaçamento sem quebrar o layout */
-}
-
-
-.line {
-    width: 1000px;
-    height: 5px;
-    background-color: #c5a15c;
-    position: absolute;
-}
-
-.text-space {
-    width: 50%;
-    height: 100%;
-    margin-top: 300px;
+    margin-bottom: 20px; 
 }
 
 .line2 {
-    width: 1000px;
+    width: 100%;
     height: 5px;
     background-color: #c5a15c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    margin: 20px auto; 
+}
+
+.text-space {
+    width: 100%;
+    max-width: 800px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #6b2e2e;
 }
 
 .text-space2 {
-    width: 50%;
-    height: auto; /* Para evitar que ele tenha altura fixa */
-    border: solid 5px #6b2e2e;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px; /* Agora pode aumentar sem empurrar os elementos acima */
-    box-sizing: border-box;
+    width: 100%;
+    border: solid 3px #6b2e2e;
+    border-radius: 40px;
+    padding: 40px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.img-place {
+    width: 520px;
+}
+
+.img-place img{
+    width: 520px;
+    height: 296px;
+    margin-top: 30px;
 }

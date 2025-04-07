@@ -6,12 +6,15 @@ const Home = () => {
     return (
         <section className="our-space">
             <div className="banner-img">
-                <img src={Banner} />
+                <img src={Banner} alt="Banner" />
             </div>
             <div className="space">
                 <div className="space-text">
-                    <div className="line"></div>
-                    <p className="title-space">Conheça nosso espaço</p>
+                    <div className='title'>
+                        <div className="line"></div>
+                        <p className="title-space">Conheça nosso espaço</p>
+                        <div className="line"></div>
+                    </div>
                     <p className="text-space">
                         Cada detalhe foi pensado para proporcionar a você uma
                         experiência inesquecível. Nosso espaço combina conforto,
@@ -28,6 +31,10 @@ const Home = () => {
                         </p>
                         <p className="text2">De Terça a Domingo – 18h às 23h</p>
                     </div>
+                </div>
+                <div className="img-place">
+                    <img src={Banner} alt="Space1" />
+                    <img src={Banner} alt="Space2" />
                 </div>
             </div>
         </section>

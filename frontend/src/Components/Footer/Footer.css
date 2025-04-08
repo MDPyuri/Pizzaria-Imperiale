@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+
+#Footer {
+    background-color: #2e4b32;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#title-rod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Great Vibes';
+    color: #f5f3e7;
+    font-size: 50px;
+}
+
+#title-rod p {
+    margin: 10px;
+}
+
+.line-rod {
+    width: 100%;
+    max-width: 15%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+#content-rod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-family: "Glacial indifference";
+}

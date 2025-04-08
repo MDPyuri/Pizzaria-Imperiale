@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    background-color: #f5f3e7;
+}
+
+.menu {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 5%;
+    color: #6b2e2e;
+}
+
+.line-one {
+    width: 80%;
+    height: 4px;
+    background-color: #c5a15c;
+    margin-top: -6.5%;
+    margin-left: 10%;
+}
+
+.pizzas {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 20%;
+    margin-top: 3%;
+    margin-left: 10%;
+    background-color: #c5a15c;
+}
+
+.salt-pizza {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    background-color: #e6d6b8;
+    border: none;
+    border-radius: 20px;
+    margin: 0% 5%;
+    align-items: center;
+    color: #6b2e2e;
+    font-family: cursive;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.sweet-pizza {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    height: 20%;
+    background-color: #e6d6b8;
+    border-radius: 20px;
+    margin: 0% 5%;
+}
+
+.vegan-pizza {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    height: 20%;
+    background-color: #e6d6b8;
+    border-radius: 20px;
+    margin: 0% 5%;
+}
+
+.drinks {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    height: 20%;
+    background-color: #e6d6b8;
+    border-radius: 20px;
+    margin: 0% 5%;
+}
+
+/* .line-two {
+    width: 80%;
+    height: 4px;
+    background-color: #c5a15c;
+    margin-left: 10%;
+} */

@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import Banner from './img/banner.png';
+import Space1 from './img/ambienteExterno.png'
+import Space2 from './img/ambienteInterno.png';
 
 const Home = () => {
     return (
@@ -29,12 +31,12 @@ const Home = () => {
                         <p className="text1">
                             Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP
                         </p>
-                        <p className="text2">De Terça a Domingo – 18h às 23h</p>
+                        <p className="text1">De Terça a Domingo - 18h às 23h</p>
                     </div>
                 </div>
                 <div className="img-place">
-                    <img src={Banner} alt="Space1" />
-                    <img src={Banner} alt="Space2" />
+                    <img src={Space1} alt="Space1" />
+                    <img src={Space2} alt="Space2" />
                 </div>
             </div>
         </section>

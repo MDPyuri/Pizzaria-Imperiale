@@ -4,8 +4,14 @@ import './Menu.css';
 const Menu = () => {
     return (
         <>
-            <p className="menu">Cardápio</p>
-            <div className="line-one"></div>
+            <div className="menu">
+                <p>Cardápio</p>
+            </div>
+            
+            <div className="line-one">
+                <div className="line-one-one"></div>
+                <div className="line-one-two"></div>
+            </div>
             <div className="pizzas">
                 <button className="salt-pizza">Pizzas salgadas</button>
                 <button className="sweet-pizza">Pizzas doces</button>

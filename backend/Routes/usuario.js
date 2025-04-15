@@ -3,43 +3,65 @@ const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
-const app = express();
-app.use(express.json());
+const usuarioRoutes = express.Router();
 
 // Rota para listar usuários
-app.get("/usuarios", async (req, res) => {
-    const usuarios = await prisma.usuario.findMany();
-    res.json(usuarios);
+usuarioRoutes.get("/", async (req, res) => {
+    try {
+        const usuarios = await prisma.usuario.findMany();
+        res.json(usuarios);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao listar usuários", details: error.message });
+    }
 });
 
 // Rota para criar usuário
-app.post("/usuarios/criar", async (req, res) => {
-    const { nome, telefone, cpf, email, senha } = req.body;
-    const usuario = await prisma.usuario.create({
-        data: { nome, telefone, cpf, email, senha }
-    });
-    res.json(usuario);
+usuarioRoutes.post("/criar", async (req, res) => {
+    try {
+        const { nome, telefone, cpf, email, senha } = req.body;
+        const usuario = await prisma.usuario.create({
+            data: { nome, telefone, cpf, email, senha }
+        });
+        res.json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao criar usuário", details: error.message });
+    }
 });
 
 // Rota para atualizar usuário
-app.put("/usuarios/atualizar/:id", async (req, res) => {
-    const { id } = req.params;
-    const { nome, email } = req.body;
-    const usuario = await prisma.usuario.update({
-        where: { id: parseInt(id) },
-        data: { nome, email }
-    });
-    res.json(usuario);
+usuarioRoutes.put("/atualizar/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { nome, email } = req.body;
+
+        // Validação do parâmetro id
+        const idUsuario = parseInt(id);
+        if (isNaN(idUsuario)) {
+            return res.status(400).json({ error: "ID inválido. Deve ser um número inteiro." });
+        }
+
+        const usuario = await prisma.usuario.update({
+            where: { idUsuario }, // Usa o idUsuario validado
+            data: { nome, email }
+        });
+
+        res.json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao atualizar usuário", details: error.message });
+    }
 });
 
 // Rota para deletar usuário
-app.delete("/usuarios/:id", async (req, res) => {
-    const { id } = req.params;
-    await prisma.usuario.delete({
-        where: { id: parseInt(id) }
-    });
-    res.json({ message: "Usuário deletado com sucesso" });
+usuarioRoutes.delete("/deletar/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.usuario.delete({
+            where: { idUsuario: parseInt(id) } // Alterado para usar idUsuario
+        });
+        res.json({ message: "Usuário deletado com sucesso" });
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao deletar usuário", details: error.message });
+    }
 });
 
-// Iniciar o servidor
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+module.exports = usuarioRoutes;

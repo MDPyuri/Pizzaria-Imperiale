@@ -24,24 +24,27 @@ const Footer = () => {
 
                 <div id="socialmedia-rod">
                     <div className="item-socialmedia">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
                         <p>(12) 3881-2540</p>
                     </div>
                     <div className="item-socialmedia">
+                        <ion-icon name="logo-instagram"></ion-icon>
                         <p>@vilaimperiale_</p>
                     </div>
                     <div className="item-socialmedia">
+                        <ion-icon name="logo-tiktok"></ion-icon>
                         <p>@vilaimperiale_</p>
                     </div>
                     <div className="item-socialmedia">
+                        <ion-icon name="logo-facebook"></ion-icon>
                         <p>VilaImperiale</p>
                     </div>
                 </div>
-
             </div>
 
-                <div className="line-rod"></div>
-                
-            <div id="copright-rod">
+            <div className="line-rod2"></div>
+
+            <div id="copyright-rod">
                 <p>
                     Vila Imperiale © 2025 - Todos os direitos reservados / todas
                     as imagens deste site foram criadas por IA

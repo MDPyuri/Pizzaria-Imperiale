@@ -34,10 +34,35 @@
     background-color: #c5a15c;
 }
 
+.line-rod2 {
+    width: 100vw;
+    max-width: 50%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
 #content-rod {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     font-family: "Glacial indifference";
+    color: #f5f3e7;
+}
+
+
+#copyright-rod p {
+    color: #f5f3e7;
+    font-family: "Glacial indifference";
+}
+
+.item-socialmedia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #c5a15c;
+}
+
+.item-socialmedia ion-icon {
+    margin: 0.4vw;
 }

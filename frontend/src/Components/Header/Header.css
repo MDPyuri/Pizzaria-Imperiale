@@ -8,26 +8,26 @@
     background-color: #2e4b32;
     color: #f5f3e7;
     align-items: center;
-    padding: 3px 50px;
+    padding: 0.86vh 4vw;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    margin-top: -106px;
+    z-index: 1000;
 }
 
 #LogoName {
     font-family: 'Great Vibes';
-    font-size: 45px;
+    font-size: 2.8rem;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 #LogoName img {
-    width: 80px;
-    margin: 10px;
-    margin-right: 15px;
-    cursor: pointer;
+  width: 5.2vw;
+  max-width: 80px;
+  margin-right: 1vw;
+  cursor: pointer;
 }
 
 #NavHeader {
@@ -36,24 +36,24 @@
     align-items: center;
 }
 
-#NavHeader ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+#NavHeader ul {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  gap: 2vw;
 }
 
 #NavHeader ul li {
-    list-style: none;
-    margin: 30px;
+  list-style: none;
 }
 
 #NavHeader ul li a {
-    color: #f5f3e7;
-    text-decoration: none;
-    font-family: 'Cinzel';
-    font-size: 20px;
-    position: relative;
+  color: #f5f3e7;
+  text-decoration: none;
+  font-family: 'Cinzel';
+  font-size: 1.2rem;
+  position: relative;
+  white-space: nowrap;
 }
 
 #NavHeader a::after,
@@ -78,20 +78,20 @@
     justify-content: center;
     flex-direction: row;
     font-family: "Cinzel";
-    font-size: 30px;
-    margin: 0 30px;
+    font-size: 2rem;
+    margin-left: 3vw;
 }
 
 #profile ion-icon {
-    font-size: 43px;
-    margin-left: 15px;
+    font-size: 2.6rem;
+    margin-left: 1vw;
     cursor: pointer;
 }
 
 #popupProfile {
     position: absolute;
-    top: 94px;
-    right: 100px;
+    top: 90%;
+    right: 5.25vw;
 }
 
 #popupTriangle {
@@ -106,15 +106,14 @@
 
 #popupText {
     background-color: #6b2e2edf;
-    padding: 8px;
+    padding: 0.3vh 0.5vw;
     border-radius: 15px;
     font-family: 'Glacial Indifference';
-    padding-right: 50px;
-
+    padding-right: 3vw;
 }
 
 #popupText ul li {
-    margin: 10px;
+    margin: 1vw 0;
     cursor: pointer;
     position: relative;
     list-style: none;

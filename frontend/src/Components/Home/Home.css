@@ -88,17 +88,17 @@
 }
 
 .text1 {
-    font-size: 26px;
+    font-size: 1.6rem;
     color: #6b2e2e;
     font-family: 'Glacial Indifference';
 }
 
 .img-place {
-    width: 800px;
-    gap: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    width: auto;
 }
 
 .img-place img{
@@ -108,11 +108,7 @@
 
 /* verificar depois */
 
-/* .text1 { 
-    font-size: clamp(1rem, 2.2vw, 1.6rem);
-    color: #6b2e2e;
-    font-family: 'Glacial Indifference';
-}
+/* 
 
 .img-place {
     display: flex;

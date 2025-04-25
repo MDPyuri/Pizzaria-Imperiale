@@ -3,10 +3,17 @@
 
 #Footer {
     background-color: #2e4b32;
-    padding: 10px;
+    padding: 1vw;
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contentRod {
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,23 +27,22 @@
     width: 100%;
     font-family: 'Great Vibes';
     color: #f5f3e7;
-    font-size: 50px;
+    font-size: 3.4rem;
 }
 
 #title-rod p {
-    margin: 10px;
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
 }
 
 .line-rod {
     width: 100%;
-    max-width: 15%;
     height: 3px;
     background-color: #c5a15c;
 }
 
 .line-rod2 {
-    width: 100vw;
-    max-width: 50%;
+    width: 100%;
     height: 3px;
     background-color: #c5a15c;
 }
@@ -46,14 +52,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    font-family: "Glacial indifference";
+    font-family: 'Glacial indifference';
     color: #f5f3e7;
+    font-size: 1.2rem;
+    width: 95%;
+    margin-top: -0.7vw;
 }
 
-
-#copyright-rod p {
-    color: #f5f3e7;
-    font-family: "Glacial indifference";
+#content-rod p {
+    font-size: 1.2rem;
 }
 
 .item-socialmedia {
@@ -61,8 +68,50 @@
     flex-direction: row;
     align-items: center;
     color: #c5a15c;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.item-socialmedia p {
+    position: relative;
+}
+
+.item-socialmedia p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.1px;
+    height: 1px;
+    width: 0;
+    transition: width 0.4s ease;
+    background: currentColor;
+}
+
+.item-socialmedia p:hover::after {
+    width: 100%;
+}
+
+#socialmedia-rod {
+    margin-bottom: 0.7vw;
 }
 
 .item-socialmedia ion-icon {
     margin: 0.4vw;
+}
+
+#text-rod {
+    text-align: center;
+    margin-right: 3vw;
+}
+
+#text-rod p {
+    font-size: 1.2rem;
+}
+
+#copyright-rod p {
+    color: #f5f3e7;
+    font-family: 'Glacial indifference';
+    margin-top: 0.9vw;
+    text-align: center;
+    font-size: 1.05rem;
 }

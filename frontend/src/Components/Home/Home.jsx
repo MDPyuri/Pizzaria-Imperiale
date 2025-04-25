@@ -8,11 +8,26 @@ const Home = () => {
     return (
         <section className="our-space">
             <div className="banner-img">
+                <div className="banner-text">
+                    <div className="banner-title">
+                        <p>Bem vindos à</p>
+                        <p>Pizzaria Vila Imperiale</p>
+                    </div>
+                    <div className="banner-subtitle">
+                        <p>
+                            onde a tradição italiana se une ao requinte gourmet!
+                            histórias de uma experiência única em nosso
+                            restaurante, com um ambiente acolhedor e sabores
+                            autênticos. Aproveite também nosso delivery e leve a
+                            verdadeira essência da Itália para sua casa!
+                        </p>
+                    </div>
+                </div>
                 <img src={Banner} alt="Banner" />
             </div>
             <div className="space">
                 <div className="space-text">
-                    <div className='title'>
+                    <div className="title">
                         <div className="line"></div>
                         <p className="title-space">Conheça nosso espaço</p>
                         <div className="line"></div>

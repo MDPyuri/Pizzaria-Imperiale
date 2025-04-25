@@ -18,14 +18,14 @@ const Menu = () => {
                 <button className="vegan-pizza">Pizzas veganas</button>
                 <button className="drinks">Bebidas</button>
             </div>
-            <div>
+            <div className="search">
                 <input
                     type="text"
                     // value={search}
                     // onChange={(event) => setNome(event.target.value)}
                     placeholder="Pesquisar"
                 />
-                <button></button>
+                <button><ion-icon name="search-outline"></ion-icon></button>
             </div>
             <div className="line-two"></div>
         </>

@@ -49,7 +49,7 @@
     height: 3.5vw;
     margin-top: 3%;
     margin-left: 15%;
-    background-color: #c5a15c;
+    /* background-color: #c5a15c; */
 }
 
 .salt-pizza {
@@ -136,9 +136,96 @@
     color:#e6d6b8;
 }
 
-/* .line-two {
+.search {
+    display: flex;
+    width: 70%;
+    height: 3.5vw;
+    margin-top: 3%;
+    margin-left: 15%;
+    /* background-color: #6b2e2e; */
+}
+.search input {
+    display: flex;
+    width: 75%;
+    margin-left: 8%;
+    border-radius: 20px;
+    background-color: #e6d6b8;
+    border: solid 2.5px #c5a15c;
+}
+
+.search input::placeholder {
+    color: #c5a15c;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    text-indent: 15px; /* separa texto da leteral */
+}
+
+.search input:focus {
+    border: solid 2.5px #6b2e2e;
+    outline: none; /* impede o navegador de alterar visualmente o foco */
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    text-indent: 15px;/* separa texto da leteral */
+}
+
+.search input:focus::placeholder {
+    color: #6b2e2e;
+}
+
+.search input:hover {
+    border: solid 2.5px #6b2e2e;
+    outline: none; /* impede o navegador de alterar visualmente o foco */
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    text-indent: 15px;/* separa texto da leteral */
+}
+
+.search input:hover::placeholder {
+    color: #6b2e2e;
+}
+
+.search button {
+    display: flex;
+    width: 5%;
+    margin-left: 2%;
+    border-radius: 50px;
+    background-color: #e6d6b8;
+    border: solid 2.5px #c5a15c;
+    cursor:pointer;
+    transition: transform 0.2s ease; /* suavidade no efeito */
+}
+
+.search button:focus {
+    border: solid 2.5px #6b2e2e;
+    transform: scale(0.97);
+}
+
+.search button:focus ion-icon {
+    color: #6b2e2e;
+}
+
+.search button:hover {
+    border: solid 2.5px #6b2e2e;
+    transform: scale(1.05); /* aumenta 5% */
+}
+
+.search button:hover ion-icon {
+    color: #6b2e2e;
+}
+
+.search ion-icon {
+    background: none;
+    height: 3vw;
+    color: #c5a15c;
+    font-size: 2.55vw;
+}
+
+.line-two {
     width: 80%;
     height: 4px;
     background-color: #c5a15c;
+    margin-top: 2.6%;
     margin-left: 10%;
-} */
+}

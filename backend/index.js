@@ -18,5 +18,17 @@ app.use("/reservas", reservaRoutes);
 const produtoRoutes = require("./Routes/produto");
 app.use("/produtos", produtoRoutes);
 
+// Importar rotas de pedido
+const pedidoRoutes = require("./Routes/pedido");
+app.use("/pedidos", pedidoRoutes);
+
+// Importar rotas de endereço
+const enderecoRoutes = require("./Routes/endereco");
+app.use("/enderecos", enderecoRoutes);
+
+// Importar rotas de pagamento
+const pagamentoRoutes = require("./Routes/pagamento");
+app.use("/pagamentos", pagamentoRoutes);
+
 // Iniciar o servidor
 app.listen(3000, () => console.log("Servidor rodando na porta 3000"));

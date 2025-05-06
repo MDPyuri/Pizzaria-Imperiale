@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
-* {
+/* * {
     background-color: #f5f3e7;
-}
+} */
 
+/* menu */
 .menu {
     width: 100%;
 }
@@ -228,4 +230,60 @@
     background-color: #c5a15c;
     margin-top: 2.6%;
     margin-left: 10%;
+}
+
+/* pizzas e bebidas */
+.containerCentral {
+    background-color: rgb(55, 91, 123);
+    width: 80%;
+    margin-top: 1vw;
+    margin-left: 10%;
+    overflow: hidden;
+}
+
+.product {
+    background-color:aqua;
+    width: 45%;
+    height: 25vw;
+    overflow: hidden;
+}
+
+.img {
+    background-color: #6b2e2e;
+    width: 40%;
+    height: 17vw;
+    margin-top: 2.5vw;
+}
+
+.img img {
+    width: 100%;
+}
+
+.img p {
+    margin-left: 1vw;
+}
+
+.description {
+    background-color: #c5a15c;
+    width: 58%;
+    margin-top: -52.7%;
+    margin-left: 42%;
+    font-family: 'Cinzel';
+    font-weight: 900;
+    font-size: 1.4vw;
+}
+
+.descButton {
+    display: flex;
+    flex-direction: row;
+}
+.pDesc {
+    margin-top: -1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDesc {
+    margin-top: -4%;
+    border-radius: 50vw;
 }

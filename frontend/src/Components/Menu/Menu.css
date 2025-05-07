@@ -73,6 +73,7 @@
 .salt-pizza:hover {
     background-color: #6b2e2e;
     color:#e6d6b8;
+    cursor: pointer;
 }
 
 .sweet-pizza {
@@ -94,6 +95,7 @@
 .sweet-pizza:hover {
     background-color: #6b2e2e;
     color:#e6d6b8;
+    cursor: pointer;
 }
 
 .vegan-pizza {
@@ -115,6 +117,7 @@
 .vegan-pizza:hover {
     background-color: #6b2e2e;
     color:#e6d6b8;
+    cursor: pointer;
 }
 
 .drinks {
@@ -136,6 +139,7 @@
 .drinks:hover {
     background-color: #6b2e2e;
     color:#e6d6b8;
+    cursor: pointer;
 }
 
 .search {
@@ -234,7 +238,7 @@
 
 /* pizzas e bebidas */
 .containerCentral {
-    background-color: rgb(55, 91, 123);
+    /* background-color: rgb(55, 91, 123); */
     width: 80%;
     margin-top: 1vw;
     margin-left: 10%;
@@ -242,14 +246,14 @@
 }
 
 .product {
-    background-color:aqua;
+    /* background-color:aqua; */
     width: 45%;
     height: 25vw;
     overflow: hidden;
 }
 
 .img {
-    background-color: #6b2e2e;
+    /* background-color: #6b2e2e; */
     width: 40%;
     height: 17vw;
     margin-top: 2.5vw;
@@ -263,14 +267,22 @@
     margin-left: 1vw;
 }
 
+.react-stars {
+    cursor: pointer;
+    position: relative;
+    width: 5vw; /* Tamanho do contêiner*/
+    height: 3vw; /* Tamanho das estrelas*/
+}
+
 .description {
-    background-color: #c5a15c;
-    width: 58%;
+    background-color: #f1ddb6;
+    width: 54%;
     margin-top: -52.7%;
     margin-left: 42%;
     font-family: 'Cinzel';
     font-weight: 900;
     font-size: 1.4vw;
+    color: #6b2e2e;
 }
 
 .descButton {
@@ -278,12 +290,133 @@
     flex-direction: row;
 }
 .pDesc {
-    margin-top: -1vw;
+    margin-top: -0.5vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -0.5vw;
     font-weight: bold;
     font-size: 0.75vw;
 }
 
 .buttonDesc {
-    margin-top: -4%;
-    border-radius: 50vw;
+    position: absolute;
+    margin-top: -0.8%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2 {
+    position: absolute;
+    margin-top: -0.69%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 7.5vw;
+}
+
+.pBroto {
+    font-size: 1.2vw;
+    /* margin-top: 8.5vw; */
+}
+
+.pBrotoDivisao {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 5vw;
+}
+
+.pBrotoPreco {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 6vw;
+}
+
+.counter-wrapper2 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: -1.2vw;
+}
+
+.pPizza {
+    font-size: 1.2vw;
+    /* margin-top: 1vw; */
+}
+
+.pPizzaDivisao {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 5vw;
+}
+
+.pPizzaPreco {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 6vw;
+}
+
+.ajuste-margin {
+    margin-top: 3.53vw;
+}
+
+.counter {
+    display: inline-flex;
+    height: auto;
+    position: absolute;
+    /* margin-top: -3.2vw; */
+    margin-left: 13.3vw;
+    background-color: #e6d6b8;
+    border: 2px solid #c5a15c;
+    border-radius: 1vh;
+    overflow: hidden;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.counter button {
+    flex: 0 0 auto;
+    min-width: auto;
+    background-color: transparent;
+    border: none;
+    color: #c5a15c;
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 0vw 0.5vw;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.counter button:hover {
+    background-color: #eddfc4;
+}
+
+.counter button:not(:last-child) {
+    border-right: 2px solid #c5a15c;
 }

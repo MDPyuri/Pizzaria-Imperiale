@@ -2,9 +2,9 @@
 @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
-/* * {
+* {
     background-color: #f5f3e7;
-} */
+}
 
 /* menu */
 .menu {
@@ -238,7 +238,7 @@
 
 /* pizzas e bebidas */
 .containerCentral {
-    /* background-color: rgb(55, 91, 123); */
+    background-color: rgb(55, 91, 123);
     width: 80%;
     margin-top: 1vw;
     margin-left: 10%;
@@ -246,42 +246,47 @@
 }
 
 .product {
-    /* background-color:aqua; */
+    background-color:aqua;
     width: 45%;
     height: 25vw;
     overflow: hidden;
 }
 
 .img {
-    /* background-color: #6b2e2e; */
+    background-color: #6b2e2e;
     width: 40%;
     height: 17vw;
     margin-top: 2.5vw;
 }
 
 .img img {
-    width: 100%;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .img p {
     margin-left: 1vw;
 }
 
-.react-stars {
+.renderStarStyles {
+    /* background-color: #6b2e2e; */
     cursor: pointer;
     position: relative;
-    width: 5vw; /* Tamanho do contêiner*/
-    height: 3vw; /* Tamanho das estrelas*/
+    width: 80%; /* Tamanho do contêiner*/
+    height: 1vw; /* Tamanho das estrelas*/
+    align-items: center;
+    justify-self: center;
 }
 
 .description {
-    background-color: #f1ddb6;
+    /* background-color: #f1ddb6; */
     width: 54%;
     margin-top: -52.7%;
     margin-left: 42%;
     font-family: 'Cinzel';
     font-weight: 900;
-    font-size: 1.4vw;
+    font-size: 1.42vw;
     color: #6b2e2e;
 }
 
@@ -290,7 +295,7 @@
     flex-direction: row;
 }
 .pDesc {
-    margin-top: -0.5vw;
+    margin-top: -1.1vw;
     font-weight: bold;
     font-size: 0.75vw;
 }
@@ -298,14 +303,14 @@
 .pDesc2 {
     width: 80%;
     align-items: justify;
-    margin-top: -0.5vw;
+    margin-top: -1.1vw;
     font-weight: bold;
     font-size: 0.75vw;
 }
 
 .buttonDesc {
     position: absolute;
-    margin-top: -0.8%;
+    margin-top: -1.35%;
     margin-left: 15.5vw;
     border: none;
     background-color: transparent;
@@ -319,7 +324,7 @@
 
 .buttonDesc2 {
     position: absolute;
-    margin-top: -0.69%;
+    margin-top: -1.23%;
     margin-left: 15.5vw;
     border: none;
     background-color: transparent;
@@ -335,52 +340,58 @@
     display: flex;
     align-items: center;
     gap: 2vw;
-    margin-top: 7.5vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
 }
 
 .pBroto {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     /* margin-top: 8.5vw; */
 }
 
 .pBrotoDivisao {
     position: absolute;
     /* margin-top: -3vw; */
-    margin-left: 5vw;
+    margin-left: 4.5vw;
+    font-size: 1.1vw;
 }
 
 .pBrotoPreco {
     position: absolute;
     /* margin-top: -3vw; */
-    margin-left: 6vw;
+    margin-left: 5.5vw;
+    font-size: 1.1vw;
+}
+
+.ajuste-margin {
+    margin-top: 2.56vw;
 }
 
 .counter-wrapper2 {
     display: flex;
     align-items: center;
-    gap: 2vw;
-    margin-top: -1.2vw;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
 }
 
 .pPizza {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     /* margin-top: 1vw; */
 }
 
 .pPizzaDivisao {
     position: absolute;
     /* margin-top: -3vw; */
-    margin-left: 5vw;
+    margin-left: 4.5vw;
+    font-size: 1.1vw;
 }
 
 .pPizzaPreco {
     position: absolute;
     /* margin-top: -3vw; */
-    margin-left: 6vw;
-}
-
-.ajuste-margin {
-    margin-top: 3.53vw;
+    margin-left: 5.5vw;
+    font-size: 1.1vw;
 }
 
 .counter {
@@ -388,7 +399,7 @@
     height: auto;
     position: absolute;
     /* margin-top: -3.2vw; */
-    margin-left: 13.3vw;
+    margin-left: 13.6vw;
     background-color: #e6d6b8;
     border: 2px solid #c5a15c;
     border-radius: 1vh;
@@ -419,4 +430,233 @@
 
 .counter button:not(:last-child) {
     border-right: 2px solid #c5a15c;
+}
+
+.addCar {
+    background-color: #e6d6b8;
+    width: 65%;
+    height: 2.3vw;
+    font-size: 1.3vw;
+    color:#6b2e2e;
+    border: none;
+    border-radius: 50px;
+    margin-top: 1.5vw;
+    margin-left: 15%;
+    cursor: pointer;
+}
+
+.addCar:hover {
+    background-color: #eddfc4;
+    /* background-color: #6b2e2e; */
+    /* color:#e6d6b8; */
+}
+
+/* parte dois do containerCentral */
+.product2 {
+    background-color:aqua;
+    width: 45%;
+    height: 25vw;
+    overflow: hidden;
+    margin-top: -25vw;
+    margin-left: 55%;
+}
+
+.img2 {
+    background-color: #6b2e2e;
+    width: 40%;
+    height: 17vw;
+    margin-top: 2.5vw;
+}
+
+.img2 img {
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.img2 p {
+    margin-left: 1vw;
+}
+
+.renderStarStyles2 {
+    /* background-color: #6b2e2e; */
+    cursor: pointer;
+    position: relative;
+    width: 80%;
+    height: 1vw;
+    align-items: center;
+    justify-self: center;
+}
+
+.description2 {
+    /* background-color: #f1ddb6; */
+    width: 54%;
+    margin-top: -52.7%;
+    margin-left: 42%;
+    font-family: 'Cinzel';
+    font-weight: 900;
+    font-size: 1.42vw;
+    color: #6b2e2e;
+}
+
+.descButtonSalg2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg2 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg2 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg2 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg2 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg2 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg2 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg2 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.pBrotoSalg2 {
+    font-size: 1.1vw;
+    /* margin-top: 8.5vw; */
+}
+
+.pBrotoDivisaoSalg2 {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 4.5vw;
+    font-size: 1.1vw;
+}
+
+.pBrotoPrecoSalg2 {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 5.5vw;
+    font-size: 1.1vw;
+}
+
+.ajuste-marginSalg2 {
+    margin-top: 3.56vw;
+}
+
+.counter-wrapper2Salg2 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+.pPizzaSalg2 {
+    font-size: 1.1vw;
+    /* margin-top: 1vw; */
+}
+
+.pPizzaDivisaoSalg2 {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 4.5vw;
+    font-size: 1.1vw;
+}
+
+.pPizzaPrecoSalg2 {
+    position: absolute;
+    /* margin-top: -3vw; */
+    margin-left: 5.5vw;
+    font-size: 1.1vw;
+}
+
+.counterSalg2 {
+    display: inline-flex;
+    height: auto;
+    position: absolute;
+    /* margin-top: -3.2vw; */
+    margin-left: 13.6vw;
+    background-color: #e6d6b8;
+    border: 2px solid #c5a15c;
+    border-radius: 1vh;
+    overflow: hidden;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.counterSalg2 button {
+    flex: 0 0 auto;
+    min-width: auto;
+    background-color: transparent;
+    border: none;
+    color: #c5a15c;
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 0vw 0.5vw;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.counterSalg2 button:hover {
+    background-color: #eddfc4;
+}
+
+.counterSalg2 button:not(:last-child) {
+    border-right: 2px solid #c5a15c;
+}
+
+.addCarSalg2 {
+    background-color: #e6d6b8;
+    width: 65%;
+    height: 2.3vw;
+    font-size: 1.3vw;
+    color: #6b2e2e;
+    border: none;
+    border-radius: 50px;
+    margin-top: 1.5vw;
+    margin-left: 15%;
+    cursor: pointer;
+}
+
+.addCarSalg2:hover {
+    background-color: #eddfc4;
+    /* background-color: #6b2e2e; */
+    /* color:#e6d6b8; */
 }

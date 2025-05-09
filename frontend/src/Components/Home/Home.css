@@ -3,13 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .our-space {
     background-color: #f5f3e7;
     padding-bottom: 2rem;
@@ -17,12 +10,10 @@
 }
 
 .banner-text {
-    width: 100%;
-    max-width: 710px;
+    width: min(90%, 710px);
     position: absolute;
-    left: 60%;
+    right: 5%;
     top: 10%;
-    margin: 5% auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +24,7 @@
 .banner-title {
     width: 100%;
     font-family: 'Great Vibes';
-    font-size: 4vw;
+    font-size: clamp(2rem, 5vw, 5rem);
     color: #fff;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -135,7 +126,6 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: auto;
     padding: 0 1rem;
 }
 
@@ -144,3 +134,5 @@
     max-width: 370px;
     height: 100%;
 }
+
+/* mudar fonts para clamp para ficar responsivo */

@@ -6,7 +6,8 @@
 .our-space {
     background-color: #f5f3e7;
     padding-bottom: 2rem;
-    
+    padding-top: 3vw;
+    position: relative;
 }
 
 .banner-text {

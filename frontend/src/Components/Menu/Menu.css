@@ -660,3 +660,408 @@
     /* background-color: #6b2e2e; */
     /* color:#e6d6b8; */
 }
+
+/* container3 */
+.descButtonSalg5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg5 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg5 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg5 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg5 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg5 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg5 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg5 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+.descButtonSalg6 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg6 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg6 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg6 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg6 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg6 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg6 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg6 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+/* container4 */
+.descButtonSalg5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg5 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg5 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg5 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg5 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg5 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg5 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg5 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+.descButtonSalg6 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg6 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg6 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg6 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg6 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg6 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg6 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg6 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+/* container5 */
+.descButtonSalg5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg5 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg5 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg5 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg5 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg5 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg5 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg5 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg5 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}
+
+.descButtonSalg6 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pDescSalg6 {
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.pDesc2Salg6 {
+    width: 80%;
+    align-items: justify;
+    margin-top: -1.1vw;
+    font-weight: bold;
+    font-size: 0.75vw;
+}
+
+.buttonDescSalg6 {
+    position: absolute;
+    margin-top: -1.35%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDescSalg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.buttonDesc2Salg6 {
+    position: absolute;
+    margin-top: -1.23%;
+    margin-left: 15.5vw;
+    border: none;
+    background-color: transparent;
+}
+
+.buttonDesc2Salg6 ion-icon {
+    font-size: 1.4vw;
+    color: black;
+    cursor: pointer;
+}
+
+.counter-wrapperSalg6 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 6.5vw;
+    margin-left: 1.5%;
+}
+
+.ajuste-marginSalg6 {
+    margin-top: 3.55vw;
+}
+
+.counter-wrapper2Salg6 {
+    display: flex;
+    align-items: center;
+    /* gap: 4vw; */
+    margin-top: -1.7vw;
+    margin-left: 1.5%;
+}

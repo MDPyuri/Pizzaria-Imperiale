@@ -14,6 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 5vw;
 }
 
 #ReservationPage-block {
@@ -24,7 +25,7 @@
     flex-direction: column;
     width: 85%;
     border-radius: 30px;
-    padding: 5vw;
+    padding: 5vw 14vw;
 }
 
 #title-ReservationPg {
@@ -34,7 +35,8 @@
     width: 100%;
     font-family: 'Great Vibes';
     color: #6b2e2e;
-    font-size: 3.4rem;
+    font-size: 3.65rem;
+    margin-bottom: 1vw;
 }
 
 #title-ReservationPg p {
@@ -58,13 +60,14 @@
     font-size: 1.1rem;
 }
 
-.item-inforeserv input,
-.item-inforeserv select {
+.item-inforeserv input {
     border: none;
     background-color: #e6d6b8;
-    border-radius: 30px;
+    border-radius: 25px;
     padding: 0.8vw;
-    margin: 0.5vw;
+    padding-left: 1.1vw;
+    margin: 0.44vw;
+    width: 80%;
 }
 
 .item-inforeserv input::placeholder,
@@ -80,6 +83,28 @@
   cursor: pointer;
 }
 
-#infoReserv-list {
-    width: 50%;
+#infoReserv-list,
+#text-respg {
+    width: 100%;
+}
+
+#text-respg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.28rem;
+}
+
+#text-respg p, button {
+    margin: 1vw;
+}
+
+#text-respg button {
+    border: 1px solid #c5a15c;
+    background-color: #e6d6b8;
+    color: #6b2e2e;
+    border-radius: 25px;
+    padding: 0.8vw 2vw;
 }

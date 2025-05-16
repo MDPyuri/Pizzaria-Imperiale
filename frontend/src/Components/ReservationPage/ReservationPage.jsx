@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Reservation.css";
+import "./ReservationPage.css";
 
-const Reservation = () => {
+const ReservationPage = () => {
     return (
         <section id="ReservationPage">
             <div id="ReservationPage-block">
@@ -60,4 +60,4 @@ const Reservation = () => {
     );
 };
 
-export default Reservation;
+export default ReservationPage;

@@ -3,14 +3,14 @@ import './App.css'
 import Home from './Components/Home/Home'
 import Header from './Components/Header/Header.jsx'
 import Footer from './Components/Footer/Footer.jsx'
-import Reservation from './Components/Reservation/Reservation.jsx'
+import ReservationPage from './Components/ReservationPage/ReservationPage.jsx'
 
 function App() {
 
   return (
     <>
     <Header/>
-    <Reservation/>
+    <ReservationPage/>
     </>
   )
 }

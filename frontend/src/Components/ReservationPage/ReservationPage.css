@@ -35,7 +35,7 @@
     width: 100%;
     font-family: 'Great Vibes';
     color: #6b2e2e;
-    font-size: 3.65rem;
+    font-size: 4.5rem;
     margin-bottom: 1vw;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .item-inforeserv input {
-    border: none;
+    border: 1px solid #e6d6b8;
     background-color: #e6d6b8;
     border-radius: 25px;
     padding: 0.8vw;
@@ -75,12 +75,20 @@
 .item-inforeserv input[type="time"],
 .item-inforeserv select {
     color: #6b2e2e;
+    font-family: 'Glacial indifference';
+    font-size: 1rem;
 }
 
 .item-inforeserv input[type="date"]::-webkit-calendar-picker-indicator,
 .item-inforeserv input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(30%) sepia(50%) saturate(300%) hue-rotate(330deg);
-  cursor: pointer;
+    filter: invert(61%) sepia(33%) saturate(385%) hue-rotate(5deg) brightness(95%);
+    cursor: pointer;
+}
+
+.item-inforeserv input:focus {
+    outline: none;
+    border: 1px solid #c5a15c;
+    color: #6b2e2e;
 }
 
 #infoReserv-list,
@@ -94,7 +102,8 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-size: 1.28rem;
+    font-size: 1.5rem;
+    line-height: 1.55
 }
 
 #text-respg p, button {
@@ -102,9 +111,19 @@
 }
 
 #text-respg button {
-    border: 1px solid #c5a15c;
+    border: 2px solid #c5a15c;
     background-color: #e6d6b8;
     color: #6b2e2e;
     border-radius: 25px;
     padding: 0.8vw 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s
+}
+
+#text-respg button:hover {
+    background-color: #c5a15c;
+    border: 2px solid #c5a15c;
+    color: #f5f3e7;
+    font-weight: bold;
 }

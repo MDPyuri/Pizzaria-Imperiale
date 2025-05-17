@@ -5,7 +5,6 @@ const ReservationPage = () => {
     return (
         <section id="ReservationPage">
             <div id="ReservationPage-block">
-                
                 <div id="title-ReservationPg">
                     <div className="line-respg"></div>
                     <p>Faça sua reserva</p>
@@ -23,7 +22,11 @@ const ReservationPage = () => {
                         </div>
 
                         <div className="item-inforeserv">
-                            <input placeholder="Quantidade de pessoas" />
+                            <input
+                                placeholder="Quantidade de pessoas"
+                                type="number"
+                                min="1"
+                            />
                         </div>
 
                         <div className="item-inforeserv">

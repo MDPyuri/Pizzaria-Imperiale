@@ -67,7 +67,9 @@
     padding: 0.8vw;
     padding-left: 1.1vw;
     margin: 0.44vw;
-    width: 80%;
+    width: 90%;
+    color: #6b2e2e;
+    font-size: 1rem;
 }
 
 .item-inforeserv input::placeholder,
@@ -85,10 +87,16 @@
     cursor: pointer;
 }
 
+.item-inforeserv input[type="number"]::-webkit-inner-spin-button,
+.item-inforeserv input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 .item-inforeserv input:focus {
     outline: none;
     border: 1px solid #c5a15c;
     color: #6b2e2e;
+    font-size: 1rem;
 }
 
 #infoReserv-list,

@@ -130,4 +130,4 @@ Este projeto está licenciado sob a [MIT License](./LICENSE).
 
 ## Autor
 
-Desenvolvido por **Yuri Matsu**.
+Desenvolvido por **Yuri Matsumoto**, **Gabriela Teixeira**, **Isabelly Moraes**, **Kamilly da Silva**.

@@ -4,6 +4,9 @@ const prisma = new PrismaClient();
 async function main() {
   // Inserção de dados com create
 
+  await prisma.produto.deleteMany();
+  await prisma.usuario.deleteMany();
+
   // --- Pizzas Salgadas ###
   await prisma.produto.create({
     data: { 
@@ -682,6 +685,107 @@ async function main() {
       preco: 50.00, 
       descricao: 'Água com gás natural com opções de sabores: limão siciliano, frutas vermelhas ou flor de laranjeira.', 
       categoria: 'BEBIDAS_NAO_ALCOOLICAS',
+    },
+  });
+
+  // Seed dos usuários
+  await prisma.usuario.create({
+    data: {
+      nome: 'João Silva',
+      email: 'joaosilva01@email.com',
+      senha: 'senha123',
+      telefone: '11987654321',
+      cpf: '12345678909',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Maria Oliveira',
+      email: 'maria.oliveira@email.com',
+      senha: 'senha456',
+      telefone: '11912345678',
+      cpf: '98765432100',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Carlos Souza',
+      email: 'carlos.souza@email.com',
+      senha: 'senha789',
+      telefone: '11923456789',
+      cpf: '45678912301',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Ana Paula',
+      email: 'ana.paula@email.com',
+      senha: 'senha321',
+      telefone: '11934567890',
+      cpf: '32165498702',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Pedro Santos',
+      email: 'pedro.santos@email.com',
+      senha: 'senha654',
+      telefone: '11945678901',
+      cpf: '65498732103',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Juliana Costa',
+      email: 'juliana.costa@email.com',
+      senha: 'senha987',
+      telefone: '11956789012',
+      cpf: '78912345604',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Lucas Almeida',
+      email: 'lucas.almeida@email.com',
+      senha: 'senha159',
+      telefone: '11967890123',
+      cpf: '85296374105',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Fernanda Lima',
+      email: 'fernanda.lima@email.com',
+      senha: 'senha753',
+      telefone: '11978901234',
+      cpf: '96385274106',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Rafael Pereira',
+      email: 'rafael.pereira@email.com',
+      senha: 'senha258',
+      telefone: '11989012345',
+      cpf: '14725836907',
+    },
+  });
+
+  await prisma.usuario.create({
+    data: {
+      nome: 'Patrícia Mendes',
+      email: 'patricia.mendes@email.com',
+      senha: 'senha369',
+      telefone: '11990123456',
+      cpf: '25836914708',
     },
   });
   

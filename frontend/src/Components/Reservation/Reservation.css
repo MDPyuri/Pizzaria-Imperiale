@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+.space-reservation {
+    width: 100%;
+    height: 100vh;
+    background-color: #e6dbc7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-block {
+    background-color: #f5f3e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    border-radius: 30px;
+    padding: 5vw 14vw;
+}
+
+.all-content {
+    width: 80%;
+}
+
+.title-reservation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title-res {
+    font-family: 'Great Vibes';
+    font-size: 5rem;
+    color: #6b2e2e;
+    width: 100%;
+}
+
+.title-res p {
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
+}
+
+.line-res {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+.subtitle-reservation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.62rem;
+    line-height: 1.5;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 0 1rem;
+    font-weight: bold;
+    margin: 1vw;
+    text-align: center;
+}
+
+.text-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.62rem;
+    line-height: 1.5;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 0 1rem;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.btn-reservation {
+    border: 2px solid #c5a15c;
+    background-color: #e6d6b8;
+    color: #6b2e2e;
+    border-radius: 25px;
+    padding: 0.8vw 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-reservation:hover {
+    background-color: #c5a15c;
+    border: 2px solid #c5a15c;
+    color: #f5f3e7;
+    font-weight: bold;
+}
+
+.text-reservation2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 0 1rem;
+}
+
+.line2-res {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+    margin: 1.5rem auto;
+}

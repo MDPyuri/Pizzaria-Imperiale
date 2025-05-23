@@ -1,5 +1,6 @@
 import React from 'react';
 import './Reservation.css';
+import { Link } from 'react-router-dom';
 
 const Reservation = () => {
     return (
@@ -34,7 +35,11 @@ const Reservation = () => {
                         </p>
                     </div>
                     <div className="btn-content">
-                        <button className="btn-reservation">RESERVAR</button>
+                        <Link to="/reserva">
+                            <button className="btn-reservation">
+                                RESERVAR
+                            </button>
+                        </Link>
                     </div>
                     <div className="text-reservation2">
                         <p>

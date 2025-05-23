@@ -33,9 +33,9 @@ const UserLogin = () => {
 
                 <button className="btn-crud">Entrar</button>
 
-                <p className="messageToRegister">
-                    Ainda não tem conta? Faça seu cadastro
-                </p>
+                <div className="messageToRegister">
+                    <p>Ainda não tem conta? Faça seu cadastro</p>
+                </div>
             </div>
         </section>
     );

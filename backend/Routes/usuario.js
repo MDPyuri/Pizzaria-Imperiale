@@ -64,4 +64,22 @@ usuarioRoutes.delete("/deletar/:id", async (req, res) => {
     }
 });
 
+// Rota para login de usuário
+usuarioRoutes.post("/login", async (req, res) => {
+    try {
+        const { email, senha } = req.body;
+        const usuario = await prisma.usuario.findUnique({
+            where: { email }
+        });
+
+        if (!usuario || usuario.senha !== senha) {
+            return res.status(401).json({ error: "Email ou senha inválidos" });
+        }
+
+        res.json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao realizar login", details: error.message });
+    }
+});
+
 module.exports = usuarioRoutes;

@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./ReservationPage.css";
 
+
 const ReservationPage = () => {
+
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [people, setPeople] = useState(1);
+    const [table, setTable] = useState("");
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        fetch("http://localhost:3000/reservas/criar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                telefone: phone,
+                qtdpessoas: people,
+                preferencia: table,
+                data: date,
+                time: time
+            })
+        })
+
     return (
         <section id="ReservationPage">
             <div id="ReservationPage-block">

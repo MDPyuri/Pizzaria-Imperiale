@@ -24,6 +24,7 @@
     justify-content: center;
     flex-direction: column;
     width: 50%;
+    height: 90%;
     border-radius: 30px;
     padding: 5vw;
     color: #6b2e2e;
@@ -58,7 +59,7 @@
     text-align: center;
 }
 
-.crudDate {
+.crudData {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,19 +69,39 @@
     margin-top: 1vw;
 }
 
-.inputCrud {
+.inputCrud, 
+.item-profile {
     background-color: #f5f3e7;
     border: 1px solid #4a4a4b;
     border-radius: 15px;
     padding: 0.5vw;
     padding-left: 1.1vw;
-    margin: 0.8vw;
     font-size: 1.1rem;
     width: 70%;
     color: #6b2e2e;
 }
 
-.crudDate input::placeholder {
+.loginData input {
+    margin: 0.8vw;
+}
+
+.createData input {
+    margin: 0.3vw;
+}
+
+.updateData input {
+    margin: 0.5vw;
+}
+
+.deleteData input {
+    margin: 0.7vw;
+}
+
+.profileData p {
+    margin: 0.5vw;
+}
+
+.crudData input::placeholder {
     color: #6b2e2e;
     font-family: 'Glacial indifference';
     font-size: 1.1rem;

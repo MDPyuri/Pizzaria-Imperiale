@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Crud.css';
 
 const UserLogin = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <section className="CrudSection">
             <div className="CrudSection-block">
@@ -18,7 +21,7 @@ const UserLogin = () => {
                     </p>
                 </div>
 
-                <div className="crudDate">
+                <div className="crudData loginData">
                     <input
                         type="text"
                         placeholder="Email:"

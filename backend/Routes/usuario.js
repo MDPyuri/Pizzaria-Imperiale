@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
+const jwt = require("jsonwebtoken");
 
 const prisma = new PrismaClient();
 const usuarioRoutes = express.Router();
@@ -61,6 +62,31 @@ usuarioRoutes.delete("/deletar/:id", async (req, res) => {
         res.json({ message: "Usuário deletado com sucesso" });
     } catch (error) {
         res.status(500).json({ error: "Erro ao deletar usuário", details: error.message });
+    }
+});
+
+// Rota para login de usuário
+usuarioRoutes.post("/login", async (req, res) => {
+    try {
+        const { email, senha } = req.body;
+        const usuario = await prisma.usuario.findUnique({
+            where: { email }
+        });
+
+        if (!usuario || usuario.senha !== senha) {
+            return res.status(401).json({ error: "Email ou senha inválidos" });
+        }
+
+        // Gerar token JWT temporário (expira em 1h)
+        const token = jwt.sign(
+            { idUsuario: usuario.idUsuario, email: usuario.email },
+            process.env.JWT_SECRET || "segredo_padrao", // Use uma chave secreta do .env
+            { expiresIn: "3h" }
+        );
+
+        res.json({ usuario, token });
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao realizar login", details: error.message });
     }
 });
 

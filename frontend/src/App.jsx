@@ -6,24 +6,16 @@ import ReservationPage from './Components/ReservationPage/ReservationPage.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx';
 
 function App() {
-    return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <Home />
-                            <Reservation />
-                            <Footer />
-                        </>
-                    }
-                />
-                <Route path="/reserva" element={<ReservationPage />} />
-            </Routes>
-        </Router>
-    );
+
+  return (
+    <>
+    <Header/>
+    {/* <Home/> */}
+    {/* <Footer/> */}
+    <ReservationPage/>
+    </>
+  )
+    
 }
 
 export default App;

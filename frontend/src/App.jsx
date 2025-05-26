@@ -10,8 +10,8 @@ function App() {
   return (
     <>
     <Header/>
-    <Home/>
-    <Footer/>
+    {/* <Home/> */}
+    {/* <Footer/> */}
     <ReservationPage/>
     </>
   )

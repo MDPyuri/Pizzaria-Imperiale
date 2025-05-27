@@ -5,7 +5,7 @@ import Header from './Components/Header/Header.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import ReservationPage from './Components/ReservationPage/ReservationPage.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx';
-import AboutUs from './Components/AboutUs/AboutUs.jsx';
+import About from './Components/About/About.jsx';
 
 function App() {
     return (
@@ -18,8 +18,8 @@ function App() {
                         <>
                             <Home />
                             <Reservation />
-                            <AboutUs />
                             <Footer />
+                            <About />
                         </>
                     }
                 />

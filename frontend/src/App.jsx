@@ -18,8 +18,8 @@ function App() {
                         <>
                             <Home />
                             <Reservation />
-                            <Footer />
                             <About />
+                            <Footer />
                         </>
                     }
                 />

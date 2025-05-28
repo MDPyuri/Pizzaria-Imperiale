@@ -34,7 +34,7 @@ usuarioRoutes.post("/criar", async (req, res) => {
 usuarioRoutes.put("/atualizar/:id", async (req, res) => {
     try {
         const { id } = req.params;
-        const { nome, email } = req.body;
+        const { nome, email, telefone, senha } = req.body;
 
         // Validação do parâmetro id
         const idUsuario = parseInt(id);
@@ -42,9 +42,15 @@ usuarioRoutes.put("/atualizar/:id", async (req, res) => {
             return res.status(400).json({ error: "ID inválido. Deve ser um número inteiro." });
         }
 
+        const updateData = {};
+        if (nome !== undefined) updateData.nome = nome;
+        if (email !== undefined) updateData.email = email;
+        if (telefone !== undefined) updateData.telefone = telefone;
+        if (senha !== undefined) updateData.senha = senha;
+
         const usuario = await prisma.usuario.update({
-            where: { idUsuario }, // Usa o idUsuario validado
-            data: { nome, email }
+            where: { idUsuario },
+            data: updateData
         });
 
         res.json(usuario);
@@ -102,7 +108,7 @@ usuarioRoutes.get("/me", verificaTokenJWT, async (req, res) => {
         // req.user é preenchido pelo middleware com os dados do token
         const usuario = await prisma.usuario.findUnique({
             where: { idUsuario: req.user.id },
-            select: { nome: true, email: true, idUsuario: true }
+            select: { nome: true, email: true, idUsuario: true, telefone: true, cpf: true }
         });
         if (!usuario) {
             return res.status(404).json({ error: "Usuário não encontrado" });

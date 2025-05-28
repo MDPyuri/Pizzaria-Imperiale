@@ -98,7 +98,7 @@ const PopupProfile = () => {
                         <a>Pedido</a>
                     </li>
                     <li>
-                        <a>Perfil</a>
+                        <a onClick={() => navigate('/perfil')} style={{cursor: 'pointer'}}>Perfil</a>
                     </li>
                 </ul>
             </div>

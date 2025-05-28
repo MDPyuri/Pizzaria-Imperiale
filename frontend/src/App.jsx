@@ -33,6 +33,7 @@ function App() {
         <Route path="/login" element={<UserLogin />} />
         <Route path="/cadastro" element={<CreateUser />} />
         <Route path="/reserva" element={isAuthenticated() ? <ReservationPage /> : <Navigate to="/login" />} />
+        <Route path="/delete" element={<DeleteUser />} />
         <Route path="/" element={isAuthenticated() ? <MainApp /> : <Navigate to="/login" />} />
         {/* fallback */}
         <Route path="*" element={<Navigate to="/" />} />

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+.about-space {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #f5f3e7;
+}
+
+.space-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+}
+
+.title-about {
+    display: flex;
+    width: 70%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-abo {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+.title-abo {
+    width: 100%;
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #6b2e2e;
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
+}
+
+.block-about {
+    display: flex;
+    flex-direction: row;
+    width: 51%;
+    gap: 4vw;
+    padding-top: 2vw;
+}
+
+.photo {
+    padding-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.name-person {
+    font-family: 'Glacial Indifference';
+    font-size: 1.2vw;
+    color: #6b2e2e;
+    text-align: center; 
+}
+
+.about-person {
+    font-family: 'Glacial Indifference';
+    font-size: 1vw;
+    color: #6b2e2e;
+}
+
+.link-git {
+    font-family: 'Glacial Indifference';
+    font-size: 1vw;
+}
+
+.link-git a {
+    text-decoration: none;
+    color: #6b2e2e;
+}
+
+.space-about-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 5vw;
+}
+
+.about-project {
+    width: 60%;
+    font-family: 'Glacial Indifference';
+    font-size: 1.2vw;
+    color: #6b2e2e;
+}
+
+.about-project p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

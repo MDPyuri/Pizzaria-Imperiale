@@ -27,7 +27,7 @@ const Footer = () => {
                     <div id="socialmedia-rod">
                         <div className="item-socialmedia">
                             <ion-icon name="logo-whatsapp"></ion-icon>
-                            <p>(12) 3881-2540</p>
+                            <p>(12) 3885-2130</p>
                         </div>
                         <div className="item-socialmedia">
                             <ion-icon name="logo-instagram"></ion-icon>

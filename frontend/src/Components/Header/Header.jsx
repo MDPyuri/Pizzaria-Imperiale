@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import './Header.css';
 import logo from './img/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
             <nav id="NavHeader">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
                         <a href="#">Cardápio</a>
@@ -33,7 +34,7 @@ const Header = () => {
                         <a href="#">Pedido</a>
                     </li>
                     <li>
-                        <a href="#">Reserva</a>
+                        <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
                         <a href="#">Contato</a>

@@ -11,21 +11,40 @@ const ReservationPage = () => {
 	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
+	React.useEffect(() => {
+		// Buscar nome do usuário autenticado ao carregar a página
+		fetch("http://localhost:3000/usuario/me", {
+			credentials: "include",
+		})
+			.then((res) => {
+				if (!res.ok) throw new Error("Não autenticado");
+				return res.json();
+			})
+			.then((data) => {
+				if (data.nome) setName(data.nome);
+			})
+			.catch(() => {
+				// Usuário não autenticado, não preenche o nome
+			});
+	}, []);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		// Monta a data/hora correta para o backend (DateTime)
+		const dataCompleta = date && time ? `${date}T${time}:00.000Z` : date;
 
 		fetch("http://localhost:3000/reservas/criar", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
+			credentials: "include",
 			body: JSON.stringify({
-				name: name,
 				telefone: phone,
 				qtdpessoas: people,
 				preferencia: table,
-				data: date,
-				time: time,
+				data: dataCompleta,
 			}),
 		})
 			.then((res) => {
@@ -35,8 +54,7 @@ const ReservationPage = () => {
 			.then((data) => {
 				setSuccessMessage("Reserva feita com sucesso! 🎉");
 				setErrorMessage("");
-				// Limpar campos se quiser
-				setName("");
+				if (data.nomeCompleto) setName(data.nomeCompleto);
 				setPhone("");
 				setPeople("");
 				setTable("");
@@ -65,7 +83,7 @@ const ReservationPage = () => {
 							<input
 								placeholder="Nome completo"
 								value={name}
-								onChange={(e) => setName(e.target.value)}
+								readOnly
 								required
 							/>
 						</div>
@@ -129,7 +147,9 @@ const ReservationPage = () => {
 						</p>
 
 						<button type="submit">RESERVAR</button>
-						{successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+						{successMessage && (
+							<p style={{ color: "green" }}>{successMessage}</p>
+						)}
 						{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 					</div>
 				</form>

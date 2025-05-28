@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
+const jwt = require("jsonwebtoken");
+const { enviaTokenJWT } = require("../middlewares/token");
 
 const prisma = new PrismaClient();
 const usuarioRoutes = express.Router();
@@ -61,6 +63,36 @@ usuarioRoutes.delete("/deletar/:id", async (req, res) => {
         res.json({ message: "Usuário deletado com sucesso" });
     } catch (error) {
         res.status(500).json({ error: "Erro ao deletar usuário", details: error.message });
+    }
+});
+
+// Rota para login de usuário
+usuarioRoutes.post("/login", async (req, res, next) => {
+    try {
+        const { email, senha } = req.body;
+        const usuario = await prisma.usuario.findUnique({
+            where: { email }
+        });
+
+        if (!usuario || usuario.senha !== senha) {
+            return res.status(401).json({ error: "Email ou senha inválidos" });
+        }
+
+        // Preenche req.user para o middleware gerar o token
+        req.user = {
+            id: usuario.idUsuario,
+            email: usuario.email,
+            nome: usuario.nome,
+            role: usuario.role || "user" // ajuste conforme seu modelo
+        };
+        // Remove a senha do objeto de resposta
+        const { senha: _, ...usuarioSemSenha } = usuario;
+        // Chama o middleware para enviar o token via cookie
+        enviaTokenJWT(req, res, () => {
+            res.json({ usuario: usuarioSemSenha });
+        });
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao realizar login", details: error.message });
     }
 });
 

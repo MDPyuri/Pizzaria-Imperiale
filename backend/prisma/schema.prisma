@@ -69,12 +69,21 @@ model Pedido {
   itensProduto   ItemProduto[]
 }
 
+enum CategoriaProduto {
+  PIZZAS_SALGADAS
+  PIZZAS_DOCES
+  PIZZAS_VEGANAS
+  BEBIDAS_ALCOOLICAS
+  BEBIDAS_NAO_ALCOOLICAS
+}
+
 model Produto {
   idProduto  Int    @id @default(autoincrement())
   nome       String 
   preco      Decimal @db.Decimal(5,2)
   descricao  String?
   imagem     String? 
+  categoria  CategoriaProduto
 
   itensProduto ItemProduto[]
 }

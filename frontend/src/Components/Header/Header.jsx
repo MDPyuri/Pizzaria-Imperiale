@@ -52,7 +52,7 @@ const Header = () => {
                         <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
-                        <a href="#">Contato</a>
+                        <a href="#Footer">Contato</a>
                     </li>
                 </ul>
 

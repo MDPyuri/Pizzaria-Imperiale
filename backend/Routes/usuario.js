@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
-const { enviaTokenJWT } = require("../middlewares/token");
+const { enviaTokenJWT, verificaTokenJWT } = require("../middlewares/token");
 
 const prisma = new PrismaClient();
 const usuarioRoutes = express.Router();
@@ -94,6 +94,33 @@ usuarioRoutes.post("/login", async (req, res, next) => {
     } catch (error) {
         res.status(500).json({ error: "Erro ao realizar login", details: error.message });
     }
+});
+
+// Rota para obter dados do usuário autenticado
+usuarioRoutes.get("/me", verificaTokenJWT, async (req, res) => {
+    try {
+        // req.user é preenchido pelo middleware com os dados do token
+        const usuario = await prisma.usuario.findUnique({
+            where: { idUsuario: req.user.id },
+            select: { nome: true, email: true, idUsuario: true }
+        });
+        if (!usuario) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+        }
+        res.json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao buscar usuário autenticado", details: error.message });
+    }
+});
+
+// Rota para logout do usuário (limpa o cookie JWT)
+usuarioRoutes.post("/logout", (req, res) => {
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict'
+    });
+    res.json({ message: "Logout realizado com sucesso" });
 });
 
 module.exports = usuarioRoutes;

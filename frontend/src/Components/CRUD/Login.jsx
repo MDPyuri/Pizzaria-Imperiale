@@ -13,19 +13,18 @@ const UserLogin = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
-        // Exemplo de login (substitua por sua lógica real)
         try {
             const response = await fetch('http://localhost:3000/usuarios/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include', // Permite receber o cookie JWT
                 body: JSON.stringify({ email, senha: password })
             });
             if (!response.ok) {
                 const data = await response.json();
                 throw new Error(data.error || 'Erro ao fazer login');
             }
-            localStorage.setItem('auth', 'true');
-            navigate('/');
+            navigate('/'); // Redireciona para a página principal
         } catch (err) {
             setError(err.message);
         }

@@ -20,12 +20,20 @@ const UserLogin = () => {
                 credentials: 'include', // Permite receber o cookie JWT
                 body: JSON.stringify({ email, senha: password })
             });
+
+            console.log('Response status:', response.status); // Log para depuração
+
             if (!response.ok) {
                 const data = await response.json();
+                console.error('Error response:', data); // Log para depuração
                 throw new Error(data.error || 'Erro ao fazer login');
             }
+
+            console.log('Login bem-sucedido'); // Log para depuração
             navigate('/'); // Redireciona para a página principal
+            console.log('Navegação para "/" executada'); // Log para depuração
         } catch (err) {
+            console.error('Erro no login:', err.message); // Log para depuração
             setError(err.message);
         }
     };

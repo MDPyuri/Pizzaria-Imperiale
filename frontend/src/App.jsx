@@ -10,6 +10,7 @@ import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
 import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
+import About from './Components/About/About.jsx';
 
 // Simulação de autenticação (substitua por lógica real)
 const isAuthenticated = () => {
@@ -21,6 +22,7 @@ function MainApp() {
     <>
       <Header />
       <Home />
+      <About />
       <Footer />
     </>
   );

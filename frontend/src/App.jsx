@@ -10,7 +10,7 @@ import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
 import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
-import Menu from './Components/Menu/Menu.jsx';
+import FilterPizza from './Components/Menu/FilterPizza.jsx';
 import ProductList from './Components/Menu/ProductList.jsx';
 
 // Simulação de autenticação (substitua por lógica real)
@@ -46,7 +46,8 @@ import ProductList from './Components/Menu/ProductList.jsx';
 function App() {
   return (
     <>
-      <ProductList />
+      <FilterPizza/>
+      <ProductList/>
     </>
   )
 }

@@ -790,7 +790,7 @@ async function main() {
   });
   
 
-  console.log('Dados inseridos com sucesso!');
+  console.log("Dados plantados e regados com sucesso! 🌱");
 }
 
 main()

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.CrudSection {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f3e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vw;
+}
+
+.CrudSection-block {
+    background-color: #e6dbc7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 90%;
+    border-radius: 30px;
+    padding: 5vw;
+    color: #6b2e2e;
+}
+
+.title-crud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Great Vibes';
+    color: #6b2e2e;
+    font-size: 4.5rem;
+    margin-bottom: 1vw;
+}
+
+.title-crud p {
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
+}
+
+.line-crud {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+.messageCrud {
+    font-family: 'Glacial Indifference';
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.crudData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Glacial Indifference';
+    width: 100%;
+    margin-top: 1vw;
+}
+
+.inputCrud, 
+.item-profile {
+    background-color: #f5f3e7;
+    border: 1px solid #4a4a4b;
+    border-radius: 15px;
+    padding: 0.5vw;
+    padding-left: 1.1vw;
+    font-size: 1.1rem;
+    width: 70%;
+    color: #6b2e2e;
+}
+
+.loginData input {
+    margin: 0.8vw;
+}
+
+.createData input {
+    margin: 0.3vw;
+}
+
+.updateData input {
+    margin: 0.5vw;
+}
+
+.deleteData input {
+    margin: 0.7vw;
+}
+
+.profileData p {
+    margin: 0.5vw;
+}
+
+.crudData input::placeholder {
+    color: #6b2e2e;
+    font-family: 'Glacial indifference';
+    font-size: 1.1rem;
+}
+
+.inputCrud:focus {
+    outline: none;
+    border: 1px solid #c5a15c;
+    color: #6b2e2e;
+    font-size: 1.1rem;
+}
+
+.btn-crud {
+    border: 2px solid #f5f3e7;
+    background-color: #f5f3e7;
+    color: #6b2e2e;
+    border-radius: 20px;
+    padding: 0.5vw 2vw;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Glacial Indifference';
+}
+
+.btn-crud:hover {
+    border: 2px solid #c5a15c;
+}
+
+.messageToRegister {
+    font-family: 'Glacial Indifference';
+    font-size: 1.2rem;
+    margin-top: 1vh;
+    position: relative;
+    cursor: pointer;
+}
+
+.messageToRegister p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0.3s ease;
+    background: currentColor;
+} 
+
+.messageToRegister p:hover::after {
+    width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+form .crudData.createData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form .btn-crud {
+  margin-top: 20px;
+}

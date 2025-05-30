@@ -1,0 +1,1 @@
+DATABASE_URL="mysql://root:aluno@localhost:3306/pizzaria_db"

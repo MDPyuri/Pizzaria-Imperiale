@@ -246,105 +246,39 @@
 
 /* pizzas e bebidas */
 .containerCentral {
-    background-color: rgb(55, 91, 123);
     width: 80%;
     margin-top: 1vw;
     margin-left: 10%;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .product {
-    background-color:aqua;
-    width: 45%;
-    height: 25vw;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .img {
-    background-color: #6b2e2e;
-    width: 40%;
-    height: 17vw;
-    margin-top: 2.5vw;
+    flex: 1;
+    background-color: transparent;
 }
 
 .img img {
-    width: 90%;
-    margin-top: 5%;
-    margin-left: 5%;
-}
-
-.img p {
-    margin-left: 1vw;
-}
-
-.renderStarStyles {
-    /* background-color: #6b2e2e; */
-    cursor: pointer;
-    position: relative;
-    width: 80%; /* Tamanho do contêiner*/
-    height: 1vw; /* Tamanho das estrelas*/
-    align-items: center;
-    justify-self: center;
+    width: 100%;
 }
 
 .description {
-    /* background-color: #f1ddb6; */
-    width: 54%;
-    margin-top: -52.7%;
-    margin-left: 42%;
     font-family: 'Cinzel';
     font-weight: 900;
     font-size: 1.42vw;
     color: #6b2e2e;
+    flex: 2;
 }
 
-.descButton {
-    display: flex;
-    flex-direction: row;
-}
-.pDesc {
-    margin-top: -1.1vw;
-    font-weight: bold;
-    font-size: 0.75vw;
-}
-
-.pDesc2 {
-    width: 80%;
-    align-items: justify;
-    margin-top: -1.1vw;
-    font-weight: bold;
-    font-size: 0.75vw;
-}
-
-.buttonDesc {
-    position: absolute;
-    margin-top: -1.35%;
-    margin-left: 15.5vw;
-    border: none;
-    background-color: transparent;
-}
-
-.buttonDesc ion-icon {
-    font-size: 1.4vw;
-    color: black;
-    cursor: pointer;
-}
-
-.buttonDesc2 {
-    position: absolute;
-    margin-top: -1.23%;
-    margin-left: 15.5vw;
-    border: none;
-    background-color: transparent;
-}
-
-.buttonDesc2 ion-icon {
-    font-size: 1.4vw;
-    color: black;
-    cursor: pointer;
-}
-
-.counter-wrapper {
+/* .counter-wrapper {
     display: flex;
     align-items: center;
     gap: 2vw;
@@ -352,25 +286,6 @@
     margin-left: 1.5%;
 }
 
-.pBroto {
-    font-size: 1.1vw;
-    /* margin-top: 8.5vw; */
-}
-
-.pBrotoDivisao {
-    position: absolute;
-    /* margin-top: -3vw; */
-    margin-left: 4.5vw;
-    font-size: 1.1vw;
-}
-
-.pBrotoPreco {
-    position: absolute;
-    /* margin-top: -3vw; */
-    margin-left: 5.5vw;
-    font-size: 1.1vw;
-}
-
 .ajuste-margin {
     margin-top: 2.55vw;
-}
+} */

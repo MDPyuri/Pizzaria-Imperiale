@@ -64,7 +64,7 @@ const ProductList = () => {
             <img src={foto} alt="Pizza Salgada" />
           </div>
           <div className="description">
-            <h3>{product.nome}</h3>
+            <p>{product.nome}</p>
             <p>{product.descricao}</p>
             <p className="price">
               Preço: R$

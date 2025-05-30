@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Crud.css';
-import HeaderSimple from '../Header/HeaderSimple';
-import FooterSimple from '../Footer/FooterSimple';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const DeleteUser = () => {
     const [cpf, setCpf] = useState("");
@@ -44,7 +44,7 @@ const DeleteUser = () => {
 
     return (
         <>
-            <HeaderSimple />
+            <Header />
             <section className="CrudSection">
                 <div className="CrudSection-block">
                     <div className="title-crud">
@@ -92,7 +92,7 @@ const DeleteUser = () => {
                     </form>
                 </div>
             </section>
-            <FooterSimple />
+            <Footer />
         </>
     );
 };

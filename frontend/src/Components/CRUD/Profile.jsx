@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Crud.css';
-import HeaderSimple from '../Header/HeaderSimple';
-import FooterSimple from '../Footer/FooterSimple';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
@@ -36,7 +36,7 @@ const UserProfile = () => {
 
     return (
         <>
-            <HeaderSimple />
+            <Header />
             <section className="CrudSection">
                 <div className="CrudSection-block">
                     <div className="title-crud">
@@ -65,7 +65,7 @@ const UserProfile = () => {
                     </div>
                 </div>
             </section>
-            <FooterSimple />
+            <Footer />
         </>
     );
 };

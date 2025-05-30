@@ -11,6 +11,7 @@ import UpdateUser from './Components/CRUD/Update.jsx'
 import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
 import About from './Components/About/About.jsx';
+import Reservation from './Components/Reservation/Reservation.jsx'
 
 // Simulação de autenticação (substitua por lógica real)
 const isAuthenticated = async () => {
@@ -35,6 +36,7 @@ function MainApp() {
     <>
       <Header />
       <Home />
+      <Reservation />
       <About />
       <Footer />
     </>

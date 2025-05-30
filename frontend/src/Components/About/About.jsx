@@ -1,9 +1,9 @@
 import React from 'react';
 import './About.css';
-import yuri from './img/yuri.webp';
-import milly from './img/milly.jpg';
-import belly from './img/belly.png';
-import gabi from './img/gabi.png';
+import yuri from './img/yuri-photo.jpg';
+import milly from './img/milly-photo.jpg';
+import belly from './img/belly-photo.jpg';
+import gabi from './img/gabi-photo.jpg';
 
 const About = () => {
     return (

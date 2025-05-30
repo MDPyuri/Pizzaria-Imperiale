@@ -70,4 +70,28 @@ produtoRoutes.delete("/deletar/:id", async (req, res) => {
     }
 });
 
+// Rota para buscar produtos por lista de IDs
+produtoRoutes.post("/produtos-por-ids", async (req, res) => {
+    try {
+        const { ids } = req.body;
+
+        // Converte os IDs para números inteiros
+        const idsNumericos = ids.map(id => parseInt(id)).filter(id => !isNaN(id));
+
+        // Busca os produtos no banco de dados
+        const produtos = await prisma.produto.findMany({
+            where: {
+                idProduto: { in: idsNumericos }
+            }
+        });
+
+        res.json(produtos);
+    } catch (error) {
+        res.status(500).json({ 
+            error: "Erro ao buscar produtos por IDs", 
+            details: error.message 
+        });
+    }
+});
+
 module.exports = produtoRoutes;

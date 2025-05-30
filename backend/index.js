@@ -1,9 +1,11 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
 
 // Middleware para processar JSON
+app.use(cors());
 app.use(express.json());
 
 // Importar rotas de usuário

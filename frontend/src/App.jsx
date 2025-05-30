@@ -12,9 +12,22 @@ import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
 
 // Simulação de autenticação (substitua por lógica real)
-const isAuthenticated = () => {
-  return localStorage.getItem('auth') === 'true';
+const isAuthenticated = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/usuarios/me', {
+            credentials: 'include', // Importante para enviar os cookies
+        });
+
+        if (response.ok) {
+            return true; // Autenticado
+        } else {
+            return false; // Não autenticado
+        }
+    } catch (error) {
+        return false; // Erro na requisição
+    }
 };
+
 
 function MainApp() {
   return (

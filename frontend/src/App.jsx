@@ -10,7 +10,7 @@ import Cart from './Components/Order/Cart.jsx';
 function App() {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <Cart />
         </>
     );

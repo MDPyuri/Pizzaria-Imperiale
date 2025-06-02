@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.CartSection {
+    background-color: #f5f3e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6.5vw;
+}
+
+.CartContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.title-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Great Vibes';
+    color: #6b2e2e;
+    font-size: 4.5rem;
+    margin-bottom: 1vw;
+}
+
+.title-order p {
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
+}
+
+.line-order {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+.cart-card {
+    background-color: #e6dbc7;
+    border-radius: 20px;
+    padding: 2.2vw;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cart-card img {
+    margin: 1vw;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.cart-all-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+    margin-top: 10px;
+}
+
+.remove-btn-cart {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #6b2e2e;
+    font-size: 1.5rem;
+}
+
+.select-btn-cart {
+    background-color: transparent;
+    border: none;
+    color: #6b2e2e;
+    cursor: pointer;
+}
+
+.quantity-control span,
+.quantity-control button {
+    margin: 0;
+    color: #c5a15c;
+    border: 1px solid #c5a15c;
+    background-color: #e6d6b8;    
+    margin: 0;
+    padding: 0.2vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+.buttons-cart p,
+.buttons-cart button {
+    background-color: #e6dbc7;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 1vw;
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.buttons-cart p {
+    margin-top: 4vw;
+}
+
+.buttons-cart button {
+    border: none;
+    font-weight: bold;
+}

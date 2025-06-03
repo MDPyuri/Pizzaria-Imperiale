@@ -6,12 +6,14 @@ import Footer from './Components/Footer/Footer.jsx';
 import ReservationPage from './Components/ReservationPage/ReservationPage.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx';
 import Cart from './Components/Order/Cart.jsx';
+import Address from './Components/Order/Address.jsx';
+import Payment from './Components/Order/Payment.jsx';
 
 function App() {
     return (
         <>
             <Header />
-            <Cart />
+            <Payment/>
         </>
     );
 }

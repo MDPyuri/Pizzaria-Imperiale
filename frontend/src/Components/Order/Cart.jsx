@@ -181,9 +181,9 @@ const Cart = () => {
                                     <p className="product-description">
                                         {product.descricao}
                                     </p>
-                                    <p className="product-price">
+                                    {/* <p className="product-price">
                                         R$ {preco.toFixed(2)}
-                                    </p>
+                                    </p> */}
 
                                     <div className="quantity-control">
                                         <button
@@ -246,5 +246,8 @@ export default Cart;
 //         { id: 2, quantidade: 1 },
 //         { id: 3, quantidade: 1 },
 //         { id: 4, quantidade: 3 },
+//         { id: 5, quantidade: 1 },
+//         { id: 6, quantidade: 1 },
+//         { id: 7, quantidade: 3 },
 //     ])
 // );

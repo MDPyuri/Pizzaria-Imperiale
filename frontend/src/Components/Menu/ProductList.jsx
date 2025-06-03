@@ -64,8 +64,8 @@ const ProductList = () => {
             <img src={foto} alt="Pizza Salgada" />
           </div>
           <div className="description">
-            <p>{product.nome}</p>
-            <p>{product.descricao}</p>
+            <p className="description Title">{product.nome}</p>
+            <p className="description desc">{product.descricao}</p>
             <p className="price">
               Preço: R$
               {product.preco ? parseFloat(product.preco).toFixed(2) : 'N/A'}
@@ -75,6 +75,11 @@ const ProductList = () => {
               <span>{cartCounts[product.id] || 0}</span>
               <button onClick={() => handleIncrement(product.id)}>+</button>
             </div>
+
+            <div className="addCar">
+              <button /*onClick={() => (product.id)} */>Adicionar ao carrinho</button>
+            </div>
+
           </div>
         </div>
       ))}

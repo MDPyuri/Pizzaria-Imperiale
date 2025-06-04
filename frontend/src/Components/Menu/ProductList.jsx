@@ -1,43 +1,46 @@
+// ProductList.jsx
 import React, { useState, useEffect } from "react";
-import './Menu.css';
+import "./Menu.css";
+import foto from "../../assets/img/PizzasSalgadas.png";
 
-import foto from '../../assets/img/PizzasSalgadas.png'; // Imagem genérica para todos os produtos
-
-const ProductList = () => {
+const ProductList = ({ selectedCategory }) => {
   const [products, setProducts] = useState([]);
-  const [cartCounts, setCartCounts] = useState({}); // Armazena a quantidade de cada produto no carrinho
+  const [cartCounts, setCartCounts] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
-        const response = await fetch('http://localhost:3000/produtos'); // Substitua pela rota correta do backend
-        console.log('Response status:', response.status); // Log para depuração
+        const response = await fetch("http://localhost:3000/produtos");
         if (!response.ok) {
           const errorData = await response.json();
-          console.error('Error response:', errorData); // Log para depuração
-          throw new Error('Erro ao buscar produtos');
+          throw new Error("Erro ao buscar produtos");
         }
         const data = await response.json();
-        console.log('Produtos recebidos:', data); // Log para depuração
-        setProducts(data);
+
+        const filtered = selectedCategory
+          ? Array.isArray(selectedCategory)
+            ? data.filter((produto) =>
+                selectedCategory.includes(produto.categoria)
+              )
+            : data.filter((produto) => produto.categoria === selectedCategory)
+          : data;
+
+        setProducts(filtered);
         setLoading(false);
       } catch (err) {
-        console.error('Erro ao buscar produtos:', err.message); // Log para depuração
         setError(err.message);
         setLoading(false);
       }
     };
 
     fetchProducts();
-  }, []);
+  }, [selectedCategory]);
 
   const handleIncrement = (id) => {
-    setCartCounts((prev) => ({
-      ...prev,
-      [id]: (prev[id] || 0) + 1,
-    }));
+    setCartCounts((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
   };
 
   const handleDecrement = (id) => {
@@ -47,39 +50,34 @@ const ProductList = () => {
     }));
   };
 
-  if (loading) {
-    return <p>Carregando produtos...</p>;
-  }
-
-  if (error) {
-    return <p>Erro: {error}</p>;
-  }
+  if (loading) return <p>Carregando produtos...</p>;
+  if (error) return <p>Erro: {error}</p>;
 
   return (
     <div className="containerCentral">
       {products.map((product) => (
-        <div key={product.id} className="product">
+        <div key={product.idProduto} className="product">
           <div className="img">
-            {/* Imagem genérica para todos os produtos */}
-            <img src={foto} alt="Pizza Salgada" />
+            <img src={foto} alt={product.nome} />
           </div>
           <div className="description">
             <p className="description Title">{product.nome}</p>
             <p className="description desc">{product.descricao}</p>
             <p className="price">
-              Preço: R$
-              {product.preco ? parseFloat(product.preco).toFixed(2) : 'N/A'}
+              Preço: R$ {parseFloat(product.preco).toFixed(2)}
             </p>
             <div className="counter">
-              <button onClick={() => handleDecrement(product.id)}>-</button>
-              <span>{cartCounts[product.id] || 0}</span>
-              <button onClick={() => handleIncrement(product.id)}>+</button>
+              <button onClick={() => handleDecrement(product.idProduto)}>
+                -
+              </button>
+              <span>{cartCounts[product.idProduto] || 0}</span>
+              <button onClick={() => handleIncrement(product.idProduto)}>
+                +
+              </button>
             </div>
-
             <div className="addCar">
-              <button /*onClick={() => (product.id)} */>Adicionar ao carrinho</button>
+              <button>Adicionar ao carrinho</button>
             </div>
-
           </div>
         </div>
       ))}

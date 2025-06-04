@@ -12,6 +12,7 @@ import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
 import FilterPizza from './Components/Menu/FilterPizza.jsx';
 import ProductList from './Components/Menu/ProductList.jsx';
+import Menu from './Components/Menu/Menu.jsx';
 
 // Simulação de autenticação (substitua por lógica real)
 // const isAuthenticated = () => {
@@ -43,11 +44,12 @@ import ProductList from './Components/Menu/ProductList.jsx';
 //   );
 // }
 
+
+
 function App() {
   return (
     <>
-      <FilterPizza/>
-      <ProductList/>
+      <Menu/>
     </>
   )
 }

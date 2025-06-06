@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer.jsx';
 import ReservationPage from './Components/ReservationPage/ReservationPage.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx';
 import About from './Components/About/About.jsx';
+import CallToMenu from './Components/CallToMenu/CallToMenu.jsx';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     element={
                         <>
                             <Home />
+                            <CallToMenu />
                             <Reservation />
                             <About />
                             <Footer />

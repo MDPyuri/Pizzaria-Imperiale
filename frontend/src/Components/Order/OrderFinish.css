@@ -8,8 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 7vw;
+    padding-top: 6vw;
     min-height: 100vh;
+    position: relative;
 }
 
 .OrderFinish-content {
@@ -17,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 75%;
 }
 
 .title-orderfinish {
@@ -41,17 +42,21 @@
     background-color: #c5a15c;
 }
 
-.payment-options button {
+.payment-btn {
     background-color: #e6d6b8;
     border: none;
     color: #6b2e2e;
     border-radius: 18px;
-    padding: 0.7vw 1vw;
+    padding: 0.75vw 1.3vw;
     font-family: "Glacial Indifference";
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    margin-bottom: 1.4vw;
-    margin-top: 1.4vw;
+    margin: 1.4vw;
+}
+
+.active-btn {
+    background-color: #6b2e2e;
+    color: #e6dbc7;
 }
 
 .payment-options button:hover {
@@ -66,7 +71,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
 }
 
 .creditCard form input {
@@ -78,7 +83,7 @@
     padding: 0.7vw;
     margin: 0.5vw;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .creditCard form input::placeholder {
@@ -100,14 +105,69 @@
     margin: 0;
 }
 
+.finish-order-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .finish-order-btn {
     border: 1px solid #c5a15c;
     background-color: #e6dbc7;
     color: #6b2e2e;
     font-weight: bold;
     font-family: "Glacial Indifference";
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0.7vw 1.8vw;
     border-radius: 23px;
     margin-top: 1.4vw;
+    cursor: pointer;
 }
+
+.finish-order-btn:hover {
+    background-color: #6b2e2e;
+    color: #e6dbc7;
+    transition: 0.2s ease;
+}
+
+.processFinally {
+    position: absolute;
+    left: 2vw;
+    font-family: "Glacial Indifference";
+    font-size: 1.2rem;
+    color: #2e4b32;
+  }
+  
+  .step-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .steps-order {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.6vw 0;
+  }
+  
+  .number-steps {
+    background-color: #e6d6b8;
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5vw;
+    font-weight: bold;
+  }
+  
+  .vertical-line {
+    width: 3px;
+    height: 4.5vh;
+    background-color: #c5a15c;
+    margin-left: calc(1.25vw - 1.5px);
+  }
+  

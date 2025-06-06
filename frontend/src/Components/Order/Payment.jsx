@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './OrderFinish.css';
 
 const Payment = () => {
+    const [paymentMethod, setPaymentMethod] = useState('credito');
+
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
 
@@ -22,56 +24,82 @@ const Payment = () => {
                 </div>
 
                 <div className="payment-options">
-                    <button>Cartão de crédito</button>
-                    <button>Usar chave Pix</button>
-                    <button>Na entrega</button>
-                </div>
-
-                <div className="creditCard">
-                    <form>
-                        <input
-                            type="text"
-                            placeholder="Nome do cartão:"
-                            required
-                        />
-                        <input
-                            type="number"
-                            placeholder="Número do cartão:"
-                            required
-                        />
-                        <input
-                            type="text"
-                            id="expiry"
-                            placeholder="Validade"
-                            pattern="(0[1-9]|1[0-2])\/\d{2}"
-                            required
-                            onChange={handleExpiryChange}
-                        />
-                        <input type="number" placeholder="CVV" />
-                    </form>
-
-                    <button className="finish-order-btn">
-                        Finalizar pedido
+                    <button className={paymentMethod === 'credito' ? 'payment-btn active-btn' : 'payment-btn'}
+                        onClick={() => setPaymentMethod('credito')}>
+                        Cartão de crédito
+                    </button>
+                    <button  className={paymentMethod === 'pix' ? 'payment-btn active-btn' : 'payment-btn'}
+                        onClick={() => setPaymentMethod('pix')}>
+                        Usar chave Pix
+                    </button>
+                    <button className={paymentMethod === 'entrega' ? 'payment-btn active-btn' : 'payment-btn'}
+                        onClick={() => setPaymentMethod('entrega')}>
+                        Na entrega
                     </button>
                 </div>
+
+                {paymentMethod === 'credito' && (
+                    <div className="creditCard">
+                        <form>
+                            <input
+                                type="text"
+                                placeholder="Nome do cartão:"
+                                required
+                            />
+                            <input
+                                type="number"
+                                placeholder="Número do cartão:"
+                                required
+                            />
+                            <input
+                                type="text"
+                                id="expiry"
+                                placeholder="Validade"
+                                pattern="(0[1-9]|1[0-2])\/\d{2}"
+                                required
+                                onChange={handleExpiryChange}
+                            />
+                            <input type="number" placeholder="CVV" />
+                        </form>
+
+                        <div className="finish-order-btns">
+                            <button className="finish-order-btn">
+                                Cancelar Pedido
+                            </button>
+                            <button className="finish-order-btn">
+                                Finalizar pedido
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
 
+            <div className="Pix"></div>
+
+            <div className="Entrega"></div>
+
             <div className="processFinally">
-                <div className="steps-order">
-                    <p className="number-steps">1</p>
-                    <p className="name-steps">Pedido</p>
+                <div className="step-group">
+                    <div className="steps-order">
+                        <p className="number-steps">1</p>
+                        <p className="name-steps">Pedido</p>
+                    </div>
+                    <div className="vertical-line"></div>
                 </div>
-                <div className="vertical-line"></div>
-                <div className="steps-order">
-                    <p className="number-steps">2</p>
-                    <p className="name-steps">Endereço</p>
+                <div className="step-group">
+                    <div className="steps-order">
+                        <p className="number-steps">2</p>
+                        <p className="name-steps">Endereço</p>
+                    </div>
+                    <div className="vertical-line"></div>
                 </div>
-                <div className="vertical-line"></div>
-                <div className="steps-order">
-                    <p className="number-steps">3</p>
-                    <p className="name-steps">
-                        <strong>Pagamento</strong>
-                    </p>
+                <div className="step-group">
+                    <div className="steps-order">
+                        <p className="number-steps">3</p>
+                        <p className="name-steps">
+                            <strong>Pagamento</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

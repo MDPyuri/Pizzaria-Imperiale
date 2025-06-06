@@ -50,8 +50,8 @@ const ProductList = ({ selectedCategory }) => {
     }));
   };
 
-  if (loading) return <p>Carregando produtos...</p>;
-  if (error) return <p>Erro: {error}</p>;
+  if (loading) return console.log("Carregando produtos");
+  if (error) return console.log("Erro ao carregar produtos");
 
   return (
     <div className="containerCentral">

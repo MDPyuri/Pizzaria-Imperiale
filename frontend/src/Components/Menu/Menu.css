@@ -56,92 +56,31 @@
     /* background-color: #c5a15c; */
 }
 
-.salt-pizza {
+.filter-button {
     display: flex;
     flex-direction: row;
     width: 25%;
-    background-color: #6b2e2e;
+    background-color: #e6d6b8;
     border: none;
     border-radius: 20px;
     margin: 0% 5%;
     align-items: center;
+    color: #6b2e2e;
+    justify-content: center;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: #6b2e2e;
     color: #e6d6b8;
-    justify-content: center; 
-    align-items: center;
-    font-family: 'Glacial Indifference';
-    font-size: 1.3vw;
-}
-
-.salt-pizza:hover {
-    background-color: #e6d6b8 ;
-    color: #6b2e2e;
     cursor: pointer;
 }
 
-.sweet-pizza {
-    display: flex;
-    flex-direction: row;
-    width: 25%;
-    background-color: #e6d6b8;
-    border: none;
-    border-radius: 20px;
-    margin: 0% 5%;
-    align-items: center;
-    color: #6b2e2e;
-    justify-content: center; 
-    align-items: center;
-    font-family: 'Glacial Indifference';
-    font-size: 1.3vw;
-}
-
-.sweet-pizza:hover {
-    background-color: #6b2e2e;
-    color:#e6d6b8;
-    cursor: pointer;
-}
-
-.vegan-pizza {
-    display: flex;
-    flex-direction: row;
-    width: 25%;
-    background-color: #e6d6b8;
-    border: none;
-    border-radius: 20px;
-    margin: 0% 5%;
-    align-items: center;
-    color: #6b2e2e;
-    justify-content: center; 
-    align-items: center;
-    font-family: 'Glacial Indifference';
-    font-size: 1.3vw;
-}
-
-.vegan-pizza:hover {
-    background-color: #6b2e2e;
-    color:#e6d6b8;
-    cursor: pointer;
-}
-
-.drinks {
-    display: flex;
-    flex-direction: row;
-    width: 25%;
-    background-color: #e6d6b8;
-    border: none;
-    border-radius: 20px;
-    margin: 0% 5%;
-    align-items: center;
-    color: #6b2e2e;
-    justify-content: center; 
-    align-items: center;
-    font-family: 'Glacial Indifference';
-    font-size: 1.3vw;
-}
-
-.drinks:hover {
-    background-color: #6b2e2e;
-    color:#e6d6b8;
-    cursor: pointer;
+.filter-button.active {
+    background-color: #6b2e2e !important;
+    color: #e6d6b8 !important;
 }
 
 .search {
@@ -257,6 +196,7 @@
 
 .product {
     background-color: aquamarine;
+    transition: 5s;
     display: flex;
     align-items: center;
     gap: 20px;

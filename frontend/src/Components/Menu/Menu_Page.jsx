@@ -4,7 +4,7 @@ import FilterPizza from "./FilterPizza";
 import ProductList from "./ProductList";
 
 const MenuPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("PIZZAS_SALGADAS");
 
   const handleFilterChange = (category) => {
     setSelectedCategory(category);
@@ -12,7 +12,10 @@ const MenuPage = () => {
 
   return (
     <div>
-      <FilterPizza onFilterChange={handleFilterChange} />
+      <FilterPizza
+        onFilterChange={handleFilterChange}
+        activeFilter={selectedCategory}
+      />
       <ProductList selectedCategory={selectedCategory} />
     </div>
   );

@@ -2,7 +2,20 @@
 import React from "react";
 import './Menu.css';
 
-const FilterPizza = ({ onFilterChange }) => {
+const FilterPizza = ({ onFilterChange, activeFilter }) => {
+  const getButtonClass = (type) => {
+    if (Array.isArray(activeFilter) && Array.isArray(type)) {
+      const isSame =
+        type.length === activeFilter.length &&
+        type.every((item, i) => item === activeFilter[i]);
+      return isSame ? "filter-button active" : "filter-button";
+    }
+
+    return activeFilter === type ? "filter-button active" : "filter-button";
+  };
+
+  const bebidasTipo = ["BEBIDAS_ALCOOLICAS", "BEBIDAS_NAO_ALCOOLICAS"];
+
   return (
     <>
       <div className="menu">
@@ -14,32 +27,31 @@ const FilterPizza = ({ onFilterChange }) => {
       </div>
       <div className="pizzas">
         <button
-          className="salt-pizza"
+          className={getButtonClass("PIZZAS_SALGADAS")}
           onClick={() => {
-            console.log("Clicou em salgada");
-            onFilterChange("PIZZAS_SALGADAS");
+            // console.log("Clicou em salgada");
+            onFilterChange("PIZZAS_SALGADAS")
+            console.log("aa");
           }}
         >
           Pizzas salgadas
         </button>
 
         <button
-          className="sweet-pizza"
+          className={getButtonClass("PIZZAS_DOCES")}
           onClick={() => onFilterChange("PIZZAS_DOCES")}
         >
           Pizzas doces
         </button>
         <button
-          className="vegan-pizza"
+          className={getButtonClass("PIZZAS_VEGANAS")}
           onClick={() => onFilterChange("PIZZAS_VEGANAS")}
         >
           Pizzas veganas
         </button>
         <button
-          className="drinks"
-          onClick={() =>
-            onFilterChange(["BEBIDAS_ALCOOLICAS", "BEBIDAS_NAO_ALCOOLICAS"])
-          }
+          className={getButtonClass(bebidasTipo)}
+          onClick={() => onFilterChange(bebidasTipo)}
         >
           Bebidas
         </button>

@@ -23,6 +23,7 @@ model Usuario {
 
   reservas   Reserva[]
   pedidos    Pedido[]
+  pagamentos Pagamento[]
 }
 
 model Reserva {
@@ -47,13 +48,25 @@ model Endereco {
   pedidos     Pedido[]
 }
 
-model Pagamento {
-  idPagamento Int    @id @default(autoincrement())
-  tipo        String 
-  pago        Boolean
-
-  pedidos     Pedido[]
+enum StatusPagamento {
+  PENDENTE
+  PAGO
+  CANCELADO
 }
+
+model Pagamento {
+  idPagamento     Int              @id @default(autoincrement())
+  tipo            String
+  pago            StatusPagamento
+  valor           Decimal          @db.Decimal(10,2)
+  data            DateTime
+
+  Usuario_idUsuario Int    
+  usuario           Usuario        @relation(fields: [Usuario_idUsuario], references: [idUsuario])
+
+  pedidos           Pedido[]
+}
+
 
 model Pedido {
   idPedido       Int       @id @default(autoincrement())

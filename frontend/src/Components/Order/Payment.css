@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
 
+/* Geral */
 .SectionOrderFinish {
     background-color: #f5f3e7;
     display: flex;
@@ -65,6 +66,7 @@
     transition: 0.2s ease;
 }
 
+/* Cartão de Crédito */
 .creditCard,
 .creditCard form {
     display: flex;
@@ -105,6 +107,54 @@
     margin: 0;
 }
 
+/* Pagamento Pix */
+.Pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pix p,
+.Pix img {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw;
+    margin: 0.5vw;
+    font-size: 1.1rem;
+}
+
+
+/* Pagamento na entrega */
+.Entrega p {
+    font-family: "Glacial Indifference";
+    font-weight: bold;
+    color: #6b2e2e;
+    font-size: 1.1rem;
+    margin-top: 1vw;
+}
+
+.Entrega select {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw 1vw;
+    margin: 1.2vw;
+    font-size: 1.1rem;
+}
+
+.Entrega select:focus {
+    border: 1px solid #c5a15c;
+    outline: none; 
+}
+
+
+/* Botões de cancelar ou finalizar */
 .finish-order-btns {
     display: flex;
     flex-direction: row;
@@ -131,6 +181,7 @@
     transition: 0.2s ease;
 }
 
+/* Etapas do processo */
 .processFinally {
     position: absolute;
     left: 2vw;

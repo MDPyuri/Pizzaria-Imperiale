@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
-import './OrderFinish.css';
+import './Payment.css';
+import QrCodePix from './img/QrCodePix.png';
 
 const Payment = () => {
     const [paymentMethod, setPaymentMethod] = useState('credito');
@@ -24,16 +25,34 @@ const Payment = () => {
                 </div>
 
                 <div className="payment-options">
-                    <button className={paymentMethod === 'credito' ? 'payment-btn active-btn' : 'payment-btn'}
-                        onClick={() => setPaymentMethod('credito')}>
+                    <button
+                        className={
+                            paymentMethod === 'credito'
+                                ? 'payment-btn active-btn'
+                                : 'payment-btn'
+                        }
+                        onClick={() => setPaymentMethod('credito')}
+                    >
                         Cartão de crédito
                     </button>
-                    <button  className={paymentMethod === 'pix' ? 'payment-btn active-btn' : 'payment-btn'}
-                        onClick={() => setPaymentMethod('pix')}>
+                    <button
+                        className={
+                            paymentMethod === 'pix'
+                                ? 'payment-btn active-btn'
+                                : 'payment-btn'
+                        }
+                        onClick={() => setPaymentMethod('pix')}
+                    >
                         Usar chave Pix
                     </button>
-                    <button className={paymentMethod === 'entrega' ? 'payment-btn active-btn' : 'payment-btn'}
-                        onClick={() => setPaymentMethod('entrega')}>
+                    <button
+                        className={
+                            paymentMethod === 'entrega'
+                                ? 'payment-btn active-btn'
+                                : 'payment-btn'
+                        }
+                        onClick={() => setPaymentMethod('entrega')}
+                    >
                         Na entrega
                     </button>
                 </div>
@@ -61,22 +80,37 @@ const Payment = () => {
                             />
                             <input type="number" placeholder="CVV" />
                         </form>
-
-                        <div className="finish-order-btns">
-                            <button className="finish-order-btn">
-                                Cancelar Pedido
-                            </button>
-                            <button className="finish-order-btn">
-                                Finalizar pedido
-                            </button>
-                        </div>
                     </div>
                 )}
+
+                {paymentMethod === 'pix' && (
+                    <div className="Pix">
+                        <p>Chave CNPJ: 12.345.678/0001-95</p>
+                        <img src={QrCodePix} />
+                    </div>
+                )}
+
+                {paymentMethod === 'entrega' && (
+                    <div className="Entrega">
+                        <p>O pagamento será feito na entrega do pedido</p>
+                        <select>
+                            <option value="" disabled selected>Selecione uma opção de pagamento</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="cartao">Cartão de débito</option>
+                            <option value="pix">Cartão de crédito</option>
+                        </select>
+                    </div>
+                )}
+
+                <div className="finish-order-btns">
+                    <button className="finish-order-btn">
+                        Cancelar Pedido
+                    </button>
+                    <button className="finish-order-btn">
+                        Finalizar pedido
+                    </button>
+                </div>
             </div>
-
-            <div className="Pix"></div>
-
-            <div className="Entrega"></div>
 
             <div className="processFinally">
                 <div className="step-group">

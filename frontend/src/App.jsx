@@ -12,8 +12,14 @@ import Payment from './Components/Order/Payment.jsx';
 function App() {
     return (
         <>
-            <Header />
-            <Payment/>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/carrinho" element={<Cart />} />
+                    <Route path="/endereco" element={<Address />} />
+                    <Route path="/pagamento" element={<Payment />} />
+                </Routes>
+            </Router>
         </>
     );
 }

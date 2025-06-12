@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { IoMdCheckboxOutline } from 'react-icons/io';
 import logo from '../Header/img/logo.png'; 
 
 const Cart = () => {
+    const navigate = useNavigate();
+
     const [cartItems, setCartItems] = useState([]); // [{id, quantidade}]
     const [productsData, setProductsData] = useState([]); // [{idProduto, nome, preco...}]
     const [totalValue, setTotalValue] = useState(0);
@@ -93,6 +96,7 @@ const Cart = () => {
         setCartItems([]);
         setProductsData([]);
         setSelectedItems([]);
+        navigate('/endereco');
     };
 
     const handleToggleSelect = (id) => {
@@ -115,7 +119,8 @@ const Cart = () => {
                         <p>Pedido</p>
                         <div className="line-order"></div>
                     </div>
-                    <p className="empty-cart">Seu carrinho está vazio</p>
+                    <p className="empty-cart">Você ainda não adicionou nenhum item ao pedido</p>
+                    <button className='go-to-menu-btn'>Ir para o cardápio</button>
                 </div>
             </section>
         );

@@ -46,6 +46,30 @@
     background-color: #c5a15c;
 }
 
+.empty-cart {
+    font-family: 'Glacial Indifference';
+    color: #6b2e2e;
+    font-size: 1.5rem;
+    margin: 1vw;;
+}
+
+.go-to-menu-btn {
+    background-color: #e6dbc7;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 0.8vw 2vw;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #e6dbc7;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.go-to-menu-btn:hover {
+    border: 1px solid #c5a15c;
+}
+
 .cart-card {
     background-color: #e6dbc7;
     border-radius: 20px;

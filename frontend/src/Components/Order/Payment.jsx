@@ -1,8 +1,14 @@
 import React, { useState} from 'react';
 import './OrderFinish.css';
+import { useNavigate } from 'react-router-dom';
 import QrCodePix from './img/QrCodePix.png';
 
 const Payment = () => {
+    const navigate = useNavigate();
+    const cancelOrder = () => {
+        navigate('/carrinho');
+    };
+    
     const [paymentMethod, setPaymentMethod] = useState('credito');
 
     const handleExpiryChange = (e) => {
@@ -94,7 +100,9 @@ const Payment = () => {
                     <div className="Entrega">
                         <p>O pagamento será feito na entrega do pedido</p>
                         <select>
-                            <option value="" disabled selected>Selecione uma opção de pagamento</option>
+                            <option value="" disabled selected>
+                                Selecione uma opção de pagamento
+                            </option>
                             <option value="dinheiro">Dinheiro</option>
                             <option value="cartao">Cartão de débito</option>
                             <option value="pix">Cartão de crédito</option>
@@ -103,7 +111,7 @@ const Payment = () => {
                 )}
 
                 <div className="finish-order-btns">
-                    <button className="finish-order-btn">
+                    <button onClick={cancelOrder}  className="finish-order-btn">
                         Cancelar Pedido
                     </button>
                     <button className="finish-order-btn">

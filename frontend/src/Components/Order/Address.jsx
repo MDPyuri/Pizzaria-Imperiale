@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './OrderFinish.css';
+import { useNavigate } from 'react-router-dom';
 
 const Address = () => {
+    const navigate = useNavigate();
+    const goToPayment = () => {
+        navigate('/pagamento');
+    };
+    const cancelOrder = () => {
+        navigate('/carrinho')
+    };
+
     return (
         <section className="SectionOrderFinish">
             <div className="OrderFinish-content">
@@ -21,10 +30,12 @@ const Address = () => {
                 </form>
 
                 <div className="finish-order-btns">
-                    <button className="finish-order-btn">
+                    <button onClick={cancelOrder} className="finish-order-btn">
                         Cancelar Pedido
                     </button>
-                    <button className="finish-order-btn">Continuar</button>
+                    <button onClick={goToPayment} className="finish-order-btn">
+                        Continuar
+                    </button>
                 </div>
             </div>
 

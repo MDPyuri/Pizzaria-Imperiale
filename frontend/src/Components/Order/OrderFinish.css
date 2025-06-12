@@ -118,13 +118,16 @@
 .Pix p,
 .Pix img {
     background-color: #e6d6b8;
-    border: 1px solid #e6d6b8;
     border-radius: 18px;
     font-family: "Glacial Indifference";
     color: #6b2e2e;
     padding: 0.7vw;
     margin: 0.5vw;
     font-size: 1.1rem;
+}
+
+.Pix img {
+    width: 70%
 }
 
 
@@ -222,3 +225,37 @@
     margin-left: calc(1.25vw - 1.5px);
   }
   
+
+/* Endereço */
+.address-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+
+.address-infos input {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw;
+    margin: 0.5vw;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.address-infos input::placeholder {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    width: 100%;
+}
+
+.address-infos input:focus {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    border: 1px solid #c5a15c;
+    outline: none; 
+}

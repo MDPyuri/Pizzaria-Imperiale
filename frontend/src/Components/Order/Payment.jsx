@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './Payment.css';
+import './OrderFinish.css';
 import QrCodePix from './img/QrCodePix.png';
 
 const Payment = () => {

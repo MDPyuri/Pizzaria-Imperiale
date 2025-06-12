@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Address.css';
+import './OrderFinish.css';
 
 const Address = () => {
     return (
@@ -7,7 +7,7 @@ const Address = () => {
             <div className="OrderFinish-content">
                 <div className="title-orderfinish">
                     <div className="line-orderfinish"></div>
-                    <p>Endereço</p>
+                    <p>Endereço de entrega</p>
                     <div className="line-orderfinish"></div>
                 </div>
 

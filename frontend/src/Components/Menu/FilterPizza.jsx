@@ -1,19 +1,7 @@
-// FilterPizza.jsx
 import React from "react";
 import './Menu.css';
 
 const FilterPizza = ({ onFilterChange, activeFilter }) => {
-  const getButtonClass = (type) => {
-    if (Array.isArray(activeFilter) && Array.isArray(type)) {
-      const isSame =
-        type.length === activeFilter.length &&
-        type.every((item, i) => item === activeFilter[i]);
-      return isSame ? "filter-button active" : "filter-button";
-    }
-
-    return activeFilter === type ? "filter-button active" : "filter-button";
-  };
-
   const bebidasTipo = ["BEBIDAS_ALCOOLICAS", "BEBIDAS_NAO_ALCOOLICAS"];
 
   return (
@@ -27,35 +15,50 @@ const FilterPizza = ({ onFilterChange, activeFilter }) => {
       </div>
       <div className="pizzas">
         <button
-          className={getButtonClass("PIZZAS_SALGADAS")}
-          onClick={() => {
-            // console.log("Clicou em salgada");
-            onFilterChange("PIZZAS_SALGADAS")
-            console.log("aa");
-          }}
+          className={
+            activeFilter === "PIZZAS_SALGADAS"
+              ? "filter-button active"
+              : "filter-button"
+          }
+          onClick={() => onFilterChange("PIZZAS_SALGADAS")}
         >
           Pizzas salgadas
         </button>
 
         <button
-          className={getButtonClass("PIZZAS_DOCES")}
+          className={
+            activeFilter === "PIZZAS_DOCES"
+              ? "filter-button active"
+              : "filter-button"
+          }
           onClick={() => onFilterChange("PIZZAS_DOCES")}
         >
           Pizzas doces
         </button>
+
         <button
-          className={getButtonClass("PIZZAS_VEGANAS")}
+          className={
+            activeFilter === "PIZZAS_VEGANAS"
+              ? "filter-button active"
+              : "filter-button"
+          }
           onClick={() => onFilterChange("PIZZAS_VEGANAS")}
         >
           Pizzas veganas
         </button>
+
         <button
-          className={getButtonClass(bebidasTipo)}
+          className={
+            JSON.stringify(activeFilter) === JSON.stringify(bebidasTipo)
+              ? "filter-button active"
+              : "filter-button"
+          }
           onClick={() => onFilterChange(bebidasTipo)}
         >
           Bebidas
         </button>
       </div>
+
       <div className="search">
         <input type="text" placeholder="Pesquisar" />
         <button>

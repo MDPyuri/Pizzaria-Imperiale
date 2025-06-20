@@ -3,11 +3,12 @@ import FilterPizza from "./FilterPizza";
 import ProductList from "./ProductList";
 
 const MenuPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("PIZZAS_SALGADAS");
 
   return (
     <>
-      <FilterPizza onFilterChange={setSelectedCategory} />
+      <FilterPizza onFilterChange={setSelectedCategory}
+        activeFilter={selectedCategory} />
       <ProductList selectedCategory={selectedCategory} />
     </>
   );

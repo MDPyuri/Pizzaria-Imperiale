@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Menu.css";
-import foto from "../../assets/img/PizzasSalgadas.png";
+
+const images = import.meta.glob('../../assets/img/*.png', { eager: true });
+
 
 const ProductList = ({ selectedCategory, searchText }) => {
   const [products, setProducts] = useState([]);
@@ -91,6 +93,13 @@ const ProductList = ({ selectedCategory, searchText }) => {
     }));
   };
 
+  const getProductImage = (product) => {
+    const match = Object.entries(images).find(([path]) =>
+      path.endsWith(`/${product.idProduto}.png`)
+    );
+    return match ? match[1].default : "/src/assets/img/PizzasSalgadas.png"; // fallback
+  };
+
   if (error) return null;
 
   return (
@@ -99,18 +108,22 @@ const ProductList = ({ selectedCategory, searchText }) => {
         products.map((product) => (
           <div key={product.idProduto} className="product">
             <div className="img">
-              <img src={foto} alt={product.nome} />
+              <img src={getProductImage(product)} alt={product.nome} />
             </div>
             <div className="description">
               <p className="description Title">{product.nome}</p>
               <p className="description desc">{product.descricao}</p>
-              <p className="price">
-                Preço: R$ {parseFloat(product.preco).toFixed(2)}
-              </p>
-              <div className="counter">
-                <button onClick={() => handleDecrement(product.idProduto)}>-</button>
-                <span>{cartCounts[product.idProduto] || 0}</span>
-                <button onClick={() => handleIncrement(product.idProduto)}>+</button>
+              <div className="price-counter">
+                <p className="price">
+                  Preço: R$ {parseFloat(product.preco).toFixed(2)}
+                </p>
+                <div className="counter">
+                  <div className="counter-box">
+                    <button onClick={() => handleDecrement(product.idProduto)}>-</button>
+                    <span>{cartCounts[product.idProduto] || 0}</span>
+                    <button onClick={() => handleIncrement(product.idProduto)}>+</button>
+                  </div>
+                </div>
               </div>
               <div className="addCar">
                 <button>Adicionar ao carrinho</button>

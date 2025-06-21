@@ -195,7 +195,7 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 1vw;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
@@ -212,8 +212,9 @@
     background-color: aquamarine;
     transition: 5s;
     display: flex;
+    min-height: 12vw;
     align-items: center;
-    gap: 20px;
+    gap: 1.2vw;
 }
 
 .img {
@@ -226,10 +227,96 @@
 }
 
 .description {
-    background-color: aqua;
+    /* background-color: aqua; */
     font-family: 'Cinzel';
-    font-weight: 900;
-    font-size: 1.42vw;
     color: #6b2e2e;
     flex: 2;
+}
+
+.Title {
+    font-weight: 900;
+    font-size: 1.5vw;
+}
+
+.description .Title {
+    margin-bottom: 0.5vw;
+}
+
+.desc {
+    width: 95%;
+    font-weight: 700;
+    font-size: 0.85vw;
+}
+
+.price-counter {
+    margin-top: 0.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+    flex: 1;
+}
+
+.price {
+    font-weight: 800;
+    font-size: 1.2vw;
+    margin: 0;
+    padding: 0;
+}
+
+.counter {
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #c5a15c;
+    background-color: #edd9b8;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 2vw;
+    max-width: 6vw;
+    font-size: 0.5vw;
+}
+
+.counter-box button {
+    background: none;
+    height: 100%;
+    border: none;
+    color: #c5a15c;
+    font-weight: bold;
+    padding: 0 0.5vw;
+    font-size: 1vw;
+    cursor: pointer;
+    border-left: 1.5px solid #c5a15c;
+    border-right: 1.5px solid #c5a15c;
+}
+
+.counter-box button:first-child {
+    border-left: none;
+    margin-left: 0.1vw;
+}
+
+.counter-box button:last-child {
+    border-right: none;
+    margin-left: 1.5vw;
+}
+
+.counter-box span {
+    background-color: transparent;
+    width: 1vw;
+    min-width: 0vw;
+    max-width: 0vw;
+    text-align: center;
+    justify-content: center;
+    color: #c5a15c;
+    font-weight: bold;
+    font-size: 0.9vw;
+    /* margin-left: -0.5vw;
+    margin-right: 0.5vw; */
+    display: inline-block;
 }

@@ -4,12 +4,25 @@ import ProductList from "./ProductList";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("PIZZAS_SALGADAS");
+  const [searchText, setSearchText] = useState("");
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setSearchText(""); // <-- limpa a pesquisa
+  };
 
   return (
     <>
-      <FilterPizza onFilterChange={setSelectedCategory}
-        activeFilter={selectedCategory} />
-      <ProductList selectedCategory={selectedCategory} />
+      <FilterPizza 
+        onFilterChange={handleCategoryChange}
+        activeFilter={selectedCategory} 
+        searchText={searchText} 
+        onSearch={setSearchText}
+      />
+      <ProductList 
+        selectedCategory={selectedCategory}  
+        searchText={searchText}
+      />
     </>
   );
 };

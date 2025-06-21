@@ -100,6 +100,10 @@
     border-radius: 20px;
     background-color: #e6d6b8;
     border: solid 2.5px #c5a15c;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    text-indent: 15px;
 }
 
 .search input::placeholder {
@@ -107,6 +111,7 @@
     font-family: 'Glacial Indifference';
     font-size: 1.3vw;
     text-indent: 15px; /* separa texto da leteral */
+    opacity: 1;
 }
 
 .search input:focus {
@@ -125,14 +130,14 @@
 .search input:hover {
     border: solid 2.5px #6b2e2e;
     outline: none; /* impede o navegador de alterar visualmente o foco */
-    color: #6b2e2e;
-    font-family: 'Glacial Indifference';
-    font-size: 1.3vw;
-    text-indent: 15px;/* separa texto da leteral */
 }
 
 .search input:hover::placeholder {
-    color: #6b2e2e;
+    color: #6b2e2e !important;
+    font-family: 'Glacial Indifference';
+    font-size: 1.3vw;
+    text-indent: 15px;
+    opacity: 1;
 }
 
 .search button {

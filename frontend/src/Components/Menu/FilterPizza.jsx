@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import './Menu.css';
 
-const FilterPizza = ({ onFilterChange, activeFilter }) => {
+const FilterPizza = ({ onFilterChange, activeFilter, searchText, onSearch }) => {
   const bebidasTipo = ["BEBIDAS_ALCOOLICAS", "BEBIDAS_NAO_ALCOOLICAS"];
+
+  const handleSearch = () => {
+    onSearch(searchText);
+  };
 
   return (
     <>
@@ -60,8 +64,16 @@ const FilterPizza = ({ onFilterChange, activeFilter }) => {
       </div>
 
       <div className="search">
-        <input type="text" placeholder="Pesquisar" />
-        <button>
+        <input 
+          type="text" 
+          placeholder="Pesquisar" 
+          value={searchText}
+          onChange={(e) => onSearch(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSearch();
+          }}
+        />
+        <button onClick={handleSearch}>
           <ion-icon name="search-outline"></ion-icon>
         </button>
       </div>

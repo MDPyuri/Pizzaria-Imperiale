@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Menu.css";
 import foto from "../../assets/img/PizzasSalgadas.png";
 
-const ProductList = ({ selectedCategory }) => {
+const ProductList = ({ selectedCategory, searchText }) => {
   const [products, setProducts] = useState([]);
   const [cartCounts, setCartCounts] = useState({});
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ const ProductList = ({ selectedCategory }) => {
       setFade("fade-out");
       setPendingCategory(selectedCategory);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, searchText]);
 
   // executa a troca depois que o fade-out termina
   useEffect(() => {
@@ -34,11 +34,42 @@ const ProductList = ({ selectedCategory }) => {
     try {
       const response = await fetch("http://localhost:3000/produtos");
       if (!response.ok) throw new Error("Erro ao buscar produtos");
+
       const data = await response.json();
 
-      const filtered = Array.isArray(category)
+      // Filtro por categoria
+      let filtered = Array.isArray(category)
         ? data.filter((produto) => category.includes(produto.categoria))
         : data.filter((produto) => produto.categoria === category);
+
+      // Filtro por nome
+      if (searchText && searchText.trim() !== "") {
+        const texto = searchText
+          .trim()
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+          
+        const palavras = texto.split(" ");
+
+        filtered = filtered.filter((produto) => {
+          const nome = produto.nome
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          
+          console.log("Verificando:", nome, "vs", texto);
+          
+          const descricao = produto.descricao
+            ?.toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+          return palavras.every((palavra) =>
+            nome.includes(palavra) || descricao.includes(palavra)
+          );
+        });
+      }
 
       setProducts(filtered);
       setFade("fade-in"); // ativa fade-in depois de trocar

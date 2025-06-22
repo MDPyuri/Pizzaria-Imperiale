@@ -209,7 +209,7 @@
 }
 
 .product {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     transition: 5s;
     display: flex;
     min-height: 12vw;
@@ -224,6 +224,7 @@
 
 .img img {
     width: 100%;
+    margin-top: 0.5vw;
 }
 
 .description {
@@ -284,7 +285,7 @@
 }
 
 .counter-box button {
-    background: none;
+    background: transparent;
     height: 100%;
     border: none;
     color: #c5a15c;
@@ -294,6 +295,10 @@
     cursor: pointer;
     border-left: 1.5px solid #c5a15c;
     border-right: 1.5px solid #c5a15c;
+}
+
+.counter-box button:hover {
+    color: #6b2e2e;
 }
 
 .counter-box button:first-child {
@@ -319,4 +324,42 @@
     /* margin-left: -0.5vw;
     margin-right: 0.5vw; */
     display: inline-block;
+}
+
+.addCar {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 90%;
+    height: 2.5vw;
+    /* background-color: #de9219; */
+    margin-top: 0.8vw;
+    margin-left: -0.5vw;
+}
+
+.addCar button {
+    background-color: #edd9b8;
+    border: 2px solid #c5a15c;
+    border-radius: 20px;
+    color: #c5a15c;
+    width: 80%;
+    height: 100%;
+    /* padding: 0.6vw 0.1vw; */
+    font-size: 1vw;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.addCar button:focus {
+    border: solid 2px #6b2e2e;
+    transform: scale(0.20);
+    color:#6b2e2e;
+}
+
+.addCar button:hover {
+    border: solid 2px #6b2e2e;
+    transform: scale(0.97);
+    color: #6b2e2e;
 }

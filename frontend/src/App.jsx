@@ -10,10 +10,16 @@ import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
 import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
+import FilterPizza from './Components/Menu/FilterPizza.jsx';
+import ProductList from './Components/Menu/ProductList.jsx';
+import Menu from './Components/Menu/Menu.jsx';
 import About from './Components/About/About.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx'
 
 // Simulação de autenticação (substitua por lógica real)
+// const isAuthenticated = () => {
+//   return localStorage.getItem('auth') === 'true';
+// };
 const isAuthenticated = async () => {
     try {
         const response = await fetch('http://localhost:3000/usuarios/me', {
@@ -31,9 +37,39 @@ const isAuthenticated = async () => {
 };
 
 
-function MainApp() {
+// function MainApp() {
+//   return (
+//     <>
+//       <Header />
+//       <Home />
+//       <Footer />
+//     </>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/login" element={<UserLogin />} />
+//         <Route path="/cadastro" element={<CreateUser />} />
+//         <Route path="/reserva" element={isAuthenticated() ? <ReservationPage /> : <Navigate to="/login" />} />
+//         <Route path="/" element={isAuthenticated() ? <MainApp /> : <Navigate to="/login" />} />
+//         {/* fallback */}
+//         <Route path="*" element={<Navigate to="/" />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+
+
+function App() {
   return (
     <>
+      <Menu/>
+    </>
+  )
       <Header />
       <Home />
       <Reservation />

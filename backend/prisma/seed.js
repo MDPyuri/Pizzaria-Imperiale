@@ -11,7 +11,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Tartufo Nero e Burrata', 
-      preco: 198.00, 
+      preco: 191.00, 
       descricao: 'Massa de fermentação lenta, molho bechamel trufado, burrata fresca, cogumelos selvagens, azeite de trufas negras e lascas de parmesão 36 meses.', 
       imagem: null, 
       categoria: 'PIZZAS_SALGADAS',
@@ -30,7 +30,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Parma e Figos Caramelizados', 
-      preco: 180.00, 
+      preco: 170.00, 
       descricao: 'Mussarela de búfala, presunto de Parma envelhecido 24 meses, figos frescos caramelizados, redução de balsâmico e rúcula selvagem.', 
       categoria: 'PIZZAS_SALGADAS',
     },
@@ -39,7 +39,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Brie & Pera ao Mel de Trufas', 
-      preco: 160.00, 
+      preco: 161.00, 
       descricao: 'Queijo brie derretido, peras caramelizadas no vinho branco, mel trufado e amêndoas laminadas.', 
       categoria: 'PIZZAS_SALGADAS' ,
     },
@@ -57,7 +57,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Wagyu & Foie Gras', 
-      preco: 150.00, 
+      preco: 251.00, 
       descricao: 'Molho bechamel, finas fatias de wagyu A5, foie gras selado, cogumelos selvagens e redução de vinho do Porto.', 
       categoria: 'PIZZAS_SALGADAS' ,
     },
@@ -66,7 +66,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Carbonara di Roma', 
-      preco: 170.00, 
+      preco: 172.00, 
       descricao: 'Molho carbonara artesanal (ovos caipiras e pecorino romano), pancetta crocante, parmesão envelhecido e pimenta-do-reino moída na hora.', 
       categoria: 'PIZZAS_SALGADAS' ,
     },
@@ -75,7 +75,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Queijos Nobres & Mel de Acácia', 
-      preco: 180.00, 
+      preco: 181.00, 
       descricao: 'Queijo taleggio, grana padano 24 meses, gorgonzola dolce e queijo de cabra, finalizados com mel de acácia e nozes caramelizadas.', 
       categoria: 'PIZZAS_SALGADAS' ,
     },
@@ -111,7 +111,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Queijo Gruyère & Alho Negro', 
-      preco: 190.00, 
+      preco: 195.00, 
       descricao: 'Mistura de queijos gruyère, taleggio e gouda, com toque de alho negro fermentado e mel de castanheira.', 
       categoria: 'PIZZAS_SALGADAS',
     },
@@ -129,7 +129,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Rosbife de Wagyu & Mostarda Dijon', 
-      preco: 160.00, 
+      preco: 260.00, 
       descricao: 'Massa leve, molho de mostarda Dijon, rosbife de wagyu A5, queijo suíço emmental e rúcula baby.', 
       categoria: 'PIZZAS_SALGADAS',
     },
@@ -138,7 +138,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Salmão Defumado & Ovas de Caviar', 
-      preco: 300.00, 
+      preco: 400.00, 
       descricao: 'Base de mascarpone, fatias de salmão defumado artesanalmente, ovas de caviar e zest de limão siciliano.', 
       categoria: 'PIZZAS_SALGADAS',
     },
@@ -165,7 +165,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Stracciatella & Pesto de Pistache', 
-      preco: 179.00, 
+      preco: 180.00, 
       descricao: 'Mussarela de búfala, creme de stracciatella italiana, pesto de pistache siciliano e tomatinhos confitados no azeite extravirgem grego.', 
       categoria: 'PIZZAS_SALGADAS',
     },
@@ -202,7 +202,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Gianduia Royale', 
-      preco: 175.00, 
+      preco: 260.00, 
       descricao: 'Massa leve, creme de gianduia italiana, avelãs caramelizadas e raspas de chocolate belga 70%.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -229,7 +229,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Gold Caramel & Flor de Sal', 
-      preco: 190.00, 
+      preco: 200.00, 
       descricao: 'Chocolate dourado belga (Gold Chocolate Callebaut), caramelo artesanal e flor de sal da Normandia.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -274,7 +274,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Creme Brûlée & Frutas Vermelhas', 
-      preco: 180.00, 
+      preco: 185.00, 
       descricao: 'Massa delicada, creme brûlée artesanal maçaricado e frutas vermelhas frescas.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -283,7 +283,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Tiramisù Clássico & Café', 
-      preco: 200.00, 
+      preco: 220.00, 
       descricao: 'Base de creme mascarpone, cacau belga e toque de café espresso italiano, finalizado com raspas de chocolate amargo.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -292,7 +292,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Chocolate Belga 80% & Café Arábica', 
-      preco: 190.00, 
+      preco: 195.00, 
       descricao: 'Ganache de chocolate belga 80%, crumble crocante de cacau, toque de café arábica e finalização com nibs de cacau caramelizados.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -346,7 +346,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Chocolate Caramelo & Nozes Pecan', 
-      preco: 180.00, 
+      preco: 198.00, 
       descricao: 'Chocolate ao leite cremoso, caramelo artesanal salgado, nozes pecan crocantes e toque de flor de sal francesa.', 
       categoria: 'PIZZAS_DOCES',
     },
@@ -392,7 +392,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Queijo Azul Vegano & Peras Caramelizadas', 
-      preco: 190.00, 
+      preco: 200.00, 
       descricao: 'Massa crocante, queijo azul vegano artesanal, peras caramelizadas no vinho branco e nozes pecan tostadas.', 
       categoria: 'PIZZAS_VEGANAS',
     },
@@ -428,7 +428,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Tomate Confit & Pesto de Manjericão Roxo', 
-      preco: 160.00, 
+      preco: 200.00, 
       descricao: 'Massa de longa fermentação, tomates cereja confitados no azeite extravirgem, queijo de amêndoas e pesto de manjericão roxo.', 
       categoria: 'PIZZAS_VEGANAS',
     },
@@ -455,7 +455,7 @@ async function main() {
   await prisma.produto.create({
     data: { 
       nome: 'Abobrinha Grelhada & Pesto de Rúcula', 
-      preco: 169.00, 
+      preco: 170.00, 
       descricao: 'Massa de fermentação lenta, mussarela de amêndoas, abobrinha grelhada, pesto de rúcula e amêndoas laminadas crocantes.', 
       categoria: 'PIZZAS_VEGANAS',
     },

@@ -107,6 +107,10 @@ const Cart = () => {
         navigate('/endereco');
     };
 
+    const handleGoToMenu = () => {
+        navigate('/menu');
+    };
+
     const handleToggleSelect = (id) => {
         setSelectedItems(
             (prevSelected) =>
@@ -127,8 +131,12 @@ const Cart = () => {
                         <p>Pedido</p>
                         <div className="line-order"></div>
                     </div>
-                    <p className="empty-cart">Você ainda não adicionou nenhum item ao pedido</p>
-                    <button className='go-to-menu-btn'>Ir para o cardápio</button>
+                    <p className="empty-cart">
+                        Você ainda não adicionou nenhum item ao pedido
+                    </p>
+                    <button onClick={handleGoToMenu}  className="go-to-menu-btn">
+                        Ir para o cardápio
+                    </button>
                 </div>
             </section>
         );
@@ -192,9 +200,9 @@ const Cart = () => {
                                     <p className="product-description">
                                         {product.descricao}
                                     </p>
-                                    {/* <p className="product-price">
-                                        R$ {preco.toFixed(2)}
-                                    </p> */}
+                                    <p className="product-price">
+                                        R$ {preco.toFixed(2)} (Unidade)
+                                    </p>
 
                                     <div className="product-price">
                                         <p className="item-total">

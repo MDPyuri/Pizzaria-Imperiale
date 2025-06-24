@@ -14,6 +14,7 @@ const MenuPage = () => {
   return (
       <>
           <div className="menuAll">
+
               <FilterPizza
                   onFilterChange={handleCategoryChange}
                   activeFilter={selectedCategory}

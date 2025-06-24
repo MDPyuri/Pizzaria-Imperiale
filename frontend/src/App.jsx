@@ -52,7 +52,6 @@ import Menu from './Components/Menu/Menu.jsx';
 function App() {
     return (
         <>
-        {/* <Menu/> */}
             <Router>
                 <Header />
                 <Routes>

@@ -12,6 +12,28 @@ const ProductList = ({ selectedCategory, searchText }) => {
   const [fade, setFade] = useState("fade-in");
   const [pendingCategory, setPendingCategory] = useState(null);
 
+  // Enviar para o carrinho
+  const addToCart = (product) => {
+      // Recupera o carrinho atual
+      const cart = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const quantidade = cartCounts[product.idProduto] || 1;
+
+      // Verifica se o produto já está no carrinho
+      const existing = cart.find((item) => item.id === product.idProduto);
+      if (existing) {
+          // Atualiza a quantidade
+          existing.quantidade += quantidade;
+      } else {
+          // Adiciona novo produto
+          cart.push({ id: product.idProduto, quantidade });
+      }
+
+      // Salva no localStorage
+      localStorage.setItem('carrinho', JSON.stringify(cart));
+      // (Opcional) Limpa o contador desse produto
+      setCartCounts((prev) => ({ ...prev, [product.idProduto]: 0 }));
+  };
+
   useEffect(() => {
     // se a categoria mudou, começa fade-out e aguarda troca
     if (selectedCategory !== null) {
@@ -103,35 +125,57 @@ const ProductList = ({ selectedCategory, searchText }) => {
   if (error) return null;
 
   return (
-    <div className={`containerCentral ${fade}`}>
-      {!loading &&
-        products.map((product) => (
-          <div key={product.idProduto} className="product">
-            <div className="img">
-              <img src={getProductImage(product)} alt={product.nome} />
-            </div>
-            <div className="description">
-              <p className="description Title">{product.nome}</p>
-              <p className="description desc">{product.descricao}</p>
-              <div className="price-counter">
-                <p className="price">
-                  Preço: R$ {parseFloat(product.preco).toFixed(2)}
-                </p>
-                <div className="counter">
-                  <div className="counter-box">
-                    <button onClick={() => handleDecrement(product.idProduto)}>-</button>
-                    <span>{cartCounts[product.idProduto] || 0}</span>
-                    <button onClick={() => handleIncrement(product.idProduto)}>+</button>
+      <div className={`containerCentral ${fade}`}>
+          {!loading &&
+              products.map((product) => (
+                  <div key={product.idProduto} className="product">
+                      <div className="img">
+                          <img
+                              src={getProductImage(product)}
+                              alt={product.nome}
+                          />
+                      </div>
+                      <div className="description">
+                          <p className="description Title">{product.nome}</p>
+                          <p className="description desc">
+                              {product.descricao}
+                          </p>
+                          <div className="price-counter">
+                              <p className="price">
+                                  Preço: R${' '}
+                                  {parseFloat(product.preco).toFixed(2)}
+                              </p>
+                              <div className="counter">
+                                  <div className="counter-box">
+                                      <button
+                                          onClick={() =>
+                                              handleDecrement(product.idProduto)
+                                          }
+                                      >
+                                          -
+                                      </button>
+                                      <span>
+                                          {cartCounts[product.idProduto] || 0}
+                                      </span>
+                                      <button
+                                          onClick={() =>
+                                              handleIncrement(product.idProduto)
+                                          }
+                                      >
+                                          +
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="addCar">
+                              <button onClick={() => addToCart(product)}>
+                                  Adicionar ao carrinho
+                              </button>
+                          </div>
+                      </div>
                   </div>
-                </div>
-              </div>
-              <div className="addCar">
-                <button>Adicionar ao carrinho</button>
-              </div>
-            </div>
-          </div>
-        ))}
-    </div>
+              ))}
+      </div>
   );
 };
 

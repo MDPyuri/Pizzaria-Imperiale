@@ -81,16 +81,26 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    width: 100%;
 }
 
 .product-imgCart {
-    /* flex: 1; */
-    background-color: transparent;
+    flex: 0 0 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 100%;
+    margin-right: 1vw;
 }
 
 .product-imgCart img {
-    width: 100%;
-    margin-top: 0.5vw;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .product-name {
@@ -102,6 +112,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3vw;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 
@@ -123,39 +134,7 @@
     cursor: pointer;
 }
 
-.quantity-control span,
-.quantity-control button {
-    margin: 0;
-    color: #c5a15c;
-    border: 1px solid #c5a15c;
-    background-color: #e6d6b8;
-    margin: 0;
-    padding: 0.2vw;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttons-cart p,
-.buttons-cart button {
-    background-color: #e6dbc7;
-    color: #6b2e2e;
-    font-family: 'Glacial Indifference';
-    padding: 1vw;
-    font-size: 1.2rem;
-    border-radius: 20px;
-}
-
-.buttons-cart p {
-    margin-top: 4vw;
-}
-
-.buttons-cart button {
-    border: none;
-    font-weight: bold;
-}
-
-
-/*  */
+/* controle de quantidade */
 .counterCart {
     margin-left: 10%;
     display: flex;
@@ -212,15 +191,54 @@
     color: #c5a15c;
     font-weight: bold;
     font-size: 0.9vw;
-    /* margin-left: -0.5vw;
-    margin-right: 0.5vw; */
     display: inline-block;
 }
 
 .product-price {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end; 
+    font-weight: bold; 
+    margin-top: 0.65vw;
+}
+
+.item-total {
+    font-size: 1.25vw;  
+    margin-right: -0.8vw;
+}
+
+/* finalização do pedido */
+.buttons-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1vw;
+}
+.buttons-cart p,
+.buttons-cart button {
+    background-color: #e6dbc7;
+    color: #6b2e2e;
+    font-family: 'Glacial Indifference';
+    padding: 1vw;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.buttons-cart p {
+    margin-top: 4vw;
+}
+
+.buttons-cart button {
+    border: 1px solid #e6dbc7;
     font-weight: bold;
-    margin-top: 1vw;
+    cursor: pointer;
+}
+
+.buttons-cart button:hover {
+    background-color: #6b2e2e;
+    border: 1px solid #c5a15c;
+    color: #e6dbc7;
+    transition: 0.2s ease-in-out;
 }

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header.jsx';
@@ -8,13 +8,6 @@ import Reservation from './Components/Reservation/Reservation.jsx';
 import Cart from './Components/Order/Cart.jsx';
 import Address from './Components/Order/Address.jsx';
 import Payment from './Components/Order/Payment.jsx';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react'
-import './App.css'
-import Home from './Components/Home/Home'
-import Header from './Components/Header/Header.jsx'
-import Footer from './Components/Footer/Footer.jsx'
-import ReservationPage from './Components/ReservationPage/ReservationPage.jsx'
 import UserLogin from './Components/CRUD/Login.jsx'
 import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
@@ -59,6 +52,7 @@ import Menu from './Components/Menu/Menu.jsx';
 function App() {
     return (
         <>
+        {/* <Menu/> */}
             <Router>
                 <Header />
                 <Routes>
@@ -69,12 +63,6 @@ function App() {
             </Router>
         </>
     );
-  return (
-    <>
-      <Menu/>
-    </>
-  )
 }
 
-export default App;
 export default App;

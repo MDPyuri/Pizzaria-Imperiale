@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { IoMdCheckboxOutline } from 'react-icons/io';
-import logo from '../Header/img/logo.png'; 
+// import logo from '../Header/img/logo.png'; 
+const images = import.meta.glob('../../assets/img/*.png', { eager: true });
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -13,6 +14,13 @@ const Cart = () => {
     const [totalValue, setTotalValue] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedItems, setSelectedItems] = useState([]);
+
+    const getProductImage = (product) => {
+        const match = Object.entries(images).find(([path]) =>
+            path.endsWith(`/${product.idProduto}.png`)
+        );
+        return match ? match[1].default : '/src/assets/img/PizzasSalgadas.png'; // fallback
+    };
 
     useEffect(() => {
         // 1. Recupera itens do carrinho do localStorage
@@ -170,14 +178,12 @@ const Cart = () => {
                                     <ion-icon name="trash-outline"></ion-icon>
                                 </button>
 
-                                <img
-                                    src={logo}
-                                    // src={product.imagem || 'placeholder-image.jpg'}
-                                    // alt={product.nome}
-                                    // onError={(e) => {
-                                    //     e.target.src = 'placeholder-image.jpg';
-                                    // }}
-                                />
+                                <div className="product-imgCart">
+                                    <img
+                                        src={getProductImage(product)}
+                                        alt={product.nome}
+                                    />
+                                </div>
 
                                 <div className="product-info">
                                     <p className="product-name">
@@ -190,34 +196,41 @@ const Cart = () => {
                                         R$ {preco.toFixed(2)}
                                     </p> */}
 
-                                    <div className="quantity-control">
-                                        <button
-                                            onClick={() =>
-                                                handleUpdateQuantity(
-                                                    cartItem.id,
-                                                    -1
-                                                )
-                                            }
-                                            disabled={cartItem.quantidade <= 1}
-                                        >
-                                            -
-                                        </button>
-                                        <span>{cartItem.quantidade}</span>
-                                        <button
-                                            onClick={() =>
-                                                handleUpdateQuantity(
-                                                    cartItem.id,
-                                                    1
-                                                )
-                                            }
-                                        >
-                                            +
-                                        </button>
+                                    <div className="product-price">
+                                        <p className="item-total">
+                                            R$ {subtotal.toFixed(2)}
+                                        </p>
+                                        <div className="counterCart">
+                                            <div className="counter-boxCart">
+                                                <button
+                                                    onClick={() =>
+                                                        handleUpdateQuantity(
+                                                            cartItem.id,
+                                                            -1
+                                                        )
+                                                    }
+                                                    disabled={
+                                                        cartItem.quantidade <= 1
+                                                    }
+                                                >
+                                                    -
+                                                </button>
+                                                <span>
+                                                    {cartItem.quantidade}
+                                                </span>
+                                                <button
+                                                    onClick={() =>
+                                                        handleUpdateQuantity(
+                                                            cartItem.id,
+                                                            1
+                                                        )
+                                                    }
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <p className="item-total">
-                                        R$ {subtotal.toFixed(2)}
-                                    </p>
                                 </div>
                             </div>
                         );

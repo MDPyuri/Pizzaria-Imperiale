@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
+const { verificaTokenJWT } = require("../middlewares/token");
 
 const prisma = new PrismaClient();
 const reservaRoutes = express.Router();
@@ -18,13 +19,29 @@ reservaRoutes.get("/", async (req, res) => {
 });
 
 // Rota para criar reserva
-reservaRoutes.post("/criar", async (req, res) => {
+reservaRoutes.post("/criar", verificaTokenJWT, async (req, res) => {
     try {
-        const { data, preferencia, telefone, qtdpessoas, Usuario_idUsuario } = req.body;
-        const reserva = await prisma.reserva.create({
-            data: { data, preferencia, telefone, qtdpessoas, Usuario_idUsuario }
+        // req.user foi preenchido pelo middleware verificaTokenJWT
+        const idUsuario = req.user.id;
+        // Busca o usuário para preencher o nome completo automaticamente
+        const usuario = await prisma.usuario.findUnique({
+            where: { idUsuario }
         });
-        res.json(reserva);
+        if (!usuario) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+        }
+        const { data, preferencia, telefone, qtdpessoas } = req.body;
+        const reserva = await prisma.reserva.create({
+            data: {
+                data,
+                preferencia,
+                telefone,
+                qtdpessoas,
+                Usuario_idUsuario: idUsuario
+            }
+        });
+        // Retorna a reserva criada e o nome completo do usuário
+        res.json({ reserva, nomeCompleto: usuario.nome });
     } catch (error) {
         res.status(500).json({ error: "Erro ao criar reserva", details: error.message });
     }

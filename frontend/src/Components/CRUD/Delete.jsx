@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Crud.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const DeleteUser = () => {
     const [cpf, setCpf] = useState("");
@@ -9,6 +10,8 @@ const DeleteUser = () => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,6 +45,11 @@ const DeleteUser = () => {
         }
     };
 
+    if (message) {
+        alert(message);
+        navigate('/');
+    }
+
     return (
         <>
             <Header />
@@ -58,7 +66,6 @@ const DeleteUser = () => {
                         <p>Confirme seus dados para seguir com a exclusão.</p>
                     </div>
 
-                    {message && <div className="success-message">{message}</div>}
                     {error && <div className="error-message">{error}</div>}
 
                     <form onSubmit={handleSubmit}>

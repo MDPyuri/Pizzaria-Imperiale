@@ -53,26 +53,23 @@ const Header = () => {
                 <div id="profile">
                     <p
                         id="openPopup"
-                        className="defaultPopup"
+                        className={`defaultPopup${
+                            showPopup ? ' openPopup' : ''
+                        }`}
                         onClick={togglePopup}
                     >
                         ^
                     </p>
                     <ion-icon name="person-circle-outline"></ion-icon>
-                    {user && (
-                        <span style={{ marginLeft: 8, fontWeight: 500 }}>
-                            {user.nome}
-                        </span>
-                    )}
                 </div>
             </nav>
 
-            {showPopup && <PopupProfile />}
+            {showPopup && <PopupProfile user={user} />}
         </header>
     );
 };
 
-const PopupProfile = () => {
+const PopupProfile = ({ user }) => {
     const navigate = useNavigate();
     const { isAuthenticated, logout } = useAuth();
 
@@ -90,6 +87,13 @@ const PopupProfile = () => {
             <div id="popupTriangle"></div>
             <div id="popupText">
                 <ul>
+                    <li id="popupPersonName">
+                        {isAuthenticated() && user ? (
+                            <p>Olá, {user.nome}!</p>
+                        ) : (
+                            <p>Olá, visitante!</p>
+                        )}
+                    </li>
                     <li>
                         {isAuthenticated() ? (
                             <a

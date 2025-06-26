@@ -132,3 +132,7 @@
     rotate: 180deg;
     cursor: pointer;
 }
+
+#popupPersonName {
+    font-weight: bold;
+}

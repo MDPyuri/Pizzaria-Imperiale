@@ -6,9 +6,9 @@ import Header from './Components/Header/Header.jsx'
 import Footer from './Components/Footer/Footer.jsx'
 import ReservationPage from './Components/ReservationPage/ReservationPage.jsx'
 import Reservation from './Components/Reservation/Reservation.jsx';
-import Cart from './Components/Order/Cart.jsx';
-import Address from './Components/Order/Address.jsx';
-import Payment from './Components/Order/Payment.jsx';
+// import Cart from './Components/Order/Cart.jsx';
+// import Address from './Components/Order/Address.jsx';
+// import Payment from './Components/Order/Payment.jsx';
 import UserLogin from './Components/CRUD/Login.jsx'
 import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
@@ -16,6 +16,7 @@ import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
 import Menu from './Components/Menu/Menu.jsx';
 import About from './Components/About/About.jsx';
+import CallToMenu from './Components/CallToMenu/CallToMenu.jsx';
 
 // Simulação de autenticação (substitua por lógica real)
 // const isAuthenticated = () => {
@@ -43,6 +44,7 @@ function MainApp() {
     <>
       <Header />
       <Home />
+      <CallToMenu />
       <Reservation />
       <About />
       <Footer />
@@ -50,61 +52,12 @@ function MainApp() {
   );
 }
 
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/login" element={<UserLogin />} />
-//         <Route path="/cadastro" element={<CreateUser />} />
-//         <Route path="/reserva" element={isAuthenticated() ? <ReservationPage /> : <Navigate to="/login" />} />
-//         <Route path="/" element={isAuthenticated() ? <MainApp /> : <Navigate to="/login" />} />
-//         {/* fallback */}
-//         <Route path="*" element={<Navigate to="/" />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-
-
-// function App() {
-//   return (
-//     <>
-//       <Menu/>
-//     </>
-//   )
-//       <Header />
-//       <Home />
-//       <Reservation />
-//       <About />
-//       <Footer />
-//     </>
-//   );
-// }
-
-//   return (
-//     <>
-//       <Menu/>
-//     </>
-//   )
-//       <Header />
-//       <Home />
-//       <Reservation />
-//       <About />
-//       <Footer />
-//     </>
-//   );
-// }
 
 function App() {
   return (
         
         <Router>
             <Header />
-            {/* <Home />
-            <Reservation />
-            <About />
-            <Footer />  */}
             <Routes>
                 <Route path="/login" element={<UserLogin />} />
                 <Route path="/cadastro" element={<CreateUser />} />

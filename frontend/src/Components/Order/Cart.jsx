@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { IoMdCheckboxOutline } from 'react-icons/io';
-// import logo from '../Header/img/logo.png'; 
+// import logo from '../Header/img/logo.png';
 const images = import.meta.glob('../../assets/img/*.png', { eager: true });
 
 const Cart = () => {
@@ -99,11 +99,15 @@ const Cart = () => {
     };
 
     const handleConfirmOrder = () => {
+        // Verifica se há itens selecionados para prosseguir
+        if (selectedItems.length === 0) {
+            alert('Selecione pelo menos um item para continuar com o pedido.');
+            return;
+        }
+
+        // Limpa dados de endereço anteriores para garantir que o usuário preencherá novamente
+        localStorage.removeItem('endereco');
         alert(`Pedido confirmado! Total: R$ ${totalValue.toFixed(2)}`);
-        // localStorage.removeItem('carrinho');
-        // setCartItems([]);
-        // setProductsData([]);
-        // setSelectedItems([]);
         navigate('/endereco');
     };
 
@@ -119,7 +123,6 @@ const Cart = () => {
                     : [...prevSelected, id] // se não está, adiciona na seleção
         );
     };
-    
 
     if (isLoading) return <div className="CartSection">Carregando...</div>;
     if (cartItems.length === 0)
@@ -134,7 +137,7 @@ const Cart = () => {
                     <p className="empty-cart">
                         Você ainda não adicionou nenhum item ao pedido
                     </p>
-                    <button onClick={handleGoToMenu}  className="go-to-menu-btn">
+                    <button onClick={handleGoToMenu} className="go-to-menu-btn">
                         Ir para o cardápio
                     </button>
                 </div>
@@ -246,7 +249,9 @@ const Cart = () => {
                 </div>
 
                 <div className="buttons-cart">
-                    <p><strong>Valor Total: </strong>R$ {totalValue.toFixed(2)}</p>
+                    <p>
+                        <strong>Valor Total: </strong>R$ {totalValue.toFixed(2)}
+                    </p>
                     <button
                         className="confirm-btn"
                         onClick={handleConfirmOrder}
@@ -261,9 +266,6 @@ const Cart = () => {
 };
 
 export default Cart;
-
-
-
 
 // localStorage.setItem(
 //     'carrinho',

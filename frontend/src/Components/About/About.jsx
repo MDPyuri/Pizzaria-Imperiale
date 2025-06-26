@@ -16,7 +16,7 @@ const About = () => {
                 </div>
                 <div className="block-about">
                     <div className="person-block">
-                        <div className="photo">
+                        <div className="photo-about">
                             <img src={yuri} alt="Foto do Desenvolvedor" />
                         </div>
                         <div className="name-person">
@@ -35,7 +35,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="person-block">
-                        <div className="photo">
+                        <div className="photo-about">
                             <img src={milly} alt="Foto do Desenvolvedor" />
                         </div>
                         <div className="name-person">
@@ -54,7 +54,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="person-block">
-                        <div className="photo">
+                        <div className="photo-about">
                             <img src={belly} alt="Foto do Desenvolvedor" />
                         </div>
                         <div className="name-person">
@@ -73,7 +73,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="person-block">
-                        <div className="photo">
+                        <div className="photo-about">
                             <img src={gabi} alt="Foto do Desenvolvedor" />
                         </div>
                         <div className="name-person">

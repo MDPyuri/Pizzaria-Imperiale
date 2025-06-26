@@ -152,14 +152,14 @@ const ReservationPage = () => {
 
 							<button type="submit">RESERVAR</button>
 							{successMessage && (
-								<p style={{ color: "green" }}>{successMessage}</p>
+								<p style={{ color: "#2E8B57" }}>{successMessage}</p>
 							)}
-							{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+							{errorMessage && <p style={{ color: "	#CD0000" }}>{errorMessage}</p>}
 						</div>
 					</form>
 				</div>
 			</section>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 };

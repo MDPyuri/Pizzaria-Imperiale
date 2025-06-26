@@ -50,14 +50,14 @@
     padding-top: 2vw;
 }
 
-.photo {
+.photo-about {
     padding-bottom: 2vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.photo img{
+.photo-about img{
     width: 150px;
     height: 150px;
     border-radius: 50%;

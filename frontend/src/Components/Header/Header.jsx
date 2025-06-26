@@ -2,22 +2,16 @@ import { React, useState, useEffect } from 'react';
 import './Header.css';
 import logo from './img/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
-    const [userName, setUserName] = useState("");
+    const { user, isAuthenticated, logout } = useAuth();
 
-    useEffect(() => {
-        fetch("http://localhost:3000/usuarios/me", { credentials: "include" })
-            .then((res) => {
-                if (!res.ok) throw new Error("Não autenticado");
-                return res.json();
-            })
-            .then((data) => {
-                if (data.nome) setUserName(data.nome);
-            })
-            .catch(() => setUserName(""));
-    }, []);
+    const handleLogout = async () => {
+        await logout();
+        setShowPopup(false);
+    };
 
     const togglePopup = () => {
         setShowPopup(!showPopup);
@@ -32,7 +26,7 @@ const Header = () => {
         <header id="Header">
             <div id="LogoName">
                 <Link to="/">
-                    <img src={logo} alt="Logo" style={{cursor: 'pointer'}}/>
+                    <img src={logo} alt="Logo" style={{ cursor: 'pointer' }} />
                 </Link>
                 <p>Vila Imperiale</p>
             </div>
@@ -43,16 +37,16 @@ const Header = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="#">Cardápio</a>
+                        <a href="/menu">Cardápio</a>
                     </li>
                     <li>
-                        <a href="#">Pedido</a>
+                        <a href="/carrinho">Pedido</a>
                     </li>
                     <li>
                         <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
-                        <a href="#Footer">Contato</a>
+                        <Link to="/#Footer">Contato</Link>
                     </li>
                 </ul>
 
@@ -65,8 +59,10 @@ const Header = () => {
                         ^
                     </p>
                     <ion-icon name="person-circle-outline"></ion-icon>
-                    {userName && (
-                        <span style={{ marginLeft: 8, fontWeight: 500 }}>{userName}</span>
+                    {user && (
+                        <span style={{ marginLeft: 8, fontWeight: 500 }}>
+                            {user.nome}
+                        </span>
                     )}
                 </div>
             </nav>
@@ -78,27 +74,54 @@ const Header = () => {
 
 const PopupProfile = () => {
     const navigate = useNavigate();
-    // Função para logout: faz requisição para backend limpar cookie e redireciona para login
+    const { isAuthenticated, logout } = useAuth();
+
     const handleLogout = async () => {
-        await fetch('http://localhost:3000/usuarios/logout', {
-            method: 'POST',
-            credentials: 'include',
-        });
+        await logout();
+        navigate('/');
+    };
+
+    const handleLogin = () => {
         navigate('/login');
     };
+
     return (
         <div id="popupProfile">
             <div id="popupTriangle"></div>
             <div id="popupText">
                 <ul>
                     <li>
-                        <a onClick={handleLogout} style={{cursor: 'pointer'}}>Login/Logout</a>
+                        {isAuthenticated() ? (
+                            <a
+                                onClick={handleLogout}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                Logout
+                            </a>
+                        ) : (
+                            <a
+                                onClick={handleLogin}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                Login
+                            </a>
+                        )}
                     </li>
                     <li>
-                        <a>Pedido</a>
+                        <a
+                            onClick={() => navigate('/carrinho')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Pedido
+                        </a>
                     </li>
                     <li>
-                        <a onClick={() => navigate('/perfil')} style={{cursor: 'pointer'}}>Perfil</a>
+                        <a
+                            onClick={() => navigate('/perfil')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Perfil
+                        </a>
                     </li>
                 </ul>
             </div>

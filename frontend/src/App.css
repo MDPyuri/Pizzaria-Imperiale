@@ -8,3 +8,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
+p::selection,
+a::selection,
+button::selection,
+img::selection,
+Link::selection,
+ion-icon::selection,
+span::selection,
+div::selection {
+    background-color: #c5a15c;
+    color: #f5f3e7;
+}

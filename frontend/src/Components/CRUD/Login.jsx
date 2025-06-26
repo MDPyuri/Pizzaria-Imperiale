@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Crud.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import HeaderSimple from '../Header/HeaderSimple';
 import FooterSimple from '../Footer/FooterSimple';
 
@@ -9,24 +10,36 @@ const UserLogin = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const { login, isAuthenticated } = useAuth();
+
+    // Se já estiver logado, redireciona
+    useEffect(() => {
+        if (isAuthenticated()) {
+            const from = location.state?.from?.pathname || '/';
+            navigate(from, { replace: true });
+        }
+    }, [isAuthenticated, navigate, location]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
-        try {
-            const response = await fetch('http://localhost:3000/usuarios/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include', // Permite receber o cookie JWT
-                body: JSON.stringify({ email, senha: password })
-            });
-            if (!response.ok) {
-                const data = await response.json();
-                throw new Error(data.error || 'Erro ao fazer login');
+
+        const result = await login(email, password);
+
+        if (result.success) {
+            const from = location.state?.from?.pathname || '/';
+            navigate(from, { replace: true });
+        } else {
+            if (result.error === 'Failed to fetch') {
+                setError(
+                    'Erro de conexão: Verifique se o servidor está rodando na porta 3000'
+                );
+            } else if (result.error && result.error.includes('fetch')) {
+                setError('Erro de rede: Não foi possível conectar ao servidor');
+            } else {
+                setError(result.error);
             }
-            navigate('/'); // Redireciona para a página principal
-        } catch (err) {
-            setError(err.message);
         }
     };
 
@@ -43,8 +56,8 @@ const UserLogin = () => {
 
                     <div className="messageCrud">
                         <p>
-                            O primeiro passo para uma experiência única: faça seu
-                            login!
+                            O primeiro passo para uma experiência única: faça
+                            seu login!
                         </p>
                     </div>
                     {error && <div className="error-message">{error}</div>}
@@ -65,11 +78,18 @@ const UserLogin = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <button className="btn-crud" type="submit">Entrar</button>
+                        <button className="btn-crud" type="submit">
+                            Entrar
+                        </button>
                     </form>
 
                     <div className="messageToRegister">
-                        <p style={{ cursor: 'pointer' }} onClick={() => navigate('/cadastro')}>Ainda não tem conta? Faça seu cadastro</p>
+                        <p
+                            style={{ cursor: 'pointer' }}
+                            onClick={() => navigate('/cadastro')}
+                        >
+                            Ainda não tem conta? Faça seu cadastro
+                        </p>
                     </div>
                 </div>
             </section>

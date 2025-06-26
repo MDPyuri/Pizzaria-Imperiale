@@ -6,17 +6,22 @@ import { Link, useNavigate } from 'react-router-dom';
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [userName, setUserName] = useState("");
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:3000/usuarios/me", { credentials: "include" })
+        fetch('http://localhost:3000/usuarios/me', { credentials: 'include' })
             .then((res) => {
-                if (!res.ok) throw new Error("Não autenticado");
+                if (!res.ok) throw new Error('Não autenticado');
                 return res.json();
             })
             .then((data) => {
                 if (data.nome) setUserName(data.nome);
+                setIsAuthenticated(true);
             })
-            .catch(() => setUserName(""));
+            .catch(() => {
+                setUserName('');
+                setIsAuthenticated(false);
+            });
     }, []);
 
     const togglePopup = () => {
@@ -73,12 +78,12 @@ const Header = () => {
                 </div>
             </nav>
 
-            {showPopup && <PopupProfile />}
+            {showPopup && <PopupProfile isAuthenticated={isAuthenticated} />}
         </header>
     );
 };
 
-const PopupProfile = () => {
+const PopupProfile = ({ isAuthenticated }) => {
     const navigate = useNavigate();
     // Função para logout: faz requisição para backend limpar cookie e redireciona para login
     const handleLogout = async () => {
@@ -88,19 +93,48 @@ const PopupProfile = () => {
         });
         navigate('/login');
     };
+
+    const handleLogin = () => {
+        navigate('/login');
+    };
+
     return (
         <div id="popupProfile">
             <div id="popupTriangle"></div>
             <div id="popupText">
                 <ul>
                     <li>
-                        <a onClick={handleLogout} style={{cursor: 'pointer'}}>Login/Logout</a>
+                        {isAuthenticated ? (
+                            <a
+                                onClick={handleLogout}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                Logout
+                            </a>
+                        ) : (
+                            <a
+                                onClick={handleLogin}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                Login
+                            </a>
+                        )}
                     </li>
                     <li>
-                        <a onClick={() => navigate('/carrinho')} style={{cursor: 'pointer'}}>Pedido</a>
+                        <a
+                            onClick={() => navigate('/carrinho')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Pedido
+                        </a>
                     </li>
                     <li>
-                        <a onClick={() => navigate('/perfil')} style={{cursor: 'pointer'}}>Perfil</a>
+                        <a
+                            onClick={() => navigate('/perfil')}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Perfil
+                        </a>
                     </li>
                 </ul>
             </div>

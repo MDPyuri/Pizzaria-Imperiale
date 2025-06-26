@@ -1,8 +1,21 @@
 import React from 'react';
 import './Reservation.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Reservation = () => {
+    const navigate = useNavigate();
+    const { isAuthenticated } = useAuth();
+
+    const handleReservationClick = (e) => {
+        if (!isAuthenticated()) {
+            e.preventDefault();
+            navigate('/login', {
+                state: { from: { pathname: '/reserva' } },
+                replace: false,
+            });
+        }
+    };
     return (
         <section className="space-reservation">
             <div className="reservation-block">
@@ -35,7 +48,7 @@ const Reservation = () => {
                         </p>
                     </div>
                     <div className="btn-content">
-                        <Link to="/reserva">
+                        <Link to="/reserva" onClick={handleReservationClick}>
                             <button className="btn-reservation">
                                 RESERVAR
                             </button>
@@ -51,6 +64,6 @@ const Reservation = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Reservation;

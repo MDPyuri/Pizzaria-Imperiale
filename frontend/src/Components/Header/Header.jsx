@@ -2,27 +2,16 @@ import { React, useState, useEffect } from 'react';
 import './Header.css';
 import logo from './img/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
-    const [userName, setUserName] = useState("");
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const { user, isAuthenticated, logout } = useAuth();
 
-    useEffect(() => {
-        fetch('http://localhost:3000/usuarios/me', { credentials: 'include' })
-            .then((res) => {
-                if (!res.ok) throw new Error('Não autenticado');
-                return res.json();
-            })
-            .then((data) => {
-                if (data.nome) setUserName(data.nome);
-                setIsAuthenticated(true);
-            })
-            .catch(() => {
-                setUserName('');
-                setIsAuthenticated(false);
-            });
-    }, []);
+    const handleLogout = async () => {
+        await logout();
+        setShowPopup(false);
+    };
 
     const togglePopup = () => {
         setShowPopup(!showPopup);
@@ -70,28 +59,26 @@ const Header = () => {
                         ^
                     </p>
                     <ion-icon name="person-circle-outline"></ion-icon>
-                    {userName && (
+                    {user && (
                         <span style={{ marginLeft: 8, fontWeight: 500 }}>
-                            {userName}
+                            {user.nome}
                         </span>
                     )}
                 </div>
             </nav>
 
-            {showPopup && <PopupProfile isAuthenticated={isAuthenticated} />}
+            {showPopup && <PopupProfile />}
         </header>
     );
 };
 
-const PopupProfile = ({ isAuthenticated }) => {
+const PopupProfile = () => {
     const navigate = useNavigate();
-    // Função para logout: faz requisição para backend limpar cookie e redireciona para login
+    const { isAuthenticated, logout } = useAuth();
+
     const handleLogout = async () => {
-        await fetch('http://localhost:3000/usuarios/logout', {
-            method: 'POST',
-            credentials: 'include',
-        });
-        navigate('/login');
+        await logout();
+        navigate('/');
     };
 
     const handleLogin = () => {
@@ -104,7 +91,7 @@ const PopupProfile = ({ isAuthenticated }) => {
             <div id="popupText">
                 <ul>
                     <li>
-                        {isAuthenticated ? (
+                        {isAuthenticated() ? (
                             <a
                                 onClick={handleLogout}
                                 style={{ cursor: 'pointer' }}

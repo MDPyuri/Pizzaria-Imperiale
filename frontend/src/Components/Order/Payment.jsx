@@ -3,6 +3,7 @@ import './OrderFinish.css';
 import { useNavigate } from 'react-router-dom';
 import QrCodePix from './img/QrCodePix.png';
 
+
 const Payment = () => {
     const navigate = useNavigate();
     const cancelOrder = () => {
@@ -19,6 +20,14 @@ const Payment = () => {
         }
 
         e.target.value = value;
+    };
+
+    const handleConfirmPayment = () => {
+        alert('Pagamento confirmado!'); // ou calcule o valor total aqui se quiser mostrar
+        localStorage.removeItem('carrinho');
+        setTimeout(() => {
+            navigate('/');
+        }, 100); // pequeno delay para garantir o alert
     };
 
     return (
@@ -111,10 +120,13 @@ const Payment = () => {
                 )}
 
                 <div className="finish-order-btns">
-                    <button onClick={cancelOrder}  className="finish-order-btn">
+                    <button onClick={cancelOrder} className="finish-order-btn">
                         Cancelar Pedido
                     </button>
-                    <button className="finish-order-btn">
+                    <button
+                        onClick={handleConfirmPayment}
+                        className="finish-order-btn"
+                    >
                         Finalizar pedido
                     </button>
                 </div>

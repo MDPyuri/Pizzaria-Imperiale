@@ -100,10 +100,10 @@ const Cart = () => {
 
     const handleConfirmOrder = () => {
         alert(`Pedido confirmado! Total: R$ ${totalValue.toFixed(2)}`);
-        localStorage.removeItem('carrinho');
-        setCartItems([]);
-        setProductsData([]);
-        setSelectedItems([]);
+        // localStorage.removeItem('carrinho');
+        // setCartItems([]);
+        // setProductsData([]);
+        // setSelectedItems([]);
         navigate('/endereco');
     };
 
@@ -200,7 +200,7 @@ const Cart = () => {
                                     <p className="product-description">
                                         {product.descricao}
                                     </p>
-                                    <p className="product-price">
+                                    <p className="product-priceFixed">
                                         R$ {preco.toFixed(2)} (Unidade)
                                     </p>
 

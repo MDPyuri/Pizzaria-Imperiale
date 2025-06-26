@@ -54,6 +54,7 @@ function App() {
         <>
             <Router>
                 <Header />
+                {/* <Menu/> */}
                 <Routes>
                     <Route path="/carrinho" element={<Cart />} />
                     <Route path="/endereco" element={<Address />} />

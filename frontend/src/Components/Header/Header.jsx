@@ -1,9 +1,23 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import './Header.css';
 import logo from './img/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
+    const [userName, setUserName] = useState("");
+
+    useEffect(() => {
+        fetch("http://localhost:3000/usuarios/me", { credentials: "include" })
+            .then((res) => {
+                if (!res.ok) throw new Error("Não autenticado");
+                return res.json();
+            })
+            .then((data) => {
+                if (data.nome) setUserName(data.nome);
+            })
+            .catch(() => setUserName(""));
+    }, []);
 
     const togglePopup = () => {
         setShowPopup(!showPopup);
@@ -17,26 +31,28 @@ const Header = () => {
     return (
         <header id="Header">
             <div id="LogoName">
-                <img src={logo} alt="Logo"/>
+                <Link to="/">
+                    <img src={logo} alt="Logo" style={{cursor: 'pointer'}}/>
+                </Link>
                 <p>Vila Imperiale</p>
             </div>
 
             <nav id="NavHeader">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="#">Cardápio</a>
+                        <a href="/menu">Cardápio</a>
                     </li>
                     <li>
-                        <a href="#">Pedido</a>
+                        <a href="/carrinho">Pedido</a>
                     </li>
                     <li>
-                        <a href="#">Reserva</a>
+                        <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
-                        <a href="#">Contato</a>
+                        <a href="#Footer">Contato</a>
                     </li>
                 </ul>
 
@@ -49,6 +65,9 @@ const Header = () => {
                         ^
                     </p>
                     <ion-icon name="person-circle-outline"></ion-icon>
+                    {userName && (
+                        <span style={{ marginLeft: 8, fontWeight: 500 }}>{userName}</span>
+                    )}
                 </div>
             </nav>
 
@@ -58,19 +77,28 @@ const Header = () => {
 };
 
 const PopupProfile = () => {
+    const navigate = useNavigate();
+    // Função para logout: faz requisição para backend limpar cookie e redireciona para login
+    const handleLogout = async () => {
+        await fetch('http://localhost:3000/usuarios/logout', {
+            method: 'POST',
+            credentials: 'include',
+        });
+        navigate('/login');
+    };
     return (
         <div id="popupProfile">
             <div id="popupTriangle"></div>
             <div id="popupText">
                 <ul>
                     <li>
-                        <a>Login/Logout</a>
+                        <a onClick={handleLogout} style={{cursor: 'pointer'}}>Login/Logout</a>
                     </li>
                     <li>
                         <a>Pedido</a>
                     </li>
                     <li>
-                        <a>Perfil</a>
+                        <a onClick={() => navigate('/perfil')} style={{cursor: 'pointer'}}>Perfil</a>
                     </li>
                 </ul>
             </div>

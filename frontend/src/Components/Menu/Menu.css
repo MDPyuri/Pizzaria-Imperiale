@@ -2,8 +2,14 @@
 @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
-* {
+/* * {
     background-color: #f5f3e7;
+} */
+
+.menuAll {
+    background-color: #f5f3e7;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* filterPizza */
@@ -229,7 +235,7 @@
 
 .description {
     /* background-color: aqua; */
-    font-family: 'Cinzel';
+    font-family: 'Glacial Indifference';
     color: #6b2e2e;
     flex: 2;
 }
@@ -237,6 +243,7 @@
 .Title {
     font-weight: 900;
     font-size: 1.5vw;
+    font-family: 'Glacial Indifference';
 }
 
 .description .Title {
@@ -245,7 +252,7 @@
 
 .desc {
     width: 95%;
-    font-weight: 700;
+    /* font-weight: 700*/
     font-size: 0.85vw;
 }
 
@@ -270,6 +277,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Glacial Indifference';
 }
 
 .counter-box {
@@ -350,11 +358,12 @@
     font-family: inherit;
     cursor: pointer;
     transition: all 0.2s ease;
+    font-family: 'Glacial Indifference';
 }
 
 .addCar button:focus {
     border: solid 2px #6b2e2e;
-    transform: scale(0.20);
+    /* transform: scale(0.20); */
     color:#6b2e2e;
 }
 

@@ -1,0 +1,261 @@
+/* CSS da página de Endereço e pagamento */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+
+/* Geral */
+.SectionOrderFinish {
+    background-color: #f5f3e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+.OrderFinish-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+
+.title-orderfinish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Great Vibes';
+    color: #6b2e2e;
+    font-size: 4.5rem;
+}
+
+.title-orderfinish p {
+    white-space: nowrap;
+    margin: 0vw 0.8vw;
+}
+
+.line-orderfinish {
+    width: 100%;
+    height: 3px;
+    background-color: #c5a15c;
+}
+
+.payment-btn {
+    background-color: #e6d6b8;
+    border: none;
+    color: #6b2e2e;
+    border-radius: 18px;
+    padding: 0.75vw 1.3vw;
+    font-family: "Glacial Indifference";
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 1.4vw;
+}
+
+.active-btn {
+    background-color: #6b2e2e;
+    color: #e6dbc7;
+}
+
+.payment-options button:hover {
+    background-color: #6b2e2e;
+    color: #e6dbc7;
+    transition: 0.2s ease;
+}
+
+/* Cartão de Crédito */
+.creditCard,
+.creditCard form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+
+.creditCard form input {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw;
+    margin: 0.5vw;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.creditCard form input::placeholder {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    width: 100%;
+}
+
+.creditCard form input:focus {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    border: 1px solid #c5a15c;
+    outline: none; 
+}
+
+.creditCard form input[type=number]::-webkit-inner-spin-button, 
+.creditCard form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Pagamento Pix */
+.Pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pix p,
+.Pix img {
+    background-color: #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw;
+    margin: 0.5vw;
+    font-size: 1.1rem;
+}
+
+.Pix img {
+    width: 70%
+}
+
+
+/* Pagamento na entrega */
+.Entrega p {
+    font-family: "Glacial Indifference";
+    font-weight: bold;
+    color: #6b2e2e;
+    font-size: 1.1rem;
+    margin-top: 1vw;
+}
+
+.Entrega select {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw 1vw;
+    margin: 1.2vw;
+    font-size: 1.1rem;
+}
+
+.Entrega select:focus {
+    border: 1px solid #c5a15c;
+    outline: none; 
+}
+
+
+/* Botões de cancelar ou finalizar */
+.finish-order-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.finish-order-btn {
+    border: 1px solid #c5a15c;
+    background-color: #e6dbc7;
+    color: #6b2e2e;
+    font-weight: bold;
+    font-family: "Glacial Indifference";
+    font-size: 1.1rem;
+    padding: 0.7vw 1.8vw;
+    border-radius: 23px;
+    margin-top: 1.4vw;
+    cursor: pointer;
+}
+
+.finish-order-btn:hover {
+    background-color: #6b2e2e;
+    color: #e6dbc7;
+    transition: 0.2s ease;
+}
+
+/* Etapas do processo */
+.processFinally {
+    position: absolute;
+    left: 2vw;
+    font-family: "Glacial Indifference";
+    font-size: 1.2rem;
+    color: #2e4b32;
+  }
+  
+  .step-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .steps-order {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.6vw 0;
+  }
+  
+  .number-steps {
+    background-color: #e6d6b8;
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5vw;
+    font-weight: bold;
+  }
+  
+  .vertical-line {
+    width: 3px;
+    height: 4.5vh;
+    background-color: #c5a15c;
+    margin-left: calc(1.25vw - 1.5px);
+  }
+  
+
+/* Endereço */
+.address-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+
+.address-infos input {
+    background-color: #e6d6b8;
+    border: 1px solid #e6d6b8;
+    border-radius: 18px;
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    padding: 0.7vw;
+    margin: 0.5vw;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.address-infos input::placeholder {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    width: 100%;
+}
+
+.address-infos input:focus {
+    font-family: "Glacial Indifference";
+    color: #6b2e2e;
+    border: 1px solid #c5a15c;
+    outline: none; 
+}

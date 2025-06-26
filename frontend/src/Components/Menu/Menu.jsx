@@ -12,18 +12,21 @@ const MenuPage = () => {
   };
 
   return (
-    <>
-      <FilterPizza 
-        onFilterChange={handleCategoryChange}
-        activeFilter={selectedCategory} 
-        searchText={searchText} 
-        onSearch={setSearchText}
-      />
-      <ProductList 
-        selectedCategory={selectedCategory}  
-        searchText={searchText}
-      />
-    </>
+      <>
+          <div className="menuAll">
+
+              <FilterPizza
+                  onFilterChange={handleCategoryChange}
+                  activeFilter={selectedCategory}
+                  searchText={searchText}
+                  onSearch={setSearchText}
+              />
+              <ProductList
+                  selectedCategory={selectedCategory}
+                  searchText={searchText}
+              />
+          </div>
+      </>
   );
 };
 

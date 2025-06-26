@@ -14,6 +14,7 @@ app.use(cors({
 }));
 
 // Middleware para processar JSON
+app.use(cors());
 app.use(express.json());
 
 // Importar rotas de usuário

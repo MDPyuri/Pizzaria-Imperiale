@@ -43,10 +43,10 @@ const Header = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="#">Cardápio</a>
+                        <a href="/menu">Cardápio</a>
                     </li>
                     <li>
-                        <a href="#">Pedido</a>
+                        <a href="/carrinho">Pedido</a>
                     </li>
                     <li>
                         <Link to="/reserva">Reserva</Link>

@@ -32,7 +32,7 @@ const Header = () => {
         <header id="Header">
             <div id="LogoName">
                 <Link to="/">
-                    <img src={logo} alt="Logo" style={{cursor: 'pointer'}}/>
+                    <img src={logo} alt="Logo" style={{ cursor: 'pointer' }} />
                 </Link>
                 <p>Vila Imperiale</p>
             </div>
@@ -52,7 +52,7 @@ const Header = () => {
                         <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
-                        <a href="#Footer">Contato</a>
+                        <Link to="/#Footer">Contato</Link>
                     </li>
                 </ul>
 
@@ -66,7 +66,9 @@ const Header = () => {
                     </p>
                     <ion-icon name="person-circle-outline"></ion-icon>
                     {userName && (
-                        <span style={{ marginLeft: 8, fontWeight: 500 }}>{userName}</span>
+                        <span style={{ marginLeft: 8, fontWeight: 500 }}>
+                            {userName}
+                        </span>
                     )}
                 </div>
             </nav>
@@ -95,7 +97,7 @@ const PopupProfile = () => {
                         <a onClick={handleLogout} style={{cursor: 'pointer'}}>Login/Logout</a>
                     </li>
                     <li>
-                        <a>Pedido</a>
+                        <a onClick={() => navigate('/carrinho')} style={{cursor: 'pointer'}}>Pedido</a>
                     </li>
                     <li>
                         <a onClick={() => navigate('/perfil')} style={{cursor: 'pointer'}}>Perfil</a>

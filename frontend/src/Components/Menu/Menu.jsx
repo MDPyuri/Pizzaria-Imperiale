@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FilterPizza from "./FilterPizza";
 import ProductList from "./ProductList";
+import Header from "../Header/Header";
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("PIZZAS_SALGADAS");
@@ -13,8 +14,8 @@ const MenuPage = () => {
 
   return (
       <>
+          <Header />
           <div className="menuAll">
-
               <FilterPizza
                   onFilterChange={handleCategoryChange}
                   activeFilter={selectedCategory}

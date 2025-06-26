@@ -159,7 +159,7 @@ const ReservationPage = () => {
 					</form>
 				</div>
 			</section>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 };

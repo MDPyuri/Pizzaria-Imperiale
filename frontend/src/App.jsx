@@ -5,12 +5,6 @@ import Home from './Components/Home/Home'
 import Header from './Components/Header/Header.jsx'
 import Footer from './Components/Footer/Footer.jsx'
 import ReservationPage from './Components/ReservationPage/ReservationPage.jsx'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
-import Home from './Components/Home/Home';
-import Header from './Components/Header/Header.jsx';
-import Footer from './Components/Footer/Footer.jsx';
-import ReservationPage from './Components/ReservationPage/ReservationPage.jsx';
 import Reservation from './Components/Reservation/Reservation.jsx';
 import Cart from './Components/Order/Cart.jsx';
 import Address from './Components/Order/Address.jsx';
@@ -20,11 +14,8 @@ import CreateUser from './Components/CRUD/Create.jsx'
 import UpdateUser from './Components/CRUD/Update.jsx'
 import UserProfile from './Components/CRUD/Profile.jsx'
 import DeleteUser from './Components/CRUD/Delete.jsx'
-import FilterPizza from './Components/Menu/FilterPizza.jsx';
-import ProductList from './Components/Menu/ProductList.jsx';
 import Menu from './Components/Menu/Menu.jsx';
 import About from './Components/About/About.jsx';
-import Reservation from './Components/Reservation/Reservation.jsx'
 
 // Simulação de autenticação (substitua por lógica real)
 // const isAuthenticated = () => {
@@ -47,15 +38,17 @@ const isAuthenticated = async () => {
 };
 
 
-// function MainApp() {
-//   return (
-//     <>
-//       <Header />
-//       <Home />
-//       <Footer />
-//     </>
-//   );
-// }
+function MainApp() {
+  return (
+    <>
+      <Header />
+      <Home />
+      <Reservation />
+      <About />
+      <Footer />
+    </>
+  );
+}
 
 // function App() {
 //   return (
@@ -89,49 +82,45 @@ const isAuthenticated = async () => {
 //   );
 // }
 
-function App() {
-    return (
-        <>
-            <Router>
-                <Header />
-                {/* <Menu/> */}
-                <Routes>
-                    <Route path="/carrinho" element={<Cart />} />
-                    <Route path="/endereco" element={<Address />} />
-                    <Route path="/pagamento" element={<Payment />} />
-                </Routes>
-            </Router>
-        </>
-    );
-  return (
-    <>
-      <Menu/>
-    </>
-  )
-      <Header />
-      <Home />
-      <Reservation />
-      <About />
-      <Footer />
-    </>
-  );
-}
+//   return (
+//     <>
+//       <Menu/>
+//     </>
+//   )
+//       <Header />
+//       <Home />
+//       <Reservation />
+//       <About />
+//       <Footer />
+//     </>
+//   );
+// }
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<UserLogin />} />
-        <Route path="/cadastro" element={<CreateUser />} />
-        <Route path="/reserva" element={isAuthenticated() ? <ReservationPage /> : <Navigate to="/login" />} />
-        <Route path="/delete" element={<DeleteUser />} />
-        <Route path="/perfil" element={<UserProfile />} />
-        <Route path="/update" element={<UpdateUser />} />
-        <Route path="/" element={isAuthenticated() ? <MainApp /> : <Navigate to="/login" />} />
-        {/* fallback */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+        
+        <Router>
+            <Header />
+            {/* <Home />
+            <Reservation />
+            <About />
+            <Footer />  */}
+            <Routes>
+                <Route path="/login" element={<UserLogin />} />
+                <Route path="/cadastro" element={<CreateUser />} />
+                <Route path="/reserva" element={isAuthenticated() ? <ReservationPage /> : <Navigate to="/login" />} />
+                <Route path="/delete" element={<DeleteUser />} />
+                <Route path="/perfil" element={isAuthenticated() ? <UserProfile /> : <Navigate to="/login" />} />
+                <Route path="/update" element={<UpdateUser />} />
+                <Route path="/" element={<MainApp />} />
+                {/* fallback */}
+                <Route path="*" element={<Navigate to="/" />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/carrinho" element={isAuthenticated() ? <Cart /> : <Navigate to="/login" />} />
+                <Route path="/endereco" element={<Address />} />
+                <Route path="/pagamento" element={<Payment />} />
+            </Routes>
+        </Router>
   );
 }
 

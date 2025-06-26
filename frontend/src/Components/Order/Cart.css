@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 7vw;
+    padding-top: 8vw;
     min-height: 100vh;
 }
 
@@ -31,7 +31,7 @@
     width: 100%;
     font-family: 'Great Vibes';
     color: #6b2e2e;
-    font-size: 4.5rem;
+    font-size: 4.8rem;
     margin-bottom: 1vw;
 }
 

@@ -22,6 +22,17 @@ const Header = () => {
         }
     };
 
+    const scrollToFooter = (e) => {
+        e.preventDefault();
+        const footer = document.getElementById('Footer');
+        if (footer) {
+            footer.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    };
+
     return (
         <header id="Header">
             <div id="LogoName">
@@ -46,7 +57,13 @@ const Header = () => {
                         <Link to="/reserva">Reserva</Link>
                     </li>
                     <li>
-                        <Link to="/#Footer">Contato</Link>
+                        <a
+                            href="#Footer"
+                            onClick={scrollToFooter}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Contato
+                        </a>
                     </li>
                 </ul>
 

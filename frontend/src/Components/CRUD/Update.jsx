@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Crud.css';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateUser = () => {
     const [NewName, setNewName] = useState("");
@@ -11,6 +12,8 @@ const UpdateUser = () => {
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
     const [userId, setUserId] = useState(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:3000/usuarios/me', { credentials: 'include' })
@@ -63,6 +66,13 @@ const UpdateUser = () => {
         }
     };
 
+    useEffect(() => {
+        if (message) {
+            alert(message);
+            navigate('/perfil');
+        }
+    }, [message]);
+
     return (
         <>
             <Header />
@@ -79,7 +89,6 @@ const UpdateUser = () => {
                         <p>Insira seu dado atualizado:</p>
                     </div>
 
-                    {message && <div className="success-message">{message}</div>}
                     {error && <div className="error-message">{error}</div>}
 
                     <form onSubmit={handleSubmit}>

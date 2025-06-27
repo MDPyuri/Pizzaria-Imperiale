@@ -10,7 +10,9 @@ const usuarioRoutes = express.Router();
 // Rota para listar usuários
 usuarioRoutes.get('/', async (req, res) => {
     try {
-        const usuarios = await prisma.usuario.findMany();
+        const usuarios = await prisma.usuario.findMany({
+            where: { ativo: true },
+        });
         res.json(usuarios);
     } catch (error) {
         res.status(500).json({
@@ -25,7 +27,7 @@ usuarioRoutes.post('/criar', async (req, res) => {
     try {
         const { nome, telefone, cpf, email, senha } = req.body;
         const usuario = await prisma.usuario.create({
-            data: { nome, telefone, cpf, email, senha },
+            data: { nome, telefone, cpf, email, senha, ativo: true },
         });
         res.json(usuario);
     } catch (error) {
@@ -74,9 +76,20 @@ usuarioRoutes.put('/atualizar/:id', async (req, res) => {
 usuarioRoutes.delete('/deletar/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        await prisma.usuario.delete({
-            where: { idUsuario: parseInt(id) }, // Alterado para usar idUsuario
+        const idUsuario = parseInt(id);
+
+        if (isNaN(idUsuario)) {
+            return res
+                .status(400)
+                .json({ error: 'ID inválido. Deve ser um número inteiro.' });
+        }
+
+        // Desativa o usuário ao invés de deletar
+        await prisma.usuario.update({
+            where: { idUsuario },
+            data: { ativo: false },
         });
+
         res.json({ message: 'Usuário deletado com sucesso' });
     } catch (error) {
         res.status(500).json({
@@ -99,7 +112,7 @@ usuarioRoutes.post('/login', async (req, res, next) => {
         }
 
         const usuario = await prisma.usuario.findUnique({
-            where: { email },
+            where: { email, ativo: true },
         });
 
         console.log('Usuário encontrado:', usuario ? 'Sim' : 'Não'); // Debug
@@ -136,7 +149,7 @@ usuarioRoutes.get('/me', verificaTokenJWT, async (req, res) => {
     try {
         // req.user é preenchido pelo middleware com os dados do token
         const usuario = await prisma.usuario.findUnique({
-            where: { idUsuario: req.user.id },
+            where: { idUsuario: req.user.id, ativo: true },
             select: {
                 nome: true,
                 email: true,

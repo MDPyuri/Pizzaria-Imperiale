@@ -20,6 +20,7 @@ model Usuario {
   cpf        String  @unique
   email      String  @unique
   senha      String 
+  ativo      Boolean @default(true)
 
   reservas   Reserva[]
   pedidos    Pedido[]

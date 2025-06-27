@@ -5,7 +5,6 @@ async function main() {
     // Inserção de dados com create
 
     await prisma.produto.deleteMany();
-    await prisma.usuario.deleteMany();
 
     // --- Pizzas Salgadas ###
     await prisma.produto.create({
@@ -763,69 +762,6 @@ async function main() {
         },
     });
 
-    // Seed dos usuários
-    const usuario1 = await prisma.usuario.create({
-        data: {
-            nome: 'João Silva',
-            email: 'joaosilva01@email.com',
-            senha: 'senha123',
-            telefone: '11987654321',
-            cpf: '12345678909',
-        },
-    });
-
-    const usuario2 = await prisma.usuario.create({
-        data: {
-            nome: 'Maria Oliveira',
-            email: 'maria.oliveira@email.com',
-            senha: 'senha456',
-            telefone: '11912345678',
-            cpf: '98765432100',
-        },
-    });
-
-    const usuario3 = await prisma.usuario.create({
-        data: {
-            nome: 'Carlos Souza',
-            email: 'carlos.souza@email.com',
-            senha: 'senha789',
-            telefone: '11923456789',
-            cpf: '45678912301',
-        },
-    });
-
-    // Seed dos pagamentos vinculados aos usuários criados
-    await prisma.pagamento.create({
-        data: {
-            Usuario_idUsuario: usuario1.idUsuario,
-            valor: 198.0,
-            pago: 'PAGO', // enum válido: PENDENTE, PAGO, CANCELADO
-            tipo: 'cartao_credito',
-            data: new Date(),
-        },
-    });
-
-    await prisma.pagamento.create({
-        data: {
-            Usuario_idUsuario: usuario2.idUsuario,
-            valor: 150.0,
-            pago: 'PENDENTE',
-            tipo: 'boleto',
-            data: new Date(),
-        },
-    });
-
-    await prisma.pagamento.create({
-        data: {
-            Usuario_idUsuario: usuario3.idUsuario,
-            valor: 300.0,
-            pago: 'CANCELADO',
-            tipo: 'pix',
-            data: new Date(),
-        },
-    });
-
-    console.log('Pagamentos simulados inseridos com sucesso! 💳');
     console.log('Dados plantados e regados com sucesso! 🌱');
 }
 

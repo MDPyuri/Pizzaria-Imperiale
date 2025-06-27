@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import './OrderFinish.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import NotaFiscalModal from './NotaFiscalModal';
 import QrCodePix from './img/QrCodePix.png';
 
 const Payment = () => {
     const navigate = useNavigate();
     const { user, isAuthenticated } = useAuth();
+    const [paymentMethod, setPaymentMethod] = useState('credito');
+    const [showNotaFiscalModal, setShowNotaFiscalModal] = useState(false);
+    const [pedidoFinalizado, setPedidoFinalizado] = useState(null);
+
     const cancelOrder = () => {
         localStorage.removeItem('endereco'); // Remove os dados de endereço ao cancelar
         navigate('/carrinho');
     };
-
-    const [paymentMethod, setPaymentMethod] = useState('credito');
 
     const handleExpiryChange = (e) => {
         let value = e.target.value.replace(/\D/g, '');
@@ -181,24 +184,28 @@ const Payment = () => {
                 );
             }
 
-            // 7. Sucesso - limpa dados e redireciona
-            alert(
-                `🎉 Pedido realizado com sucesso!\nNúmero do pedido: ${
-                    pedido.idPedido
-                }\nValor total: R$ ${totalValue.toFixed(2)}`
-            );
+            // 7. Sucesso - mostra modal de nota fiscal
+            setPedidoFinalizado({
+                id: pedido.idPedido,
+                valor: totalValue.toFixed(2),
+            });
+            setShowNotaFiscalModal(true);
+
             localStorage.removeItem('carrinho');
             localStorage.removeItem('endereco');
-
-            setTimeout(() => {
-                navigate('/');
-            }, 2000);
         } catch (error) {
             console.error('Erro ao finalizar pedido:', error);
             alert(
                 `❌ Erro ao finalizar pedido: ${error.message}\nTente novamente.`
             );
         }
+    };
+
+    const handleCloseNotaFiscalModal = () => {
+        setShowNotaFiscalModal(false);
+        setTimeout(() => {
+            navigate('/');
+        }, 500);
     };
 
     return (
@@ -327,6 +334,14 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Modal de Nota Fiscal */}
+            <NotaFiscalModal
+                isOpen={showNotaFiscalModal}
+                onClose={handleCloseNotaFiscalModal}
+                pedidoId={pedidoFinalizado?.id}
+                valorTotal={pedidoFinalizado?.valor}
+            />
         </section>
     );
 };

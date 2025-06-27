@@ -66,5 +66,9 @@ app.use('/enderecos', enderecoRoutes);
 const pagamentoRoutes = require('./Routes/pagamento');
 app.use('/pagamentos', pagamentoRoutes);
 
+// Importar rotas de nota fiscal
+const notaFiscalRoutes = require('./Routes/notaFiscal');
+app.use('/nota-fiscal', notaFiscalRoutes);
+
 // Iniciar o servidor
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));

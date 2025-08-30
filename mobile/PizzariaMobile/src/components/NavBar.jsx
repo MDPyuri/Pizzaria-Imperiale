@@ -24,7 +24,7 @@ export default function NavBar({ navigation }) {
               <FontAwesome name="home" size={30} color="#f5f3e7" />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Screen2')}>
-              <FontAwesome5 name="pizza" size={30} color="#f5f3e7" />
+              <FontAwesome5 name="pizza-slice" size={30} color="#f5f3e7" />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Screen3')}>
               <FontAwesome5 name="shopping-cart" size={30} color="#f5f3e7" />

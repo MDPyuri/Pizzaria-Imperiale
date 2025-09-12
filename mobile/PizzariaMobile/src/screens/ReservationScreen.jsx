@@ -20,8 +20,42 @@ export default function ReservationScreen({ navigation }) {
   }
 
   function handleReservation() {
-    console.log({ name, phone, date, time, preferences, numberOfPeople });
-    alert('Reservation submitted!');
+      const reservationData = {
+          name,
+          phone,
+          date,
+          time,
+          preferences,
+          numberOfPeople,
+      };
+
+      fetch('http://localhost:3000/reservas/criar', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(reservationData),
+      })
+          .then((response) => {
+              if (!response.ok) {
+                  throw new Error('Erro ao enviar reserva');
+              }
+              return response.json();
+          })
+          .then((data) => {
+              console.log('Reserva criada:', data);
+              alert('Reserva enviada com sucesso!');
+              setName('');
+              setPhone('');
+              setDate('');
+              setTime('');
+              setPreferences('');
+              setNumberOfPeople('');
+          })
+          .catch((error) => {
+              console.error('Erro ao enviar reserva:', error);
+              alert('Erro ao enviar a reserva, tente novamente.');
+          });
   }
 
   return (

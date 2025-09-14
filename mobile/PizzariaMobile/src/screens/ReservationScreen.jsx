@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { useFonts } from 'expo-font';
 import NavBar from '../components/NavBar';
 
+
 export default function ReservationScreen({ navigation }) {
   const [name, setName] = React.useState('');
   const [phone, setPhone] = React.useState('');

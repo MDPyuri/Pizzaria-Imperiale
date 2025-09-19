@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { useFonts } from 'expo-font';
 import NavBar from '../components/NavBar';
 
-import HeaderHomePage from '../components/HeaderHomeScreen';
+import { HeaderReservation } from '../components/Header';
 
 export default function ReservationScreen({ navigation }) {
   const [name, setName] = React.useState('');
@@ -28,7 +28,7 @@ export default function ReservationScreen({ navigation }) {
 
   return (
       <View style={styles.container}>
-          <HeaderHomePage />
+          <HeaderReservation />
           <Text style={styles.text}>
               Para garantir sua experiência na Vila Imperiale, recomendamos que
               as reservas sejam feitas com pelo menos 24 horas de antecedência.

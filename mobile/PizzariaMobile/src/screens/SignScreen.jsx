@@ -27,15 +27,16 @@ export default function SignScreen({ navigation }) {
 
     function handleSubmit() {
         const userData = {
-            name,
-            phone,
+            nome: name,
+            telefone: phone,
             cpf,
             email,
-            password,
+            senha: password,
         };
         console.log('Dados do usuário:', userData);
 
-        fetch('http://localhost:3000/usuarios/criar', {
+        fetch('http://10.81.205.27:3000/usuarios/criar', {
+            // Replace <SERVER_IP> with your server's IP address
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,7 +45,11 @@ export default function SignScreen({ navigation }) {
         })
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error('Erro ao cadastrar usuário');
+                    return response.text().then((text) => {
+                        throw new Error(
+                            `Erro da API: ${response.status} - ${text}`
+                        );
+                    });
                 }
                 return response.json();
             })

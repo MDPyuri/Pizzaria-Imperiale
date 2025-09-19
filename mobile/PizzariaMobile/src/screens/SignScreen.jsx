@@ -35,7 +35,7 @@ export default function SignScreen({ navigation }) {
         };
         console.log('Dados do usuário:', userData);
 
-        fetch('http://10.81.205.27:3000/usuarios/criar', {
+        fetch('http://10.0.2.2:3000/usuarios/criar', {
             // Replace <SERVER_IP> with your server's IP address
             method: 'POST',
             headers: {

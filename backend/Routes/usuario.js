@@ -3,6 +3,7 @@ const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const jwt = require('jsonwebtoken');
 const { enviaTokenJWT, verificaTokenJWT } = require('../middlewares/token');
+const generateMobileToken = require('../middlewares/mobileToken');
 
 const prisma = new PrismaClient();
 const usuarioRoutes = express.Router();
@@ -139,6 +140,43 @@ usuarioRoutes.post('/login', async (req, res, next) => {
         console.error('Erro no login:', error); // Debug
         res.status(500).json({
             error: 'Erro ao realizar login',
+            details: error.message,
+        });
+    }
+});
+
+// Rota para login no ambiente mobile
+usuarioRoutes.post('/login-mobile', async (req, res) => {
+    try {
+        const { email, senha } = req.body;
+
+        if (!email || !senha) {
+            return res.status(400).json({ error: 'Email e senha são obrigatórios' });
+        }
+
+        const usuario = await prisma.usuario.findUnique({
+            where: { email, ativo: true },
+        });
+
+        if (!usuario || usuario.senha !== senha) {
+            return res.status(401).json({ error: 'Email ou senha inválidos' });
+        }
+
+        // Gera o token JWT para o ambiente mobile
+        const tokenData = generateMobileToken({
+            id: usuario.idUsuario,
+            name: usuario.nome,
+            role: usuario.role || 'Usuario',
+        });
+
+        res.json({
+            message: 'Login realizado com sucesso',
+            token: tokenData,
+        });
+    } catch (error) {
+        console.error('Erro no login mobile:', error);
+        res.status(500).json({
+            error: 'Erro ao realizar login mobile',
             details: error.message,
         });
     }

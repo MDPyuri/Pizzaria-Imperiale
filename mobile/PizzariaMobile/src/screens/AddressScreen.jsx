@@ -11,6 +11,36 @@ import { useFonts } from 'expo-font';
 
 import { HeaderAddress } from '../components/Header';
 
+function processFinally() {
+    return (
+        <View style={styles.processFinally}>
+            <View style={styles.stepGroup}>
+                <View style={styles.stepsOrder}>
+                    <Text style={styles.numberSteps}>1</Text>
+                    <Text style={styles.nameSteps}>Pedido</Text>
+                </View>
+                <View style={styles.verticalLine} />
+            </View>
+
+            <View style={styles.stepGroup}>
+                <View style={styles.stepsOrder}>
+                    <Text style={styles.numberSteps}>2</Text>
+                    <Text style={styles.nameStepsBold}>Endereço</Text>
+                </View>
+                <View style={styles.verticalLine} />
+            </View>
+
+            <View style={styles.stepGroup}>
+                <View style={styles.stepsOrder}>
+                    <Text style={styles.numberSteps}>3</Text>
+                    <Text style={styles.nameSteps}>Pagamento</Text>
+                </View>
+            </View>
+        </View>
+    );
+}
+export { processFinally };
+
 export default function AddressScreen({ navigation }) {
     const [fontsLoaded] = useFonts({
         GreatVibes: require('../../assets/fonts/GreatVibes-Regular.ttf'),
@@ -26,32 +56,7 @@ export default function AddressScreen({ navigation }) {
             <HeaderAddress />
 
             {/* Processo do pedido */}
-            <View style={styles.processFinally}>
-                <View style={styles.stepGroup}>
-                    <View style={styles.stepsOrder}>
-                        <Text style={styles.numberSteps}>1</Text>
-                        <Text style={styles.nameSteps}>Pedido</Text>
-                    </View>
-                    <View style={styles.verticalLine} />
-                </View>
-
-                <View style={styles.stepGroup}>
-                    <View style={styles.stepsOrder}>
-                        <Text style={styles.numberSteps}>2</Text>
-                        <Text style={styles.nameStepsBold}>
-                            Endereço
-                        </Text>
-                    </View>
-                    <View style={styles.verticalLine} />
-                </View>
-
-                <View style={styles.stepGroup}>
-                    <View style={styles.stepsOrder}>
-                        <Text style={styles.numberSteps}>3</Text>
-                        <Text style={styles.nameSteps}>Pagamento</Text>
-                    </View>
-                </View>
-            </View>
+            <processFinally/>
 
             {/* Formulário de endereço */}
             <View style={styles.formAddr}>

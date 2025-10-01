@@ -7,6 +7,7 @@ export default function HomeScreen() {
     const [fontsLoaded] = useFonts({
         'GlacialIndifference': require('../../assets/fonts/GlacialIndifference-Regular.otf'), 
         'GreatVibes': require('../../assets/fonts/GreatVibes-Regular.ttf'),
+        'GlacialIndifference-Bold': require('../../assets/fonts/GlacialIndifference-Bold.otf')
     });
         if (!fontsLoaded) {
         return null;
@@ -95,17 +96,23 @@ const styles = StyleSheet.create({
     item: {
         width: 100,
         alignItems: 'center',
+        position: 'relative',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     itemImage: {
         width: 100,
         height: 100,
         borderRadius: 8,
-        marginBottom: 6,
     },
     itemText: {
-        textAlign: 'center',
-        fontWeight: '600',
-        fontFamily: 'GlacialIndifference',
+        fontSize: 17,
+        fontFamily: 'GlacialIndifference-Bold',
         color: '#6b2e2e',
+        position: 'absolute',
+        alignItems: 'center',
+        textAlign: 'center',
+        backgroundColor: '#fff',
+        opacity: 0.8,
     },
 });

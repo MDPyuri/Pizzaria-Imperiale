@@ -29,18 +29,21 @@ export default function FilterPizza({ search, setSearch }) {
 
             </View>
 
-            {/* Botões de filtro
+            {/* Botões de filtro */}
             <View style={styles.filters}>
                 <TouchableOpacity style={styles.filterBtn}>
-                    <Text style={styles.filterText}>Todos</Text>
+                    <Text style={styles.filterText}>Pizzas salgadas</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.filterBtn}>
-                    <Text style={styles.filterText}>Salgadas</Text>
+                    <Text style={styles.filterText}>Pizzas doces</Text>
+                </TouchableOpacity>
+                {/* <TouchableOpacity style={styles.filterBtn}>
+                    <Text style={styles.filterText}>Pizzas veganas</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.filterBtn}>
-                    <Text style={styles.filterText}>Doces</Text>
-                </TouchableOpacity>
-            </View> */}
+                    <Text style={styles.filterText}>Bebidas</Text>
+                </TouchableOpacity> */}
+            </View> 
         </View>
     );
 }
@@ -50,20 +53,18 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "160",
         backgroundColor: '#e6d6b8'
-        // paddingHorizontal: 16,
-        // marginBottom: 16,
     },
     searchContainer: {
         width: "80%",
         height: 45,
         flexDirection: "row",
         alignItems: "center",
-        backgroundColor: "red",//"#f5f3e7",
+        // backgroundColor: "red",//"#f5f3e7",
         marginTop: 20,
         marginLeft: 30,
     },
     input: {
-        width: "82%",
+        width: "90%",
         height: 45,
         flexDirection: "row",
         alignItems: "center",
@@ -72,27 +73,32 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: "#c5a15c",
         color: "#6b2e2e",
-        // paddingHorizontal: 100,
-        // paddingVertical: 60,
-        // shadowColor: "#6b2e2e",
-        // shadowOffset: { width: 0, height: 1 },
-        // shadowOpacity: 0.1,
-        // shadowRadius: 2,
-        // elevation: 2,
     },
     icon: {
-        // marginRight: 8,
+        marginLeft: 10,
+        backgroundColor: '#f5f3e7',
+        fontSize: 38,
+        padding: 3,
+        borderRadius: 50,
+        borderColor: '#c5a15c',
+        borderWidth: 1.5,
+        color: '#c5a15c',
     },
     filters: {
-        // flexDirection: "row",
-        // justifyContent: "space-between",
-        // marginTop: 12,
+        width: '80%',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 35,
+        marginLeft: 30,
+        backgroundColor: 'green',
     },
     filterBtn: {
-        // backgroundColor: "#e63946", // cor principal do site
+        backgroundColor: "#e63946", // cor principal do site
         // paddingVertical: 8,
         // paddingHorizontal: 16,
-        // borderRadius: 20,
+        padding: 10,
+        // gap: 2,
+        borderRadius: 5,
     },
     filterText: {
         // color: "#fff",

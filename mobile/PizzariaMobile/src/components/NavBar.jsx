@@ -15,12 +15,12 @@ export default function NavBar({ navigation }) {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                onPress={() => navigation.navigate('ReservationScreen')}
+                onPress={() => navigation.navigate('HomeScreen')}
             >
                 <FontAwesome
                     name="home"
                     size={30}
-                    color={getColor('ReservationScreen')}
+                    color={getColor('HomeScreen')}
                 />
             </TouchableOpacity>
 
@@ -40,12 +40,8 @@ export default function NavBar({ navigation }) {
                 />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Screen4')}>
-                <Ionicons
-                    name="calendar-outline"
-                    size={30}
-                    color={getColor('Screen4')}
-                />
+            <TouchableOpacity onPress={() => navigation.navigate('ReservationScreen')}>
+                <Ionicons name="calendar-outline" size={30} color="#f5f3e7" />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => navigation.navigate('SignScreen')}>

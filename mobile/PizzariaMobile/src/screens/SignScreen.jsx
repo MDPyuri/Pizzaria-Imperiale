@@ -7,6 +7,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import { useFonts } from 'expo-font';
+import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 
 export default function SignScreen({ navigation }) {
@@ -70,6 +71,7 @@ export default function SignScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
+            <Header/>
             <View style={styles.card}>
                 <Text style={styles.title}>Cadastrar</Text>
                 <Text style={styles.textBold}>Cadastre-se e descubra um novo sabor de sofisticação.</Text>

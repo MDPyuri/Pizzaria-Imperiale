@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
     },
     lineCardapio: {
-        width: 150,
+        width: 300,
         height: 2,
         backgroundColor: '#c5a15c',
     },
@@ -88,17 +88,16 @@ const styles = StyleSheet.create({
 
     categories: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         marginTop: 20,
         width: '100%',
-        paddingHorizontal: 10,
+        gap: 5,
     },
     item: {
         width: 100,
-        alignItems: 'center',
         position: 'relative',
-        alignItems: 'center',
         justifyContent: 'center',
+        margin: 5,
     },
     itemImage: {
         width: 100,

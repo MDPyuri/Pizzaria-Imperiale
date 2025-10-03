@@ -32,12 +32,8 @@ export default function NavBar({ navigation }) {
                 />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Screen3')}>
-                <FontAwesome5
-                    name="shopping-cart"
-                    size={30}
-                    color={getColor('Screen3')}
-                />
+            <TouchableOpacity onPress={() => navigation.navigate('AddressScreen')}>
+                <FontAwesome5 name="shopping-cart" size={30} color="#f5f3e7" />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => navigation.navigate('ReservationScreen')}>

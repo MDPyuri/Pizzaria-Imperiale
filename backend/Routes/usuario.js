@@ -126,7 +126,7 @@ usuarioRoutes.post('/login', async (req, res, next) => {
             id: usuario.idUsuario,
             email: usuario.email,
             nome: usuario.nome,
-            role: usuario.role || 'user', // ajuste conforme seu modelo
+            role: usuario.role || 'user',
         };
         // Remove a senha do objeto de resposta
         const { senha: _, ...usuarioSemSenha } = usuario;

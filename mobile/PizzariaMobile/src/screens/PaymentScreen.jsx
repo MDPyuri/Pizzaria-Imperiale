@@ -39,7 +39,7 @@ export default function PaymentScreen({ navigation }) {
                 <View style={styles.stepGroup}>
                     <View style={styles.stepsOrder}>
                         <Text style={styles.numberSteps}>2</Text>
-                        <Text style={styles.nameStepsBold}>Endereço</Text>
+                        <Text style={styles.nameSteps}>Endereço</Text>
                     </View>
                     <View style={styles.verticalLine} />
                 </View>
@@ -47,7 +47,7 @@ export default function PaymentScreen({ navigation }) {
                 <View style={styles.stepGroup}>
                     <View style={styles.stepsOrder}>
                         <Text style={styles.numberSteps}>3</Text>
-                        <Text style={styles.nameSteps}>Pagamento</Text>
+                        <Text style={styles.nameStepsBold}>Pagamento</Text>
                     </View>
                 </View>
             </View>

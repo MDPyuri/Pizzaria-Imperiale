@@ -21,7 +21,7 @@ export default function AppNavigator() {
                 <Stack.Screen name="Screen2" component={Screen2} />
                 <Stack.Screen name="AddressScreen" component={AddressScreen} />
                 <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
-                <Stack.Screen name="Screen3" component={Screen3} />
+                {/* <Stack.Screen name="Screen3" component={Screen3} /> */}
                 <Stack.Screen name="ReservationScreen" component={ReservationScreen}/>
                 <Stack.Screen name="SignScreen" component={SignScreen} />
             </Stack.Navigator>
